@@ -5,6 +5,7 @@ from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 from db import init_db
 from claude_client import get_claude_response, run_triage, run_briefing, run_followup
+from followup_tracker import init_followup_table
 
 logging.basicConfig(
     level=logging.INFO,
@@ -101,10 +102,39 @@ def handle_digest(ack, respond):
         respond(f"エラーが発生しました: {e}")
 
 
+@app.command("/weekly")
+def handle_weekly(ack, respond):
+    """週次レポートを手動で生成する。"""
+    ack()
+    respond("週次レポートを生成しています...")
+    try:
+        from weekly_report import run_weekly_report
+        result = run_weekly_report()
+        respond(result)
+    except Exception as e:
+        logger.error(f"/weekly error: {e}")
+        respond(f"エラーが発生しました: {e}")
+
+
+@app.command("/notion")
+def handle_notion(ack, respond):
+    """今後の会議のNotionページを作成する。"""
+    ack()
+    respond("Notionページを確認・作成しています...")
+    try:
+        from notion_sync import sync_upcoming_meetings
+        sync_upcoming_meetings()
+        respond("完了しました。")
+    except Exception as e:
+        logger.error(f"/notion error: {e}")
+        respond(f"エラーが発生しました: {e}")
+
+
 # ── Entry point ────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     init_db()
+    init_followup_table()
 
     from scheduler import start_scheduler
     start_scheduler(app)
