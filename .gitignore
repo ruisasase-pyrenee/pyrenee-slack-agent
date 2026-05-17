@@ -5,3 +5,4 @@ __pycache__/
 data/
 token.json
 credentials.json
+auth_state.pkl
