@@ -114,15 +114,19 @@ def run_weekly_report(app=None, rui_user_id: str = "") -> str:
 
             # Notionにも保存
             try:
-                from notion_sync import is_configured, _get_client, MEETINGS_DB_ID
+                from notion_sync import is_configured, _get_client
+                # 日次レポートDBに週次レポートとして保存
+                REPORTS_DB_ID = "9d1e0e96-fdd5-44de-baf1-41d8269f35df"
                 if is_configured():
                     notion = _get_client()
                     title = f"週次レポート {datetime.now().strftime('%Y-%m-%d')}"
                     notion.pages.create(
-                        parent={"database_id": MEETINGS_DB_ID},
+                        parent={"database_id": REPORTS_DB_ID},
                         properties={
-                            "Name": {"title": [{"text": {"content": title}}]},
-                            "Date": {"date": {"start": datetime.now().strftime("%Y-%m-%d")}},
+                            "タイトル": {"title": [{"text": {"content": title}}]},
+                            "日付": {"date": {"start": datetime.now().strftime("%Y-%m-%d")}},
+                            "カテゴリ": {"select": {"name": "週次レポート"}},
+                            "ステータス": {"select": {"name": "生成済み"}},
                         },
                         children=[
                             {

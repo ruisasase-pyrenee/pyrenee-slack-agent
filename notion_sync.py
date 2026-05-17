@@ -18,7 +18,8 @@ from db import DB_PATH
 logger = logging.getLogger(__name__)
 
 NOTION_API_KEY = os.getenv("NOTION_API_KEY", "")
-MEETINGS_DB_ID = os.getenv("NOTION_MEETINGS_DB_ID", "")
+# 既存の議事録データベース（Notionワークスペースで発見済み）
+MEETINGS_DB_ID = os.getenv("NOTION_MEETINGS_DB_ID", "3646f494-84f3-47c8-a6f0-779d2b150847")
 
 
 def is_configured() -> bool:
@@ -92,11 +93,11 @@ def create_meeting_page(event: dict) -> str | None:
         page = notion.pages.create(
             parent={"database_id": MEETINGS_DB_ID},
             properties={
-                "Name": {
+                "件名": {
                     "title": [{"text": {"content": title}}]
                 },
-                "Date": {
-                    "date": {"start": start[:10] if start else datetime.now().strftime("%Y-%m-%d")}
+                "イベント時間": {
+                    "date": {"start": start[:19] if start else datetime.now().strftime("%Y-%m-%dT%H:%M:%S")}
                 },
             },
             children=[
