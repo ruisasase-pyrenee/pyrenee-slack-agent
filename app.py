@@ -6,6 +6,8 @@ from slack_bolt.adapter.socket_mode import SocketModeHandler
 from db import init_db
 from claude_client import get_claude_response, run_triage, run_briefing, run_followup
 from followup_tracker import init_followup_table
+from memory import init_memory_tables
+from watchlist import init_watchlist_table
 
 logging.basicConfig(
     level=logging.INFO,
@@ -135,6 +137,8 @@ def handle_notion(ack, respond):
 if __name__ == "__main__":
     init_db()
     init_followup_table()
+    init_memory_tables()
+    init_watchlist_table()
 
     from scheduler import start_scheduler
     start_scheduler(app)

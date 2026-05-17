@@ -184,6 +184,16 @@ def run_auto_triage(app=None, rui_user_id: str = "") -> str:
             _apply_gmail_label(r["id"], category)
 
         if category == "URGENT":
+            # HubSpot自動同期
+            try:
+                import hubspot_client
+                hubspot_client.sync_email_to_hubspot(
+                    email,
+                    f"[URGENT] {email.get('subject', '')} — {reason}"
+                )
+            except Exception:
+                pass
+
             # 下書き自動作成
             suggested = r.get("suggested_reply", "")
             if suggested and email.get("from"):

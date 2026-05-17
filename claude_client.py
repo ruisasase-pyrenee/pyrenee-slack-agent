@@ -11,6 +11,7 @@ import logging
 from pathlib import Path
 import anthropic
 import google_client
+import memory
 from db import get_history, append_message
 
 logger = logging.getLogger(__name__)
@@ -191,14 +192,30 @@ def _run_with_tools(messages: list[dict], system: str = None) -> str:
 # ── Public API ─────────────────────────────────────────────────────────────────
 
 def get_claude_response(user_id: str, user_message: str, channel_id: str = None) -> str:
-    """通常の会話: 履歴付きでClaudeに返答させる。"""
+    """通常の会話: 履歴＋長期記憶付きでClaudeに返答させる。"""
+    # 関連する記憶を検索して注入
+    relevant_memories = memory.search(user_message, limit=5)
+    memory_context = memory.format_for_prompt(relevant_memories)
+
+    system = SYSTEM_PROMPT
+    if memory_context:
+        system = f"{SYSTEM_PROMPT}\n\n{memory_context}"
+
     history = get_history(user_id)
     history.append({"role": "user", "content": user_message})
 
-    response = _run_with_tools(history)
+    response = _run_with_tools(history, system=system)
 
     append_message(user_id, "user", user_message, channel_id)
     append_message(user_id, "assistant", response, channel_id)
+
+    # 会話から重要な事実を非同期で記憶に保存
+    import threading
+    threading.Thread(
+        target=memory.extract_and_store,
+        args=(user_message, response),
+        daemon=True
+    ).start()
 
     return response
 

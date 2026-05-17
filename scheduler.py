@@ -109,6 +109,15 @@ def _job_weekly_report(app):
         logger.error(f"weekly_report failed: {e}")
 
 
+def _job_watchlist_check(app):
+    logger.info("Job: watchlist_check")
+    try:
+        from watchlist import check_and_alert
+        check_and_alert(app=app, rui_user_id=RUI_SLACK_USER_ID)
+    except Exception as e:
+        logger.error(f"watchlist_check failed: {e}")
+
+
 # ── スケジューラー起動 ──────────────────────────────────────────────────────────
 
 def start_scheduler(app):
@@ -159,6 +168,13 @@ def start_scheduler(app):
             _job_weekly_report,
             CronTrigger(day_of_week="mon", hour=8, minute=0),
             args=[app], id="weekly_report", replace_existing=True,
+        )
+
+        # 締め切り・リスク監視 (毎朝 8:00 PT)
+        scheduler.add_job(
+            _job_watchlist_check,
+            CronTrigger(hour=8, minute=0),
+            args=[app], id="watchlist_check", replace_existing=True,
         )
 
         scheduler.start()
