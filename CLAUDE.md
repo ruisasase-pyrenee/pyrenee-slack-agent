@@ -18,9 +18,9 @@ general work assistant (email triage, calendar, meeting prep, follow-ups).
 - **野口 颯人 (Hayato Noguchi)** — Management at Pyrenee.
   `hayato.noguchi@pyrenee.net`
 - Tim Moore (`tim@timmoore.work`) — Director/cinematographer; Pyrenee Drive
-  video collaboration partner.
+  video collaboration partner. Based in **Missouri**（元アトランタ、引越し済み）.
 - Daniel Stine (`stine@risingactfilms.org`) — Executive Director, Rising Act
-  Films. Working with Tim on the Pyrenee Drive video project.
+  Films. Working with Tim on the Pyrenee Drive video project. Based in **Atlanta, GA**（Old Fourth Ward）.
 - **杉江** (`sugie@actieus.com`) — actieus.com; introduced Matkins Digital to Rui.
 - **Jake** (`matkinsdigital@gmail.com`) — Matkins Digital, video production.
 - **Vin** (`vin.garc@gmail.com`) — Matkins Digital team.
