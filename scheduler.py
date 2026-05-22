@@ -118,6 +118,26 @@ def _job_watchlist_check(app):
         logger.error(f"watchlist_check failed: {e}")
 
 
+def _job_meeting_notes_watcher(app):
+    logger.info("Job: meeting_notes_watcher")
+    try:
+        from meeting_notes_watcher import run_meeting_notes_watcher
+        count = run_meeting_notes_watcher(app=app, rui_user_id=RUI_SLACK_USER_ID)
+        if count:
+            logger.info(f"meeting_notes_watcher: {count}件の議事録を処理")
+    except Exception as e:
+        logger.error(f"meeting_notes_watcher failed: {e}")
+
+
+def _job_na_reminder(app):
+    logger.info("Job: na_reminder")
+    try:
+        from meeting_notes_watcher import check_na_reminders
+        check_na_reminders(app=app, rui_user_id=RUI_SLACK_USER_ID)
+    except Exception as e:
+        logger.error(f"na_reminder failed: {e}")
+
+
 # ── スケジューラー起動 ──────────────────────────────────────────────────────────
 
 def start_scheduler(app):
@@ -177,6 +197,20 @@ def start_scheduler(app):
             args=[app], id="watchlist_check", replace_existing=True,
         )
 
+        # 議事録自動取込 (15分ごと)
+        scheduler.add_job(
+            _job_meeting_notes_watcher,
+            IntervalTrigger(minutes=15),
+            args=[app], id="meeting_notes_watcher", replace_existing=True,
+        )
+
+        # NA リマインダー (毎朝 9:15 PT)
+        scheduler.add_job(
+            _job_na_reminder,
+            CronTrigger(hour=9, minute=15),
+            args=[app], id="na_reminder", replace_existing=True,
+        )
+
         scheduler.start()
         logger.info(
             f"Scheduler started: "
@@ -184,7 +218,9 @@ def start_scheduler(app):
             f"triage=every {TRIAGE_INTERVAL}h, "
             f"followup=09:00PT, "
             f"notion=07:00PT, "
-            f"weekly=Mon 08:00PT"
+            f"weekly=Mon 08:00PT, "
+            f"meeting_notes=every 15min, "
+            f"na_reminder=09:15PT"
         )
         return scheduler
 

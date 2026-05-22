@@ -10,6 +10,7 @@ from claude_client import get_claude_response, run_triage, run_briefing, run_fol
 from followup_tracker import init_followup_table
 from memory import init_memory_tables
 from watchlist import init_watchlist_table
+from meeting_notes_watcher import init_meetings_table
 
 logging.basicConfig(
     level=logging.INFO,
@@ -134,6 +135,62 @@ def handle_notion(ack, respond):
         respond(f"エラーが発生しました: {e}")
 
 
+@app.command("/minutes")
+def handle_minutes(ack, respond, command):
+    """議事録を今すぐチェック・取込する。
+    使い方: /minutes         → 新着議事録を今すぐ取込
+             /minutes nas     → 未完了NAの一覧表示
+             /minutes done <id> → NA完了マーク
+    """
+    ack()
+    text = command.get("text", "").strip()
+
+    if text.startswith("nas"):
+        try:
+            from meeting_notes_watcher import get_pending_nas
+            nas = get_pending_nas()
+            if not nas:
+                respond("✅ 未完了のNAはありません。")
+                return
+            priority_emoji = {"HIGH": "🔴", "MEDIUM": "🟡", "LOW": "🟢"}
+            lines = ["*📌 未完了 Next Actions*", ""]
+            for na in nas:
+                emoji = priority_emoji.get(na["priority"], "🟡")
+                deadline = f"  ⏰ {na['deadline']}" if na["deadline"] else ""
+                lines.append(
+                    f"`#{na['id']}` {emoji} *{na['owner']}*: {na['action']}{deadline}\n"
+                    f"　_[{na['meeting']}]_"
+                )
+            lines.append("\n完了したら `/minutes done <id>` で更新")
+            respond("\n".join(lines))
+        except Exception as e:
+            respond(f"エラー: {e}")
+
+    elif text.startswith("done "):
+        try:
+            na_id = int(text.split()[1])
+            from meeting_notes_watcher import mark_na_done
+            mark_na_done(na_id)
+            respond(f"✅ NA #{na_id} を完了にしました。")
+        except (ValueError, IndexError):
+            respond("使い方: `/minutes done <id>`  例: `/minutes done 3`")
+        except Exception as e:
+            respond(f"エラー: {e}")
+
+    else:
+        respond("議事録をチェックしています... (少々お待ちください)")
+        try:
+            from meeting_notes_watcher import run_meeting_notes_watcher
+            count = run_meeting_notes_watcher(app=app, rui_user_id=command.get("user_id", ""))
+            if count:
+                respond(f"✅ {count}件の新しい議事録を取込みました。")
+            else:
+                respond("新着の議事録はありませんでした。")
+        except Exception as e:
+            logger.error(f"/minutes error: {e}")
+            respond(f"エラーが発生しました: {e}")
+
+
 # ── Entry point ────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
@@ -141,6 +198,7 @@ if __name__ == "__main__":
     init_followup_table()
     init_memory_tables()
     init_watchlist_table()
+    init_meetings_table()
 
     from scheduler import start_scheduler
     start_scheduler(app)
