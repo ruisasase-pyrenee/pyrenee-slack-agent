@@ -37,7 +37,27 @@ _gmail_service = None
 _calendar_service = None
 
 
+def _bootstrap_credentials_from_env():
+    """環境変数 GOOGLE_TOKEN_JSON / GOOGLE_CREDENTIALS_JSON からファイルを生成する（Render等クラウド用）。"""
+    token_env = os.getenv("GOOGLE_TOKEN_JSON")
+    if token_env and not TOKEN_PATH.exists():
+        try:
+            TOKEN_PATH.write_text(base64.b64decode(token_env).decode())
+            logger.info("token.json written from GOOGLE_TOKEN_JSON env var")
+        except Exception as e:
+            logger.warning(f"Failed to write token.json from env: {e}")
+
+    creds_env = os.getenv("GOOGLE_CREDENTIALS_JSON")
+    if creds_env and not CREDENTIALS_PATH.exists():
+        try:
+            CREDENTIALS_PATH.write_text(base64.b64decode(creds_env).decode())
+            logger.info("credentials.json written from GOOGLE_CREDENTIALS_JSON env var")
+        except Exception as e:
+            logger.warning(f"Failed to write credentials.json from env: {e}")
+
+
 def _get_creds():
+    _bootstrap_credentials_from_env()
     try:
         from google.oauth2.credentials import Credentials
         from google.auth.transport.requests import Request
@@ -50,12 +70,13 @@ def _get_creds():
         if not creds or not creds.valid:
             if creds and creds.expired and creds.refresh_token:
                 creds.refresh(Request())
+                TOKEN_PATH.write_text(creds.to_json())
             else:
                 if not CREDENTIALS_PATH.exists():
                     return None
                 flow = InstalledAppFlow.from_client_secrets_file(CREDENTIALS_PATH, SCOPES)
                 creds = flow.run_local_server(port=0)
-            TOKEN_PATH.write_text(creds.to_json())
+                TOKEN_PATH.write_text(creds.to_json())
 
         return creds
     except Exception as e:
@@ -88,7 +109,11 @@ def _calendar():
 
 
 def is_configured() -> bool:
-    return CREDENTIALS_PATH.exists() or TOKEN_PATH.exists()
+    return (
+        CREDENTIALS_PATH.exists()
+        or TOKEN_PATH.exists()
+        or bool(os.getenv("GOOGLE_TOKEN_JSON"))
+    )
 
 
 # ── Gmail ─────────────────────────────────────────────────────────────────────
