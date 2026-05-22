@@ -217,6 +217,22 @@ def _format_slack_message(data: dict, sender: str) -> str:
     return "\n".join(lines)
 
 
+# ── Slack DM 送信ヘルパー ──────────────────────────────────────────────────────
+
+def _send_dm(app, rui_user_id: str, text: str) -> str:
+    """Rui に Slack DM を送る。成功したら ts を返す。"""
+    try:
+        dm = app.client.conversations_open(users=rui_user_id)
+        result = app.client.chat_postMessage(
+            channel=dm["channel"]["id"],
+            text=text,
+        )
+        return result.get("ts", "")
+    except Exception as e:
+        logger.error(f"DM send failed: {e}")
+        return ""
+
+
 # ── メイン処理 ─────────────────────────────────────────────────────────────────
 
 def run_meeting_notes_watcher(app=None, rui_user_id: str = "") -> int:
@@ -253,26 +269,22 @@ def run_meeting_notes_watcher(app=None, rui_user_id: str = "") -> int:
 
                 message = _format_slack_message(data, email.get("from", ""))
 
-                # #議事録 チャンネルに投稿、失敗時はDMにフォールバック
+                # チャンネル設定あり→チャンネル投稿、なし→DM直送
                 slack_ts = ""
                 if app:
-                    try:
-                        result = app.client.chat_postMessage(
-                            channel=MINUTES_CHANNEL,
-                            text=message,
-                        )
-                        slack_ts = result.get("ts", "")
-                    except Exception as e:
-                        logger.warning(f"Channel post failed, falling back to DM: {e}")
-                        if rui_user_id:
-                            try:
-                                dm = app.client.conversations_open(users=rui_user_id)
-                                app.client.chat_postMessage(
-                                    channel=dm["channel"]["id"],
-                                    text=message,
-                                )
-                            except Exception as e2:
-                                logger.error(f"DM fallback failed: {e2}")
+                    if MINUTES_CHANNEL and rui_user_id:
+                        try:
+                            result = app.client.chat_postMessage(
+                                channel=MINUTES_CHANNEL,
+                                text=message,
+                            )
+                            slack_ts = result.get("ts", "")
+                        except Exception as e:
+                            logger.warning(f"Channel post failed, falling back to DM: {e}")
+                            _send_dm(app, rui_user_id, message)
+                    elif rui_user_id:
+                        # チャンネル未設定 → 常にDM直送
+                        _send_dm(app, rui_user_id, message)
 
                 title = data.get("meeting_title", email.get("subject", ""))
                 date = data.get("meeting_date", "")
