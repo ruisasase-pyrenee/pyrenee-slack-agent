@@ -1,89 +1,135 @@
+"""
+PE Fund Launch Agent - Slack interface.
+
+Commands:
+  スクリーニング [会社情報]  → Deal screening memo
+  ICメモ [会社名]           → Investment Committee memo
+  法務チェック              → Legal/compliance checklist
+  LPレポート               → LP report generation
+  ファンド状況              → Fund overview dashboard
+  (その他)                 → General PE advisor chat
+"""
+
 import os
 import re
+import asyncio
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
-import anthropic
 
-# Initialize Slack app
+from agents.pe_fund_agent import PEFundAgent
+
 app = App(token=os.environ["SLACK_BOT_TOKEN"])
-
-# Initialize Anthropic client
-claude = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-
-# Store conversation history per user (in-memory, resets on restart)
-conversation_history: dict[str, list] = {}
-
-SYSTEM_PROMPT = """あなたはRuiの専属ビジネス壁打ち相手です。スタートアップ、事業戦略、マーケティング、意思決定など、ビジネス全般の相談に乗ります。
-まず結論・答えをズバッと言い、その後に理由を簡潔に添えます。
-共感より「前に進む思考」を優先し、甘い言葉より鋭い本音を言います。
-必要なら反論や別視点を積極的に提示します。
-相手が話しかけた言語（日本語・英語）で返します。"""
+agent = PEFundAgent()  # mcp_client=None until Drive MCP is wired in
 
 
-def get_claude_response(user_id: str, user_message: str) -> str:
-        """Get a response from Claude, maintaining conversation history."""
-        if user_id not in conversation_history:
-                    conversation_history[user_id] = []
+def run_async(coro):
+    """Run async coroutine from sync Slack handler."""
+    loop = asyncio.new_event_loop()
+    try:
+        return loop.run_until_complete(coro)
+    finally:
+        loop.close()
 
-        conversation_history[user_id].append({
-            "role": "user",
-            "content": user_message
-        })
 
-    # Keep last 20 messages to avoid token limits
-        messages = conversation_history[user_id][-20:]
+def parse_command(text: str) -> tuple[str, str]:
+    """
+    Parse message into (command, args).
+    Returns ('chat', text) if no specific command is matched.
+    """
+    text = text.strip()
 
-    response = claude.messages.create(
-                model="claude-opus-4-5",
-                max_tokens=2048,
-                system=SYSTEM_PROMPT,
-                messages=messages
-    )
+    # Deal screening
+    if re.match(r'^スクリーニング\s*', text):
+        args = re.sub(r'^スクリーニング\s*', '', text).strip()
+        return "screening", args
 
-    assistant_message = response.content[0].text
+    # IC memo
+    if re.match(r'^ICメモ\s*', text):
+        args = re.sub(r'^ICメモ\s*', '', text).strip()
+        return "ic_memo", args
 
-    conversation_history[user_id].append({
-                "role": "assistant",
-                "content": assistant_message
-    })
+    # Legal checklist
+    if text in ["法務チェック", "法務", "コンプライアンス", "チェックリスト"]:
+        return "legal", ""
 
-    return assistant_message
+    # LP report
+    if re.match(r'^LPレポート', text):
+        period = re.sub(r'^LPレポート\s*', '', text).strip() or None
+        return "lp_report", period
+
+    # Fund overview
+    if text in ["ファンド状況", "状況", "サマリー", "overview"]:
+        return "overview", ""
+
+    return "chat", text
+
+
+def handle_message(user_id: str, text: str) -> str:
+    command, args = parse_command(text)
+
+    if command == "screening":
+        if not args:
+            return "スクリーニングする会社の情報を入力してください。\n例: `スクリーニング 会社名: XX社、事業内容: B2B SaaS、ARR: 1億円`"
+        return run_async(agent.screen_deal(user_id, args))
+
+    elif command == "ic_memo":
+        if not args:
+            return "ICメモを作成する会社名を入力してください。\n例: `ICメモ XX社`"
+        return run_async(agent.create_ic_memo(user_id, args))
+
+    elif command == "legal":
+        return run_async(agent.show_legal_checklist(user_id))
+
+    elif command == "lp_report":
+        return run_async(agent.generate_lp_report(user_id, args or None))
+
+    elif command == "overview":
+        return run_async(agent.fund_overview(user_id))
+
+    else:
+        return run_async(agent.process_message(user_id, text))
 
 
 @app.event("app_mention")
 def handle_mention(event, say):
-        """Handle @mentions in channels."""
-        user_id = event["user"]
-        # Remove the bot mention from the text
-        text = re.sub(r"<@[A-Z0-9]+>", "", event["text"]).strip()
-
+    user_id = event["user"]
+    text = re.sub(r"<@[A-Z0-9]+>", "", event["text"]).strip()
     if not text:
-                say("How can I help you?")
-                return
-
-    response = get_claude_response(user_id, text)
+        say(_help_text())
+        return
+    response = handle_message(user_id, text)
     say(response)
 
 
 @app.event("message")
 def handle_dm(event, say):
-        """Handle direct messages."""
-        # Only respond to DMs (channel_type == "im"), not channel messages
-        if event.get("channel_type") != "im":
-                    return
-                if event.get("subtype") is not None:
-                            return # Ignore bot messages and other subtypes
+    if event.get("channel_type") != "im":
+        return
+    if event.get("subtype") is not None:
+        return
 
     user_id = event["user"]
     text = event.get("text", "").strip()
-
     if not text:
-                return
+        return
 
-    response = get_claude_response(user_id, text)
+    response = handle_message(user_id, text)
     say(response)
 
 
+def _help_text() -> str:
+    return """*🏦 Pyrenee Capital PE Fund Agent*
+
+使えるコマンド:
+• `スクリーニング [会社情報]` — ディールスクリーニングメモ作成 & Drive保存
+• `ICメモ [会社名]` — 投資委員会メモ作成 & Drive保存
+• `法務チェック` — 法務・コンプライアンスチェックリスト確認
+• `LPレポート [期間]` — LP報告書生成 & Drive保存
+• `ファンド状況` — ファンド全体のダッシュボード
+
+その他は壁打ち相手としてPE/ファンド運営の質問に答えます。"""
+
+
 if __name__ == "__main__":
-        handler = SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"])
+    handler = SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"])
     handler.start()
