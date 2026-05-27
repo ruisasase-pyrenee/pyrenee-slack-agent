@@ -1,29 +1,39 @@
 """
-PE Fund Launch Agent - Slack interface.
+PE Fund Launch Agent - Slack interface + daily scheduler.
 
 Commands:
-  スクリーニング [会社情報]  → Deal screening memo
-  ICメモ [会社名]           → Investment Committee memo
-  法務チェック              → Legal/compliance checklist
-  LPレポート               → LP report generation
-  ファンド状況              → Fund overview dashboard
-  (その他)                 → General PE advisor chat
+  スクリーニング [会社情報]      → Deal screening + Drive/HubSpot自動保存
+  ICメモ [会社名]               → IC memo（Deep analysis with opus）
+  ソーシング [セクター名]        → セクター調査 + アンダーレーダー案件発掘
+  MA戦略                       → 事業承継M&A戦略分析
+  LP追加 [LP情報]              → LPアウトリーチメール下書き + HubSpot登録
+  法務チェック                  → 法務タスク優先度付きレビュー
+  ファンド状況                  → ダッシュボード（パイプライン + LP + 法務）
+  朝報                         → 今日の優先アクション（手動トリガー）
+  [その他]                     → PE全般の壁打ち相手
 """
 
 import os
 import re
 import asyncio
+import threading
+import time
+import logging
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 
-from agents.pe_fund_agent import PEFundAgent
+from agents.orchestrator import Orchestrator
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = App(token=os.environ["SLACK_BOT_TOKEN"])
-agent = PEFundAgent()  # mcp_client=None until Drive MCP is wired in
+agent = Orchestrator()  # MCP接続は本番環境で mcp_tools={...} を渡す
 
+
+# ── Async runner ─────────────────────────────────────────────────────────────
 
 def run_async(coro):
-    """Run async coroutine from sync Slack handler."""
     loop = asyncio.new_event_loop()
     try:
         return loop.run_until_complete(coro)
@@ -31,64 +41,70 @@ def run_async(coro):
         loop.close()
 
 
-def parse_command(text: str) -> tuple[str, str]:
-    """
-    Parse message into (command, args).
-    Returns ('chat', text) if no specific command is matched.
-    """
-    text = text.strip()
+# ── Command router ────────────────────────────────────────────────────────────
 
-    # Deal screening
-    if re.match(r'^スクリーニング\s*', text):
-        args = re.sub(r'^スクリーニング\s*', '', text).strip()
-        return "screening", args
-
-    # IC memo
-    if re.match(r'^ICメモ\s*', text):
-        args = re.sub(r'^ICメモ\s*', '', text).strip()
-        return "ic_memo", args
-
-    # Legal checklist
-    if text in ["法務チェック", "法務", "コンプライアンス", "チェックリスト"]:
-        return "legal", ""
-
-    # LP report
-    if re.match(r'^LPレポート', text):
-        period = re.sub(r'^LPレポート\s*', '', text).strip() or None
-        return "lp_report", period
-
-    # Fund overview
-    if text in ["ファンド状況", "状況", "サマリー", "overview"]:
-        return "overview", ""
-
-    return "chat", text
+COMMANDS = {
+    r"^スクリーニング\s*(.+)": "screening",
+    r"^ICメモ\s*(.+)": "ic_memo",
+    r"^ソーシング\s*(.+)": "sourcing",
+    r"^MA戦略$": "ma_strategy",
+    r"^LP追加\s*(.+)": "lp_add",
+    r"^(法務チェック|法務|コンプライアンス)$": "legal",
+    r"^(ファンド状況|状況|サマリー|overview)$": "overview",
+    r"^(朝報|morning|briefing)$": "morning",
+}
 
 
-def handle_message(user_id: str, text: str) -> str:
-    command, args = parse_command(text)
+def route(text: str) -> tuple[str, str]:
+    """Returns (command_name, args)."""
+    for pattern, cmd in COMMANDS.items():
+        m = re.match(pattern, text.strip(), re.IGNORECASE)
+        if m:
+            args = m.group(1).strip() if m.lastindex and m.lastindex >= 1 else ""
+            return cmd, args
+    return "chat", text.strip()
 
-    if command == "screening":
+
+def dispatch(user_id: str, text: str) -> str:
+    cmd, args = route(text)
+
+    if cmd == "screening":
         if not args:
-            return "スクリーニングする会社の情報を入力してください。\n例: `スクリーニング 会社名: XX社、事業内容: B2B SaaS、ARR: 1億円`"
+            return "会社情報を入力してください。\n例: `スクリーニング 会社名: XX社、業種: B2B SaaS、ARR: 1億円、YoY成長: 120%`"
         return run_async(agent.screen_deal(user_id, args))
 
-    elif command == "ic_memo":
+    elif cmd == "ic_memo":
         if not args:
-            return "ICメモを作成する会社名を入力してください。\n例: `ICメモ XX社`"
+            return "会社名を入力してください。\n例: `ICメモ XX社`"
         return run_async(agent.create_ic_memo(user_id, args))
 
-    elif command == "legal":
-        return run_async(agent.show_legal_checklist(user_id))
+    elif cmd == "sourcing":
+        if not args:
+            return "セクター名を入力してください。\n例: `ソーシング 医療AI`"
+        return run_async(agent.deal_sourcing_research(user_id, args))
 
-    elif command == "lp_report":
-        return run_async(agent.generate_lp_report(user_id, args or None))
+    elif cmd == "ma_strategy":
+        return run_async(agent.ma_strategy(user_id))
 
-    elif command == "overview":
+    elif cmd == "lp_add":
+        if not args:
+            return "LP情報を入力してください。\n例: `LP追加 XX地方銀行、担当: 田中様、チケット想定: 300M JPY`"
+        return run_async(agent.lp_outreach_draft(user_id, args))
+
+    elif cmd == "legal":
+        return run_async(agent.legal_status(user_id))
+
+    elif cmd == "overview":
         return run_async(agent.fund_overview(user_id))
 
-    else:
-        return run_async(agent.process_message(user_id, text))
+    elif cmd == "morning":
+        return run_async(agent.morning_briefing(user_id))
 
+    else:
+        return run_async(agent.chat(user_id, text))
+
+
+# ── Slack event handlers ──────────────────────────────────────────────────────
 
 @app.event("app_mention")
 def handle_mention(event, say):
@@ -97,8 +113,7 @@ def handle_mention(event, say):
     if not text:
         say(_help_text())
         return
-    response = handle_message(user_id, text)
-    say(response)
+    say(dispatch(user_id, text))
 
 
 @app.event("message")
@@ -107,29 +122,69 @@ def handle_dm(event, say):
         return
     if event.get("subtype") is not None:
         return
-
     user_id = event["user"]
     text = event.get("text", "").strip()
     if not text:
         return
+    say(dispatch(user_id, text))
 
-    response = handle_message(user_id, text)
-    say(response)
+
+# ── Daily morning briefing scheduler ────────────────────────────────────────
+# 毎朝8:00 JSTに自動でブリーフィングを送信
+
+def _morning_briefing_job():
+    """Send morning briefing to configured channel."""
+    channel = os.environ.get("BRIEFING_CHANNEL_ID", "")
+    if not channel:
+        logger.info("BRIEFING_CHANNEL_ID not set, skipping morning briefing")
+        return
+
+    try:
+        briefing = run_async(agent.morning_briefing("scheduler"))
+        app.client.chat_postMessage(channel=channel, text=briefing)
+        logger.info("Morning briefing sent to %s", channel)
+    except Exception as e:
+        logger.error("Morning briefing failed: %s", e)
+
+
+def _scheduler():
+    """Simple scheduler: fires at JST 08:00 daily."""
+    import datetime
+    while True:
+        now = datetime.datetime.utcnow()
+        jst_hour = (now.hour + 9) % 24
+        if jst_hour == 8 and now.minute == 0:
+            _morning_briefing_job()
+            time.sleep(61)  # prevent double-fire within the same minute
+        else:
+            time.sleep(30)
 
 
 def _help_text() -> str:
     return """*🏦 Pyrenee Capital PE Fund Agent*
 
-使えるコマンド:
-• `スクリーニング [会社情報]` — ディールスクリーニングメモ作成 & Drive保存
-• `ICメモ [会社名]` — 投資委員会メモ作成 & Drive保存
-• `法務チェック` — 法務・コンプライアンスチェックリスト確認
-• `LPレポート [期間]` — LP報告書生成 & Drive保存
-• `ファンド状況` — ファンド全体のダッシュボード
+*投資案件*
+• `スクリーニング [会社情報]` — スクリーニングメモ作成 → Drive + HubSpot自動保存
+• `ICメモ [会社名]` — 投資委員会メモ作成（Deep analysis）
+• `ソーシング [セクター]` — セクター調査 + アンダーレーダー案件発掘
+• `MA戦略` — 事業承継型M&A戦略分析
 
-その他は壁打ち相手としてPE/ファンド運営の質問に答えます。"""
+*LP管理*
+• `LP追加 [LP情報]` — アウトリーチメール下書き + HubSpot登録
+
+*ファンド運営*
+• `法務チェック` — 法務タスク優先度レビュー
+• `ファンド状況` — パイプライン + LP + 法務ダッシュボード
+• `朝報` — 今日の優先アクション（毎朝8時に自動送信）
+
+その他はPE全般の壁打ち相手として使えます。"""
 
 
 if __name__ == "__main__":
+    # Start scheduler in background thread
+    briefing_thread = threading.Thread(target=_scheduler, daemon=True)
+    briefing_thread.start()
+    logger.info("Morning briefing scheduler started")
+
     handler = SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"])
     handler.start()
