@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pyrenee Capital — Deal Pipeline</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+           background: #0a0a0f; color: #e8e8f0; min-height: 100vh; }
+    header { padding: 24px 40px; border-bottom: 1px solid #1e1e2e;
+             display: flex; align-items: center; gap: 16px; }
+    header h1 { font-size: 1.3rem; font-weight: 600; letter-spacing: -0.02em; }
+    header .badge { background: #1a3a2a; color: #4ade80; font-size: 0.7rem;
+                    padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px; padding: 32px 40px 0; }
+    .card { background: #111120; border: 1px solid #1e1e35; border-radius: 12px;
+            padding: 20px; }
+    .card .label { font-size: 0.72rem; color: #8080a0; text-transform: uppercase;
+                   letter-spacing: 0.08em; margin-bottom: 8px; }
+    .card .value { font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; }
+    .card .value.green  { color: #4ade80; }
+    .card .value.yellow { color: #fbbf24; }
+    .card .value.blue   { color: #60a5fa; }
+    .card .value.purple { color: #a78bfa; }
+    section { padding: 32px 40px; }
+    section h2 { font-size: 1rem; font-weight: 600; color: #a0a0c0;
+                 text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th { text-align: left; padding: 10px 14px; border-bottom: 1px solid #1e1e35;
+         color: #6060a0; font-weight: 500; font-size: 0.75rem; text-transform: uppercase; }
+    td { padding: 11px 14px; border-bottom: 1px solid #14142a; }
+    tr:hover td { background: #111128; }
+    .score-bar { display: flex; align-items: center; gap: 8px; }
+    .bar { height: 4px; border-radius: 2px; background: #1e1e35; width: 80px; }
+    .fill { height: 100%; border-radius: 2px; }
+    .verdict { padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+    .v-priority_screen { background:#1a3a2a; color:#4ade80; }
+    .v-screen    { background:#1e2a3a; color:#60a5fa; }
+    .v-watchlist { background:#2a2a1a; color:#fbbf24; }
+    .v-pass      { background:#2a1a1a; color:#f87171; }
+    .sector-tag { background:#1a1a2e; color:#8080c0; padding:2px 8px;
+                  border-radius:4px; font-size:0.72rem; }
+    .stage-tag  { background:#1e1e30; color:#7070b0; padding:2px 8px;
+                  border-radius:4px; font-size:0.72rem; margin-left:4px; }
+    .search-row { display:flex; gap:12px; margin-bottom:20px; }
+    .search-row input { flex:1; background:#111120; border:1px solid #1e1e35;
+                        color:#e8e8f0; padding:10px 16px; border-radius:8px;
+                        font-size:0.9rem; outline:none; }
+    .search-row input:focus { border-color:#4040a0; }
+    .lp-status { padding:2px 8px; border-radius:4px; font-size:0.72rem; font-weight:600; }
+    .s-meeting_scheduled { background:#1a3a2a; color:#4ade80; }
+    .s-met          { background:#1e2a3a; color:#60a5fa; }
+    .s-intro_sent   { background:#2a2a1a; color:#fbbf24; }
+    .s-prospect     { background:#1e1e30; color:#8080c0; }
+    .s-committed    { background:#1a3550; color:#34d399; }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    @media(max-width:900px){ .two-col{grid-template-columns:1fr;} .grid{padding:16px;} section{padding:16px;} }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div style="font-size:0.72rem;color:#6060a0;margin-bottom:2px">PRIVATE & CONFIDENTIAL</div>
+    <h1>🏦 Pyrenee Capital — Deal Pipeline</h1>
+  </div>
+  <span class="badge">LIVE</span>
+</header>
+
+<!-- Stats -->
+<div class="grid">
+  <div class="card">
+    <div class="label">ユニバース総数</div>
+    <div class="value blue">{{ stats.total_companies }}</div>
+  </div>
+  <div class="card">
+    <div class="label">スクリーニング済み</div>
+    <div class="value purple">{{ stats.scored }}</div>
+  </div>
+  <div class="card">
+    <div class="label">DD以上</div>
+    <div class="value green">{{ stats.dd_plus }}</div>
+  </div>
+  <div class="card">
+    <div class="label">LP数</div>
+    <div class="value yellow">{{ stats.lp_total }}</div>
+  </div>
+  <div class="card">
+    <div class="label">LPコミット済 (M JPY)</div>
+    <div class="value green">{{ "%.0f"|format(stats.lp_committed_mn) }}</div>
+  </div>
+</div>
+
+<div class="two-col" style="padding:24px 40px 0">
+
+  <!-- Sector breakdown -->
+  <div class="card">
+    <div class="label" style="margin-bottom:14px">セクター内訳</div>
+    {% for s in stats.by_sector %}
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <span style="font-size:0.85rem;color:#c0c0e0">{{ s.sector }}</span>
+      <span style="font-weight:600;color:#a78bfa">{{ s.cnt }}社</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Pipeline funnel -->
+  <div class="card">
+    <div class="label" style="margin-bottom:14px">パイプラインステージ</div>
+    {% for status, data in summary.items() %}
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <span style="font-size:0.85rem;color:#c0c0e0">{{ status }}</span>
+      <span style="font-weight:600;color:#60a5fa">{{ data.cnt }}社</span>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Deal table -->
+<section>
+  <h2>投資ターゲット ランキング</h2>
+  <div class="search-row">
+    <input type="text" id="search" placeholder="会社名・セクターで検索..." oninput="filterTable(this.value)">
+  </div>
+  <table id="deal-table">
+    <thead>
+      <tr>
+        <th>会社名</th>
+        <th>セクター</th>
+        <th>スコア</th>
+        <th>判定</th>
+        <th>ARR (M)</th>
+        <th>成長率</th>
+        <th>NRR</th>
+        <th>ランウェイ</th>
+        <th>ステータス</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for t in targets %}
+    <tr>
+      <td style="font-weight:600;color:#e0e0f8">{{ t.name }}</td>
+      <td><span class="sector-tag">{{ t.sector }}</span><span class="stage-tag">{{ t.stage }}</span></td>
+      <td>
+        <div class="score-bar">
+          <span style="font-weight:700;color:{% if t.score >= 7.5 %}#4ade80{% elif t.score >= 5.5 %}#60a5fa{% elif t.score >= 3.5 %}#fbbf24{% else %}#f87171{% endif %}">
+            {{ t.score or '—' }}
+          </span>
+          {% if t.score %}
+          <div class="bar"><div class="fill" style="width:{{ (t.score/10*100)|int }}%;background:{% if t.score >= 7.5 %}#4ade80{% elif t.score >= 5.5 %}#60a5fa{% elif t.score >= 3.5 %}#fbbf24{% else %}#f87171{% endif %}"></div></div>
+          {% endif %}
+        </div>
+      </td>
+      <td><span class="verdict v-{{ t.verdict }}">{{ t.verdict or '—' }}</span></td>
+      <td style="font-weight:500">{{ t.arr_mn_jpy or '—' }}</td>
+      <td style="color:{% if t.growth_yoy_pct and t.growth_yoy_pct >= 150 %}#4ade80{% elif t.growth_yoy_pct and t.growth_yoy_pct >= 80 %}#60a5fa{% else %}#f87171{% endif %}">
+        {{ t.growth_yoy_pct|int if t.growth_yoy_pct else '—' }}%
+      </td>
+      <td style="color:{% if t.nrr_pct and t.nrr_pct >= 120 %}#4ade80{% elif t.nrr_pct and t.nrr_pct >= 110 %}#60a5fa{% else %}#fbbf24{% endif %}">
+        {{ t.nrr_pct|int if t.nrr_pct else '—' }}%
+      </td>
+      <td style="color:{% if t.runway_months and t.runway_months < 12 %}#f87171{% elif t.runway_months and t.runway_months < 18 %}#fbbf24{% else %}#4ade80{% endif %}">
+        {{ t.runway_months or '—' }}mo
+      </td>
+      <td><span class="verdict v-{{ t.status }}">{{ t.status or '—' }}</span></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<!-- LP table -->
+<section>
+  <h2>LP パイプライン</h2>
+  <table>
+    <thead>
+      <tr><th>機関名</th><th>担当者</th><th>タイプ</th><th>チケット (M)</th><th>ステータス</th><th>メモ</th></tr>
+    </thead>
+    <tbody>
+    {% for lp in lps %}
+    <tr>
+      <td style="font-weight:600">{{ lp.org_name }}</td>
+      <td style="color:#a0a0c0">{{ lp.contact_name or '—' }}</td>
+      <td><span class="sector-tag">{{ lp.lp_type or '—' }}</span></td>
+      <td style="font-weight:600;color:#fbbf24">{{ lp.ticket_mn_jpy|int if lp.ticket_mn_jpy else '—' }}</td>
+      <td><span class="lp-status s-{{ lp.status }}">{{ lp.status }}</span></td>
+      <td style="color:#8080a0;font-size:0.8rem;max-width:300px">{{ lp.notes[:80] + '…' if lp.notes and lp.notes|length > 80 else lp.notes or '—' }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<div style="text-align:center;padding:24px;color:#404060;font-size:0.75rem">
+  Pyrenee Capital Autonomous Fund Agent — Confidential
+</div>
+
+<script>
+function filterTable(q) {
+  const rows = document.querySelectorAll('#deal-table tbody tr');
+  q = q.toLowerCase();
+  rows.forEach(r => {
+    r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
