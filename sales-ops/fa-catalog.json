@@ -1,0 +1,94 @@
+{
+  "_source": "FIRST AGRI INC. 2026 Buyer Pitch (FA Series), PDF uploaded 2026-07-02",
+  "_note_currency": "KNOWN DATA ISSUE: the SKU summary table prices are in AUD, but each per-SKU detail page prices the same SKU in USD. Numbers below are copied as-is from each source. Confirm real currency with product/pricing team before quoting a customer.",
+  "moq_per_sku_kg": 20,
+  "skus": [
+    {
+      "sku": "FA001",
+      "origin": "Uji, Kyoto",
+      "cultivar": "Proprietary Uji blend (yabukita, sayamakaori)",
+      "harvest": "1st flush, 100% ichibancha",
+      "grade": "Ceremonial",
+      "process": "Stone-ground",
+      "price_table_aud_per_kg": 532.1,
+      "price_detail_usd_per_kg": 366.7,
+      "stock_kg": 5000,
+      "best_for": ["Usucha", "Koicha", "Latte", "Food"],
+      "positioning": "Flagship. Top sensory scores (umami, sweetness, aroma, water solubility). Use when the buyer explicitly wants top-tier ceremonial quality and price is secondary."
+    },
+    {
+      "sku": "FA002",
+      "origin": "Uji, Kyoto",
+      "cultivar": "Proprietary Uji blend (yabukita, okumidori)",
+      "harvest": "1st flush, 100% ichibancha",
+      "grade": "Ceremonial",
+      "process": "Stone-ground, fine-milled",
+      "price_table_aud_per_kg": 435.3,
+      "price_detail_usd_per_kg": 300.0,
+      "stock_kg": 5000,
+      "best_for": ["Latte", "Usucha"],
+      "positioning": "Engineered specifically for milk-based drinks (matcha latte). Water solubility 5/5. Use when the lead's stated use case is a latte menu."
+    },
+    {
+      "sku": "FA003",
+      "origin": "Uji, Kyoto",
+      "cultivar": "Proprietary Uji blend (okumidori, yabukita)",
+      "harvest": "1st flush, 100% ichibancha",
+      "grade": "Ceremonial",
+      "process": "Stone-ground, two-step firing (deep-fired + low-fired blended)",
+      "price_table_aud_per_kg": 217.7,
+      "price_detail_usd_per_kg": 150.0,
+      "stock_kg": 5000,
+      "best_for": ["Everyday latte"],
+      "positioning": "Cost-optimized while still 100% Uji ichibancha ceremonial grade. DEFAULT RECOMMENDATION when the lead explicitly asks for both premium/Kyoto quality AND wholesale price competitiveness."
+    },
+    {
+      "sku": "FA004",
+      "origin": "Kagoshima",
+      "cultivar": "Kagoshima blend (yabukita, okumidori, asanoka, saemidori)",
+      "harvest": "1st flush, 100% ichibancha",
+      "grade": "Ceremonial",
+      "process": "Fine-milled",
+      "price_table_aud_per_kg": 241.9,
+      "price_detail_usd_per_kg": 166.7,
+      "stock_kg": 5000,
+      "best_for": ["Everyday latte"],
+      "positioning": "Best price-to-flavor benchmark; nutty/milky profile. Use for volume-focused buyers who are open to non-Kyoto origin, or for multi-origin trial sample sets."
+    },
+    {
+      "sku": "FA005",
+      "origin": "Kagoshima",
+      "cultivar": "Saemidori (single cultivar)",
+      "harvest": "1st flush",
+      "grade": "Ceremonial",
+      "process": "Fine-milled",
+      "price_table_aud_per_kg": 145.1,
+      "price_detail_usd_per_kg": 100.0,
+      "stock_kg": 5000,
+      "best_for": ["Latte", "RTD"],
+      "positioning": "Lowest cost, vivid color at volume. Use for large-volume / cost-sensitive buyers, RTD beverage, ice cream, or bakery use cases."
+    }
+  ],
+  "company_facts": {
+    "partner_farms": "80+",
+    "export_destinations": "30+",
+    "sku_count": 5,
+    "differentiators": [
+      "Farm-direct sourcing, no middlemen/rebranding",
+      "Every SKU US FDA pesticide/contaminant tested",
+      "Flexible MOQ from 20kg per SKU, no minimum-container commitment"
+    ],
+    "sample_request": {
+      "email": "corporate@first-agri.jp",
+      "web": "first-agri.jp",
+      "turnaround": "curated sample box + cupping notes + quote sheet within 2 business days"
+    }
+  },
+  "sku_selection_rules": [
+    {"if": "lead wants Kyoto/Uji ceremonial AND emphasizes wholesale price competitiveness", "recommend_primary": "FA003", "recommend_secondary": "FA002 if latte menu is mentioned"},
+    {"if": "lead's use case is explicitly a matcha latte menu", "recommend_primary": "FA002", "recommend_secondary": "FA003 for a cheaper everyday-latte tier"},
+    {"if": "lead wants top-tier flagship / quality-first, price secondary, small-mid volume", "recommend_primary": "FA001", "recommend_secondary": "FA002"},
+    {"if": "lead wants to trial multiple origins / grades", "recommend_primary": "sample set spanning Uji (FA001 or FA003) + Kagoshima (FA004 or FA005)", "recommend_secondary": null},
+    {"if": "lead is large volume and cost-sensitive, or RTD/bakery/ice-cream use case", "recommend_primary": "FA005", "recommend_secondary": "FA004"}
+  ]
+}
