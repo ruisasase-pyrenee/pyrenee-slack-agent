@@ -14,6 +14,7 @@ A lead notification pasted by Rui, usually containing: company name, contact nam
 ## Steps
 
 1. **Extract lead facts**: company, contact name, email, phone, country, volume range, use case / grade interest, any hot-score or LTV info given.
+   - **Dedup check (if Google Drive MCP is connected)**: search the master list "🇦🇺 Australia 抹茶 営業ターゲット マスターリスト v2" (Drive file id `1gCoaa0_ax5gy9mySw00Xk1a05hPoIizTmpR4hZ4wWQc`) for the company name. If the company is already on the ABM list, mention its existing Status/SalesNote to Rui so outbound and inbound touches don't collide (e.g. already "Emailed" or "アポ調整中").
 2. **Pick SKU recommendation(s)**: read `sales-ops/fa-catalog.json`, use the `sku_selection_rules` list to match the lead's stated use case / price sensitivity / grade interest to a primary (and optional secondary) SKU. If nothing matches cleanly, default to FA003 (Kyoto Ceremonial, price-competitive) as the safe general recommendation.
 3. **Draft the WhatsApp message** in this style (short, casual, English, matches what Rui has approved before):
    - Greeting with contact's first name
