@@ -25,6 +25,7 @@ A lead notification pasted by Rui, usually containing: company name, contact nam
    - Sign-off: "Best,\nRui\nFirst Agri Inc."
    - Keep it under ~120 words. No markdown headers, no bullet walls — this is a text message, not an email.
 4. **Log the lead**: append one row to `sales-ops/lead-tracker.csv` with today's date, the extracted fields, the SKU recommendation, `outreach_channel=WhatsApp`, `outreach_status=drafted`, and `follow_up_due` = today + 3 days.
+   - The shared source of truth is the Google Sheet "🇦🇺 Australia 抹茶 Inboundリード管理（Hot B2B Request）" (Drive file id `1TSrjUELzdrYT66TFp4HY1Duh3l7X38Yln_9E23Pk1R8`, same columns as the ABM master list). The Drive MCP cannot append to an existing sheet, so after logging locally, give Rui the new row as a copy-pasteable tab-separated line and link the sheet so he can paste it in.
 5. **Output to Rui**: show the WhatsApp draft in a copy-pasteable block, state the SKU rationale in one line, and confirm the tracker row was added.
 
 ## Rules
