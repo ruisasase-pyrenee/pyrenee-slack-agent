@@ -69,6 +69,18 @@
       "positioning": "Lowest cost, vivid color at volume. Use for large-volume / cost-sensitive buyers, RTD beverage, ice cream, or bakery use cases."
     }
   ],
+  "internal_sample_codes": {
+    "_source": "Sample Order Sheet 2026-07-02 (Matcha, T2tea)",
+    "_note": "Organic-certified Kagoshima line, separate from the FA buyer-pitch series. All items: Organic cert + Certificate of Origin, Healthcare Certificate, COA, FDA. Terms: EXW, 100% down payment, USD/JPY bank transfer.",
+    "items": [
+      {"code": "De", "product": "Matcha", "origin": "Kagoshima", "grade": "Ceremonial", "cultivar": "yabukita", "harvest": "1st flush", "price_aud_per_kg": 293.9, "price_jpy_per_kg": 30857, "stock_kg": 1600},
+      {"code": "Df", "product": "Matcha", "origin": "Kagoshima", "grade": "Ceremonial", "cultivar": "saemidori", "harvest": "1st flush", "price_aud_per_kg": 408.2, "price_jpy_per_kg": 42857, "stock_kg": 600},
+      {"code": "Dg", "product": "Matcha", "origin": "Kagoshima", "grade": "Premium", "cultivar": "saemidori + yabukita blend", "harvest": "2nd flush", "price_aud_per_kg": 146.9, "price_jpy_per_kg": 15429, "stock_kg": 4500},
+      {"code": "AEc", "product": "Matcha", "origin": "Kagoshima", "grade": "Ceremonial", "cultivar": "Blend", "harvest": "1st flush", "price_aud_per_kg": 124.9, "price_jpy_per_kg": 13114, "stock_kg": 2000},
+      {"code": "AFb", "product": "Matcha", "origin": "Kagoshima", "grade": "Ceremonial", "cultivar": "Blend", "harvest": "1st flush", "price_aud_per_kg": 367.3, "price_jpy_per_kg": 38571, "stock_kg": 450, "_flag": "Priced above single-cultivar De despite being a blend — confirm blend composition with production before customer asks"}
+    ],
+    "volume_supply_note": "Only Dg (4500kg) and AEc (2000kg) have stock depth for chain-scale supply; Df (600kg) and AFb (450kg) are premium/limited-tier only."
+  },
   "company_facts": {
     "partner_farms": "80+",
     "export_destinations": "30+",
