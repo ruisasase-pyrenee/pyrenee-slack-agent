@@ -1,0 +1,21 @@
+{
+  "_comment": "order_cap_usd: 1注文あたりの上限ドル額。null=上限なし（要設定推奨）",
+  "mode": "paper",
+  "paper_start_date": "2026-07-17",
+  "live_enabled_after_weeks": 2,
+  "order_cap_usd": null,
+  "max_position_pct": 0.10,
+  "stop_loss_pct": 0.08,
+  "auto_trade": {
+    "enabled": false,
+    "paper_auto_execute": true,
+    "live_requires_approval": true,
+    "min_score_to_trade": 30,
+    "max_daily_orders": 3,
+    "momentum_threshold_pct": 10.0,
+    "themes": ["robotics", "spacex", "ai"],
+    "scan_times_et": ["09:45", "15:45"],
+    "notify_channel": null
+  },
+  "holdings": []
+}
