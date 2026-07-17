@@ -17,5 +17,11 @@
     "scan_times_et": ["09:45", "15:45"],
     "notify_channel": null
   },
-  "holdings": []
+  "holdings": [
+    {"ticker": "SPCX", "quantity": 12, "avg_price": 126.17, "bought_at": "2026-07-17", "note": "lot1"},
+    {"ticker": "SPCX", "quantity": 3,  "avg_price": 135.00, "bought_at": "2026-07-17", "note": "lot2 - 損切り注意"},
+    {"ticker": "TSLA", "quantity": 2,  "avg_price": 383.265, "bought_at": "2026-07-17"},
+    {"ticker": "TSM",  "quantity": 1,  "avg_price": 391.94,  "bought_at": "2026-07-17"},
+    {"ticker": "UBER", "quantity": 5,  "avg_price": 73.62,   "bought_at": "2026-07-17"}
+  ]
 }

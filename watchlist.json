@@ -37,6 +37,7 @@
     {"ticker": "RDW",   "name": "Redwire Corp",                "category": "spacex_infra",        "notes": "宇宙インフラ・太陽電池パネル"},
     {"ticker": "ASTR",  "name": "Astra Space",                 "category": "spacex_launch",       "notes": "超小型ロケット"},
     {"ticker": "SPCE",  "name": "Virgin Galactic",             "category": "spacex_tourism",      "notes": "宇宙旅行（高リスク）"},
+    {"ticker": "SPCX",  "name": "SpaceX (非公開株連動商品)",    "category": "spacex_direct",       "notes": "保有中: 15株 avg $127.06 / 損切りライン $116.90"},
     {"ticker": "UFO",   "name": "Procure Space ETF",           "category": "etf_space",           "notes": "宇宙セクターETF"},
     {"ticker": "ARKX",  "name": "ARK Space Exploration ETF",   "category": "etf_space",           "notes": "ARK宇宙探索ETF"},
 
