@@ -78,7 +78,7 @@ FA001 $386.7｜FA002 $266.7｜FA003 $150｜FA004 $166.7｜FA005 $100
 - **Ryan / TDH（TDH Milk）**: 現行JFC（Japan Food Co）$90/kg・目標100-120AUD/kg（物流込）。**Cf（landed AUD115-120）で味比べ打診中**
 - **Zen Wonders**（メルボルン・宇治抹茶ブランド）: **オーナー＝Robert（Roberto-san）**。長野代表と旧知。**単価上限¥20,000（→FA004不可）**。**Cf＋Dgの卸提案に切替**。自社農園初摘みの案内レター送付済
 - **Purematcha**（豪州最大級の抹茶卸）: 担当Stephan。**実績は1kgトライアルのみ・現実的に月20kg狙い（※来季5tは誤り）**、FA003来季予約。フォロー送信済
-- **Matcha Mami**: 問い合わせフォーム→**返信あり・対面に昇格**。Chadstoneデー（＋machi machi Chadstone＋Industry Beans Chadstone）でまとめ訪問予定
+- **Matcha Mami**: 問い合わせフォーム→返信→**商談獲得（7/22 16:00〜・Chadstone）**。同日にmachi machi Chadstone＋Industry Beans Chadstoneもまとめ訪問
 - **富士山抹茶**: サプライヤー開拓案件（大坂さん紹介・長野さんへ接続済み）。ホテル向け等で営業被り回避。※Ruiが紹介者
 - **凸済み/DM・メール送付済**: Maison Koko(hello@maisonkoko.com)・Midori Matcha・Matcha Society・Shiro Gelato(info@shirogelato.com)・Soul Origin 等（返信待ち多数）
 - **新規開拓リスト（お茶ギフト系卸・JSY/T2型・MEL/SYD 12社）**: Simply Native（★FA001ド本命/Surry Hills）・Lupicia・Storm in a Teacup・Impala&Peacock/Mary Eats Cake・Tea Drop・Larsen&Thompson・Tea Tonic・T Totaler・Taka Tea Garden・The Tea Centre・The Rabbit Hole・cha-no-wa
