@@ -46,11 +46,11 @@ FA001 $386.7｜FA002 $266.7｜FA003 $150｜FA004 $166.7｜FA005 $100
 
 ## サンプル現況（豪州で手持ち＋発送済み・随時更新）
 ### 手持ちサンプル（2026-07-22時点・配布/発送後の残）
-- FA001 ×16｜FA002 ×16｜FA003 ×16｜FA004 ×16
+- FA001 ×15｜FA002 ×15｜FA003 ×15｜FA004 ×15
 - AFb ×9｜Cf ×9｜Dg ×5｜AFc ×5｜AEf ×4｜FA005 ×20（配布禁止・温存）
 - 発送引当（未消化）: Matcha Society＝Cf ／ Calder＝Cf＋FA004＋Dg＋FA003
 - ※元の到着分: Cf×10・AEf×5・AFc×5・Dg×5・AFb×10・FA001〜005×20ずつ（"AEf"が正。"AFe"＝$18の別SKUで未所持）
-- 直近配布: BALIBOA（カリナリー本命）にCf＋AEf 各1を手渡し（7/22）
+- 直近配布: BALIBOA（カリナリー）にCf＋AEf 各1（7/22）／Matcha Mami商談でFA001-004 各1（7/22）
 - 配布禁止/温存: FA005。FA003は残僅少なので基本は来季予約導線で
 
 ### 発送済みサンプルの追跡（返信待ち）
@@ -80,7 +80,7 @@ FA001 $386.7｜FA002 $266.7｜FA003 $150｜FA004 $166.7｜FA005 $100
 - **Ryan / TDH（TDH Milk）**: 現行JFC（Japan Food Co）$90/kg・目標100-120AUD/kg（物流込）。**Cf（landed AUD115-120）で味比べ打診中**
 - **Zen Wonders**（メルボルン・宇治抹茶ブランド）: **オーナー＝Robert（Roberto-san）**。長野代表と旧知。**単価上限¥20,000（→FA004不可）**。**Cf＋Dgの卸提案に切替**。自社農園初摘みの案内レター送付済
 - **Purematcha**（豪州最大級の抹茶卸）: 担当Stephan。**実績は1kgトライアルのみ・現実的に月20kg狙い（※来季5tは誤り）**、FA003来季予約。フォロー送信済
-- **Matcha Mami**: 問い合わせフォーム→返信→**商談獲得（7/22 16:00〜・Chadstone）**。同日にmachi machi Chadstone＋Industry Beans Chadstoneもまとめ訪問
+- **Matcha Mami**: 問い合わせフォーム→返信→**商談実施済み（7/22 16:00・Chadstone／FA001-004サンプル手渡し）**。同日にmachi machi Chadstone＋Industry Beans Chadstoneもまとめ訪問
 - **富士山抹茶**: サプライヤー開拓案件（大坂さん紹介・長野さんへ接続済み）。ホテル向け等で営業被り回避。※Ruiが紹介者
 - **凸済み/DM・メール送付済**: Maison Koko(hello@maisonkoko.com)・Midori Matcha・Matcha Society・Shiro Gelato(info@shirogelato.com)・Soul Origin 等（返信待ち多数）
 - **新規開拓リスト（お茶ギフト系卸・JSY/T2型・MEL/SYD 12社）**: Simply Native（★FA001ド本命/Surry Hills）・Lupicia・Storm in a Teacup・Impala&Peacock/Mary Eats Cake・Tea Drop・Larsen&Thompson・Tea Tonic・T Totaler・Taka Tea Garden・The Tea Centre・The Rabbit Hole・cha-no-wa
