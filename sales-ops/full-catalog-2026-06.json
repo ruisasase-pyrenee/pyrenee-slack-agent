@@ -40,8 +40,10 @@
     {"code": "ALe",  "recommend": false, "sample": "Available",     "origin": "Kyoto(wazuka)",     "grade": "Ceremonial", "cultivar": "okumidori",                              "harvest": "1st Flush", "usd": 600.0, "jpy": 90000, "aud": 870.6, "stock_kg": 50,    "organic": true},
     {"code": "ALf",  "recommend": false, "sample": "Available",     "origin": "Kyoto(wazuka)",     "grade": "Ceremonial", "cultivar": "yabukita",                               "harvest": "1st Flush", "usd": 450.0, "jpy": 67500, "aud": 653.0, "stock_kg": 100,   "organic": true},
     {"code": "ALg",  "recommend": false, "sample": "Not available", "origin": "Kyoto(wazuka)",     "grade": "Latte",      "cultivar": "okumidori,yabukita",                     "harvest": "autumn",    "usd": 72.0,  "jpy": 10800, "aud": 104.5, "stock_kg": 4000,  "organic": true},
-    {"code": "ANa",  "recommend": true,  "sample": "Available",     "origin": "Kagoshima",         "grade": "Ceremonial", "cultivar": "saemidori,blend",                        "harvest": "1st Flush", "usd": 114.0, "jpy": 17100, "aud": 165.4, "stock_kg": 2000,  "organic": false}
+    {"code": "ANa",  "recommend": true,  "sample": "Available",     "origin": "Kagoshima",         "grade": "Ceremonial", "cultivar": "saemidori,blend",                        "harvest": "1st Flush", "usd": 114.0, "jpy": 17100, "aud": 165.4, "stock_kg": 2000,  "organic": false},
+    {"code": "AGa",  "recommend": false, "sample": "Available",     "origin": "Japan",             "grade": "Ceremonial (paste/ペースト)", "cultivar": "Okumidori,blend",            "harvest": "1st & 2nd", "usd": 73.3,  "jpy": 11000, "aud": 106.4, "stock_kg": "400/month", "organic": false, "_note": "抹茶ペースト製品。sencha/hojiシート(20260113)より。ジェラート/製菓向け"}
   ],
+  "_hojicha_sencha_note": "ほうじ茶=AFc(京都・ceremonial hojicha・10t・$72/¥10,800)が唯一のほうじ茶ライン。抹茶ペースト=AGa。煎茶(sencha)は sencha/hoji シート(20260113)でも行が空＝現状ラインナップ無し。煎茶要望が来たら生産側(corporate@first-agri.jp)に要確認。",
   "certifications_common": "全SKU: Certificate of Origin, Healthcare Certificate, COA。多くにFDA。Cd/Ce/CfはHalal+Kosher+FSSC22000も。Shizuoka(Ik/Il/Im系)はJFS+FSSC22000。",
   "australia_trip_samples_held": {
     "_as_of": "2026-07 到着時（配布前の原数）",
