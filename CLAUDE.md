@@ -11,6 +11,7 @@
 - 社内: インセンティブ割り戻し計算、評価面談・エクイティ交渉の資料作成
 
 ## データソース（このリポジトリ内・常にここを一次参照）
+- `sales-ops/full-catalog-2026-06.json` — **弊社全38SKUの完全プライスリスト**（USD/JPY/AUD・在庫・認証・豪州手持ちサンプル）※AFc=ほうじ茶(京都10t)・AFb=$300/2000kgが最新
 - `sales-ops/fa-catalog.json` — FAシリーズ+有機ラインのSKUデータとSKU選定ルール
 - `sales-ops/finance-master-2026.md` — 価格マスター・ロット原価・過去受注実績・5ヶ年計画の索引
 - `sales-ops/zaimu-2026-fulltext.txt` — 財務管理PDF全文（grepで検索）
