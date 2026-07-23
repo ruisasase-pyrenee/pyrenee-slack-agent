@@ -83,10 +83,10 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 - **Calder Dryden**（豪カフェ/ホテル系）: 月70-80kg＋コロンビア月200kg構想＝年3.4t級の潜在大口。現行$80。FA005完売の代替で**Cf $58.9提案**、サンプル（Cf+FA004+Dg+FA003）送付先確認中
 - **Ryan / TDH（TDH Milk）**: 現行JFC（Japan Food Co）$90/kg・目標100-120AUD/kg（物流込）。**Cf（landed AUD115-120）で味比べ打診中**
 - **Zen Wonders**（メルボルン・宇治抹茶ブランド）: **オーナー＝Robert（Roberto-san）**。長野代表と旧知。**単価上限¥20,000（→FA004不可）**。**Cf＋Dgの卸提案に切替**。自社農園初摘みの案内レター送付済
-- **Purematcha**（豪州最大級の抹茶卸）: 担当Stephan。**実績は1kgトライアルのみ・現実的に月20kg狙い（※来季5tは誤り）**、FA003来季予約。フォロー送信済
+- **Purematcha**（豪州最大級の抹茶卸）: 担当Stephany（Procurement担当）・電話1300 504 469。**実績は1kgトライアルのみ・現実的に月20kg狙い（※来季5tは誤り）**、FA003来季予約。フォロー送信済
 - **Matcha Mami**（Zahraa・家族経営）: **対面商談実施（7/22・Chadstone／FA001-004手渡し）＝大口候補**。**現行は月50kg**（11-12月の新2店舗オープンで月120-150kgへ拡大見込み）・**JPY建て・5年長期契約の意向で一致**・Uji系ラテを高評価。次アクション[Rui]＝商品情報＋送料/最終価格の提示、WhatsAppグループ作成／[先方]＝他社比較しメールで決定＋9月来日で茶園訪問・撮影予定。**⚠️FA003は今季完売で月135kg×12＝年1.4-1.8tは供給不可→ラテ量産はFA002(Uji・ミルク特化・在庫4t)かFA004に寄せる。数量コミットは在庫引当照合後に確定**。規模感＝FA002なら年¥6,000万級/FA004でも¥4,000万級。**Sydney発mobile matcha→Chadstone(7/11)・現行$173/kg AUD(=$86.50/500g)・現行月50kg(新店で120-150kg/月へ)・静岡直仕入れ志向。窓口/投資家＝Nabil(nabil@nonstop-media.com.au)。Rui提示＝FA003(Uji・完売)の代替で$90-100/kg（AEc級）。差別化＝受注後50kgバッチ挽き（品質ばらつき解消）が刺さった。DHL送料≈A$12.80/kg(要確認)**
 - **富士山抹茶**: サプライヤー開拓案件（大坂さん紹介・長野さんへ接続済み）。ホテル向け等で営業被り回避。※Ruiが紹介者
-- **凸済み/DM・メール送付済**: Maison Koko(hello@maisonkoko.com)・Midori Matcha・Matcha Society・Shiro Gelato(info@shirogelato.com)・Soul Origin 等（返信待ち多数）
+- **凸済み/DM・メール送付済**: Maison Koko(hello@maisonkoko.com)＝**電話で折り返しあり・スーパーバイザー不在で再折り返し待ち（要フォロー）**／Midori Matcha・Matcha Society・Shiro Gelato(info@shirogelato.com/Brisbane拠点)・Soul Origin 等（返信待ち多数）
 - **新規開拓リスト（お茶ギフト系卸・JSY/T2型・MEL/SYD 12社）**: Simply Native（★FA001ド本命/Surry Hills）・Lupicia・Storm in a Teacup・Impala&Peacock/Mary Eats Cake・Tea Drop・Larsen&Thompson・Tea Tonic・T Totaler・Taka Tea Garden・The Tea Centre・The Rabbit Hole・cha-no-wa
 
 ### 10枠ボード（月20kg×10の進捗）
