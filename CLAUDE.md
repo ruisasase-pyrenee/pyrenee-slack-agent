@@ -85,6 +85,7 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
   - **Hikari Café**（317 Swanston St・@hikarilifeau・hikarilife.com.au）: **京都の小農園から仕入れ・手点てceremonialの本格派→FA001/FA003(宇治)が刺さる**。**オーナー/共同創業者＝Derek Yang（Business Development Co-founder・derek@hikarilife.com.au・+61 431 483 067）**。★**6月の東京・輸出EXPOで弊社ブースに来訪済み（Mako＝本村真子経由で判明）＝既接点あり**。オーナー高頻度在店。※既存顧客HIKARIとは別店（同名の別物と判明）
   - **Miyama**（Melbourne Central L2/300 Lonsdale St・@miyamamelbourne・info@miyamamelbourne.com.au／日本カレー・定食＋抹茶）: 店長**Keiさん**に手渡し・状況説明済→**次の社内MTGで提案してもらえる予定（＝本命）**
   - **Regulars**（38-40 Little La Trobe St・@regularsmelb・-85℃ピスタチオ抹茶/Nordic berry抹茶＝フレーバー先行）: スタッフがオーナーに渡し置き→反応待ち。フレーバー系＝カリナリー(Cf)の隠れ需要も。※公開メールなし＝DM主体
+- **本日訪問（2026-07-24・飛び込み）: MINIYAMA**（team@miniyama.com.au／※café「Miyama」とは別店）: 抹茶のbest-seller・豆乳対応をヒアリング、5SKU（FA001-003宇治ブレンド/FA004-005鹿児島）＋有機を説明。**オーナーは水曜在店→水曜再訪で商談継続**。次[Rui]＝会社情報＋価格をメール送付。※同日 Sneaker Laundry・Mami matcha も訪問（詳細待ち）
 
 ### C. 卸・EC・その他パイプライン
 - **Calder Dryden**（豪カフェ/ホテル系）: 月70-80kg＋コロンビア月200kg構想＝年3.4t級の潜在大口。現行$80。FA005完売の代替で**Cf $58.9提案**、サンプル（Cf+FA004+Dg+FA003）送付先確認中
