@@ -50,11 +50,11 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 
 ## サンプル現況（豪州で手持ち＋発送済み・随時更新）
 ### 手持ちサンプル（2026-07-22時点・配布/発送後の残）
-- FA001 ×9｜FA002 ×9｜FA003 ×8｜FA004 ×8
-- AFb ×9｜Cf ×9｜Dg ×5｜AFc ×4｜AEf ×4｜FA005 ×17（試飲サンプルは配布開始）
+- FA001 ×6｜FA002 ×7｜FA003 ×6｜FA004 ×6
+- AFb ×9｜Cf ×9｜Dg ×5｜AFc ×4｜AEf ×4｜FA005 ×15（試飲サンプルは配布開始）
 - 発送引当（未消化）: Matcha Society＝Cf ／ Calder＝Cf＋FA004＋Dg＋FA003
 - ※元の到着分: Cf×10・AEf×5・AFc×5・Dg×5・AFb×10・FA001〜005×20ずつ（"AEf"が正。"AFe"＝$18の別SKUで未所持）
-- 直近配布: BALIBOA（カリナリー）にCf＋AEf 各1（7/22）／Matcha Mami商談でFA001-004 各1（7/22）／CBD4カフェ(Naau/Miyama/Hikari/Regulars)にFA001-004 各1ずつ＝計16（7/23）／7/24飛び込み: Sneaker Laundry(FA001-005各1＋FA003/FA004各+1＋AFc1)・MINIYAMA(FA001-005各1)・Matcha Mami(FA005×1)
+- 直近配布: BALIBOA（カリナリー）にCf＋AEf 各1（7/22）／Matcha Mami商談でFA001-004 各1（7/22）／CBD4カフェ(Naau/Miyama/Hikari/Regulars)にFA001-004 各1ずつ＝計16（7/23）／7/24飛び込み: Sneaker Laundry(FA001-005各1＋FA003/FA004各+1＋AFc1)・MINIYAMA(FA001-005各1)・Matcha Mami(FA005×1)／7/25飛び込み: Groove(FA001-005各1＋FA001+1)・Midori pop-up(FA001-005各1)
 - 配布禁止/温存: FA005。FA003は残僅少なので基本は来季予約導線で
 
 ### 発送済みサンプルの追跡（返信待ち）
