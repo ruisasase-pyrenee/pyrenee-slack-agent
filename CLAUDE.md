@@ -54,7 +54,7 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 - AFb ×9｜Cf ×9｜Dg ×5｜AFc ×4｜AEf ×4｜FA005 ×15（試飲サンプルは配布開始）
 - 発送引当（**送付決定**）: Matcha Society＝Cf ／ Calder＝Cf＋FA004＋Dg＋FA003
 - ※元の到着分: Cf×10・AEf×5・AFc×5・Dg×5・AFb×10・FA001〜005×20ずつ（"AEf"が正。"AFe"＝$18の別SKUで未所持）
-- 直近配布: BALIBOA（カリナリー）にCf＋AEf 各1（7/22）／Matcha Mami商談でFA001-004 各1（7/22）／CBD4カフェ(Naau/Miyama/Hikari/Regulars)にFA001-004 各1ずつ＝計16（7/23）／7/24飛び込み: Sneaker Laundry(FA001-005各1＋FA003/FA004各+1＋AFc1)・MINIYAMA(FA001-005各1)・Matcha Mami(FA005×1)／7/25飛び込み: Groove(FA001-005各1＋FA001+1)・Midori pop-up(FA001-005各1)
+- 直近配布: BALIBOA（カリナリー）にCf＋AEf 各1（7/22）／Matcha Mami商談でFA001-004 各1（7/22）／CBD4カフェ(Naau/Miyama/Hikari/Regulars)にFA001-004 各1ずつ＝計16（7/23）／7/24飛び込み: Sneaker Laundry(FA001-005各1＋FA003/FA004各+1＋AFc1)・MINIYAMA(FA001-005各1)・Matcha Mami(FA005×1)／7/25飛び込み: Groove(FA001-005各1＋FA001+1)・Midori pop-up(FA001-005各1)／7/29訪問: Tea Drop(FA005＋非FA全種=AFb/Cf/Dg/AFc/AEf)・Clement/St Ali(AFc＋FA005)
 - 配布禁止/温存: FA005。FA003は残僅少なので基本は来季予約導線で
 
 ### 発送済みサンプルの追跡（返信待ち）
@@ -121,8 +121,8 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 - **富士山抹茶**: サプライヤー開拓案件（大坂さん紹介・長野さんへ接続済み）。ホテル向け等で営業被り回避。※Ruiが紹介者
 - **凸済み/DM・メール送付済**: Maison Koko(hello@maisonkoko.com)＝**担当Stephany（Procurement）・電話で折り返しあり・スーパーバイザー不在で再折り返し待ち（要フォロー）**／Midori Matcha・Matcha Society・Shiro Gelato(info@shirogelato.com/Brisbane拠点)・Soul Origin 等（返信待ち多数）
 - **Matcha Maiden**（Melbourne本部・Caulfield South）: 豪州最大手の有機抹茶ブランド＝供給提案先。**経営者2名＝Jeff & Dylan**（現在アメリカ・木曜帰国）。オーナー面談の窓＝**木曜12-2pm**。電話+61 432 011 928。先月も代表・長野と訪問（不在）＋今回メール済。**7/27 飛び込み: 対応＝Grant（＝以前記録の"Gren"／名は要確認）に サンプル＋会社資料＋名刺を預けた→Jeff & Dylanへ取次ぎ→レビュー後にDylan/JeffからRuiへ連絡の流れ。伝えた骨子＝会社紹介＋Ruiの経歴story(21歳ドバイ→現地抹茶が非日本産と知る→静岡に戻り創業/チーム21-28歳)・ラインF001-F003=宇治/FA004・FA005=鹿児島・価格はAUD建て提示・MOQ20kg(FA004/FA005ラインは100kg)。次[Rui]＝木曜12-2pmに再訪しJeff&Dylan本人と商談。**豪州最大手＝食い込めれば有機ライン(AFb/Dg)の大口導線
-- **St. Ali（＋Peggies Matcha＋Clement Coffee）**（Melbourneのコーヒーロースター大手＝グループの親会社）: **Peggies抹茶ブランド／Clement Coffee と同じ運営元＝親会社がSt Ali**。創業/オーナー＝**Sal（Salvatore・Australian-Italian・普段イタリア在住、豪州へ3ヶ月に1回）**。GM＝**Ross（店に週2-3回来る）**。今日の対応＝Joe。飛び込み済＝抹茶供給先としてPeggies／Clement経由も狙える（1社食い込めばグループ横展開の芽）
-- **新規開拓リスト（お茶ギフト系卸・JSY/T2型・MEL/SYD 12社）**: Simply Native（★FA001ド本命/Surry Hills）・Lupicia・Storm in a Teacup・Impala&Peacock/Mary Eats Cake・Tea Drop・Larsen&Thompson・Tea Tonic・T Totaler・Taka Tea Garden・The Tea Centre・The Rabbit Hole・cha-no-wa
+- **St. Ali（＋Peggies Matcha＋Clement Coffee）**（Melbourneのコーヒーロースター大手＝グループの親会社）: **Peggies抹茶ブランド／Clement Coffee と同じ運営元＝親会社がSt Ali**。創業/オーナー＝**Sal（Salvatore・Australian-Italian・普段イタリア在住、豪州へ3ヶ月に1回）**。GM＝**Ross（店に週2-3回来る）**。今日の対応＝Joe。飛び込み済＝抹茶供給先としてPeggies／Clement経由も狙える（1社食い込めばグループ横展開の芽）。**7/29 再訪: Clement窓口＝ソフィ（さとこ）さんに AFc＋FA005 を手渡し。St Ali本店も訪問。→ Clementの日本人窓口（さとこさん）＝日本語直撃ルートの芽**
+- **新規開拓リスト（お茶ギフト系卸・JSY/T2型・MEL/SYD 12社）**: Simply Native（★FA001ド本命/Surry Hills）・Lupicia・Storm in a Teacup・Impala&Peacock/Mary Eats Cake・**Tea Drop（★7/29訪問済＝FA005＋非FA全種を手渡し・サンプル評価待ち）**・Larsen&Thompson・Tea Tonic・T Totaler・Taka Tea Garden・The Tea Centre・The Rabbit Hole・cha-no-wa
 
 ### 10枠ボード（月20kg×10の進捗）
 視界内 実質7〜9枠: Calder（3枠級）＋ハレルヤ＋BALIBOA＋Attakai＋Darling/Industry Beans/Lune系。FA003/005の在庫切れ・FA002の独占制約には触れず、今のデッキ（FA001/FA004/Cf/有機）でストレスなく戦える先を優先。
