@@ -53,7 +53,7 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 - **FAシリーズ全滅＝FA001・FA002・FA003・FA004・FA005 すべて0（Rui確認・8/3）→補充手配要（Calder全種＋Zen全サンプルの8/3送付で消化）**
 - 非FA（⚠️推定・要現物確認）: Cf ~3｜Dg ~2｜AFb ~6｜AFc ~0｜AEf ~0
 - ※7/22時点snapshot(FA001×6/FA002×7/FA004×6/FA005×15…)は以降の大量配布で消化＝上書き。以降の新規サンプル配布はFA全種不可（補充まで非FAのみ）
-- 発送引当（**送付決定**）: Matcha Society＝FA001-005 ／ Calder＝Cf＋FA004＋Dg＋FA003（→8/3にFA001-005＋残り非FAへ拡大）
+- 発送引当（**送付決定**）: Matcha Society＝FA001-003＋FA005（FA004なし） ／ Calder＝Cf＋FA004＋Dg＋FA003（→8/3にFA001-005＋残り非FAへ拡大）
 - ※元の到着分: Cf×10・AEf×5・AFc×5・Dg×5・AFb×10・FA001〜005×20ずつ（"AEf"が正。"AFe"＝$18の別SKUで未所持）
 - 直近配布: BALIBOLA（カリナリー）にCf＋AEf 各1（7/22）／Matcha Mami商談でFA001-004 各1（7/22）／CBD4カフェ(Naau/Miyama/Hikari/Regulars)にFA001-004 各1ずつ＝計16（7/23）／7/24飛び込み: Sneaker Laundry(FA003-005各1＋FA003/FA004各+1＋AFc1／※FA001-002は渡してない)・MINIYAMA(FA001-005各1)・Matcha Mami(FA005×2＝2回渡し／商談分FA001-004に加え)／7/25飛び込み: Groove(FA001-005各1)・Midori pop-up(FA001-005各1)／7/29訪問: Tea Drop(FA005＋非FA全種=AFb/Cf/Dg/AFc/AEf)・Clement/St Ali(FA001-004＋AFc＋FA005)／7/31 Hello Matcha商談(Cf＋AEf＋FA005)・飛び込みMatcha Mami(年間ペイメントプラン提出・オーナー不在)/Miniyama(オーナー不在)→両店に感謝メール＋農園紹介(汎用PDF)＋写真/動画 送付済(フォロー完了)。Miniyamaはオーナー水曜在店で再訪予定／**8/2: MEET FOREST(South Yarra)に FA003・FA005／Itteki South Yarra店に FA001-002・FA004-005 を配布 → FA003サンプル在庫=0（枯渇・補充手配要）**／8/3: KUMO(CBD)のGraciaさんに FA001・FA002 手渡し／8/3: **Calder(Cosecha)にFA001-005＋本日残りサンプル全部＋Zen Wondersに2回目(FA005＋手持ち非FA全種・※FA001-004は初回送付済) 送付**（＝サンプル在庫を大きく消化・要棚卸し）
 - **⚠️FAサンプルは全種枯渇(0・8/3)＝補充まで新規配布不可。手渡し/発送できるのは非FA(Cf/Dg/AFb)のみ**（AFc/AEfもほぼ0）。FA003・FA005は在庫本体も残僅少で来季予約導線
