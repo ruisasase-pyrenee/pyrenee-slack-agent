@@ -50,12 +50,12 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 
 ## サンプル現況（豪州で手持ち＋発送済み・随時更新）
 ### 手持ちサンプル（2026-07-22時点・配布/発送後の残）
-- FA001 ×6｜FA002 ×7｜FA003 ×6｜FA004 ×6
+- FA001 ×6｜FA002 ×7｜**FA003 ×0（枯渇・補充手配要）**｜FA004 ×6
 - AFb ×9｜Cf ×9｜Dg ×5｜AFc ×4｜AEf ×4｜FA005 ×15（試飲サンプルは配布開始）
 - 発送引当（**送付決定**）: Matcha Society＝Cf ／ Calder＝Cf＋FA004＋Dg＋FA003
 - ※元の到着分: Cf×10・AEf×5・AFc×5・Dg×5・AFb×10・FA001〜005×20ずつ（"AEf"が正。"AFe"＝$18の別SKUで未所持）
-- 直近配布: BALIBOA（カリナリー）にCf＋AEf 各1（7/22）／Matcha Mami商談でFA001-004 各1（7/22）／CBD4カフェ(Naau/Miyama/Hikari/Regulars)にFA001-004 各1ずつ＝計16（7/23）／7/24飛び込み: Sneaker Laundry(FA001-005各1＋FA003/FA004各+1＋AFc1)・MINIYAMA(FA001-005各1)・Matcha Mami(FA005×1)／7/25飛び込み: Groove(FA001-005各1＋FA001+1)・Midori pop-up(FA001-005各1)／7/29訪問: Tea Drop(FA005＋非FA全種=AFb/Cf/Dg/AFc/AEf)・Clement/St Ali(AFc＋FA005)／7/31 Hello Matcha商談(Cf＋AEf＋FA005)・飛び込みMatcha Mami(年間ペイメントプラン提出・オーナー不在)/Miniyama(オーナー不在)→両店に感謝メール＋農園紹介(汎用PDF)＋写真/動画 送付済(フォロー完了)。Miniyamaはオーナー水曜在店で再訪予定
-- 配布禁止/温存: FA005。FA003は残僅少なので基本は来季予約導線で
+- 直近配布: BALIBOA（カリナリー）にCf＋AEf 各1（7/22）／Matcha Mami商談でFA001-004 各1（7/22）／CBD4カフェ(Naau/Miyama/Hikari/Regulars)にFA001-004 各1ずつ＝計16（7/23）／7/24飛び込み: Sneaker Laundry(FA001-005各1＋FA003/FA004各+1＋AFc1)・MINIYAMA(FA001-005各1)・Matcha Mami(FA005×1)／7/25飛び込み: Groove(FA001-005各1＋FA001+1)・Midori pop-up(FA001-005各1)／7/29訪問: Tea Drop(FA005＋非FA全種=AFb/Cf/Dg/AFc/AEf)・Clement/St Ali(AFc＋FA005)／7/31 Hello Matcha商談(Cf＋AEf＋FA005)・飛び込みMatcha Mami(年間ペイメントプラン提出・オーナー不在)/Miniyama(オーナー不在)→両店に感謝メール＋農園紹介(汎用PDF)＋写真/動画 送付済(フォロー完了)。Miniyamaはオーナー水曜在店で再訪予定／**8/2: 新規MEET FOREST(South Yarra)＋Itteki South Yarra店に FA003・FA005 を配布 → FA003サンプル在庫=0（枯渇）**
+- 配布禁止/温存: FA005。**FA003サンプルは枯渇(0)＝補充まで新規配布不可**（在庫も残僅少で来季予約導線）
 
 ### 発送済みサンプルの追跡（返信待ち）
 - **Zen Wonders**（Robert）: FA001-004（1週間前発送・音沙汰なし）
@@ -92,6 +92,9 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
   - ⚠️**FA005在庫**: 年3.2t（月最大300kg）は残僅少に対しタイト→生産に供給可否の裏取り必須
   - ⚠️Gemini誤変換は使わない: 社名"Japan Rohin Kak"／店名"Surah"／過去分"Henry"/"Surak"等。数字の04/05取り違えにも注意
   - ⚠️AUD/JPY基準の混在に注意: FA005 ¥15,000=A$131（レート114.5）だが7/27見積のFA004 ¥25,000=A$235は≒106.4＝別レート。今後の見積は基準を統一
+  - **【8/1 3回目商談（Rui＋Rinsho KOYA）＝100kg受注決定 🎉】**: ✅**さみどり(Semiidori=FA005) 100kgトライアル発注 決定**（品質・配送信頼性を検証→その後300kg/月へ）。本命＝**004/005系**、将来**300kg/月・年3.2t**（5tのうち3.2t確保）。✅価格＝単価**135.84 AUD/kg**（目標$138から1.5%off）＋送料→着地**152 AUD/kg**（⚠️年間計算では$174/kg／⚠️7/28確定の"AUD131/kg=¥15,000"と基準差あり＝要一本化）。✅**請求書100kg分を8/17期日**で発行（会計士・弁護士メール宛）＋**基本契約書も8/17**送付→先方リーガルレビュー。✅納品**9月第1週**・条件FOB/EXW・**1kg袋**。✅支払い**Wise指定**（商用銀行送金可否を財務確認）。✅年間**12ヶ月・最終月70%off**。✅**300kg（2万AUD超）はDeferred GST申請**（受領時GST払わず期末繰延）。カスタムブレンド=Shinichi対応可。⚠️インド産抹茶サンプル来週着(~$48)で競合比較。相手＝来年10店舗拡大・銀行がメイン投資家でQC厳格化(5名＋写真＋書面ループ)。マーケ強(Prince Harry/Marcus Stoinis/MasterChef/Pokemonイベントで行列)。NA[Rui]＝新サンプル持参／100kg請求書発行／基本契約書送付／南(South)からサンプル回収・納品／年間契約条件確定／支払い方法を財務確認
+  - **8/2 South Yarra店舗（11 Daly St）にも訪問**
+- **Matcha Mate（Melbourne・ケン＝CFO兼CMO／既存顧客＋フルフィルメント連携）**: 現状＝**Bb（BB）を月100kg購入中**／次＝**The Last Matchaを同条件で購入予定**。BBミックスの30%は自社原料。原BB停止時に同等品質の**003**を市場価格70%offで確保→優先提供。**【8/1 商談（会食兼・約2.5h・Rui）＝モデル転換で合意】** ✅買取リセラー→**パートナー(エージェンシー)型**（**サービスフィー方式**・うちは価格に上乗せせずメーカーが価格主導権を保持） ✅**6ヶ月トライアル・初期100kg/月・即スタート** ✅**非独占**（MM＝豪州の営業/マーケ、うち＝倉庫・物流DHL・発注ポータル・CS） ✅**MSRP設定**＋価格エスカレーション防止で市場一貫性 ✅正式な**パートナーシップ声明**（物流・税・協業の性質）を作成 ✅直輸入の**産地証明**で差別化。前提＝送料AUD12-20/kg・税10%・倉庫レント⚠️AUD500-1,000/100kg・目標マージン約5%。⚠️保留＝管理費/物流費の構造・利益シェア(70/30 or 80/20)。ブレンド＝Chen／Shenan(AI20種)。NA[Rui]＝パートナーシップ提案書ドラフト／Chenと物流・管理費協議／次回MTGにChen＋担当招集／来日インタビュー撮影。※US冷蔵庫アライアンス(現地在庫でLT短縮)の文脈とも接続
 - ※Den's・Rocky'sはRuiが商談担当
 
 ### B. 豪州カフェ現地開拓（足で回った分・7/21-22メルボルン）
@@ -125,6 +128,7 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 - **Morning Made（凸リスト・新規／2026-07-30 St Ali棚で発見）**: 登記名**MORNING MADE LIMITED（NZ企業・NZBN 9429049415919・旧名"Matcha Made"）／NZ本社＝4/1 Kenwyn St, Parnell, Auckland 1052／創業者・Director＝Brad Matthews（2021創業・LinkedIn bradcm01）**。日本産（宇治）セレモニアルを仕入れ、フレーバー抹茶ラテ粉として豪/NZ/米で販売（DTC au.morningmade.com＋卸Upstock/pages/wholesale＋大手小売Woolworths/Target/Walmart/Amazon/Kroger・St Ali/ONA/Artisanals/Mansfield等・製造NZ&US）。IG=@drinkmorningmade(28K)。アプローチ導線＝①Brad Matthews創業者へLinkedIn直（小規模＝創業者が調達を握る＝最短）②卸Upstock/wholesaleページ③IG DM。ライン＝Original/Vanilla/Strawberry/Mango/Unsweetened＋Chai/Turmeric。**店頭$59/60g＝AUD$983/kg→landed想定$218-328/kg（÷3〜4.5）＝プレミアム帯を仕入れられる財布**。⚠️「organic・宇治」を謳う→うちのオーガニックは鹿児島（Dg/AEc/AFb）で宇治organic非保有＝Matcha Maidenと同構造→**フレーバーSKUに鹿児島value organic/Cfを当てる**のが現実解＋供給安定で刺す。NA=[Rui]サイトから連絡先特定→アウトリーチ（フォロー8/4）
 - **Hello Matcha（★S級・輸入卸／2026-07-31 商談 Rui）**: Sydney拠点(~2016)・**farm-direct宇治輸入卸＝豪州1000+カフェに供給**・Ordermentum/Faire・現在**シンガポール等 海外拡大中**。共同創業Ami／**窓口＝Ricky（ほぼ創業者・ベトナム系移民・実担当）**。**総量 月1t以上（年20t）＝S級**。現行仕入＝**Organic Uji Matcha ¥13,000/kg（月200kg）／Premium Uji Matcha ¥6,000/kg（月500kg）＋他種あり**。⚠️価格が激辛：**¥6,000/kg（≈$40 USD）はうちの下限割れ＝不成立**（Cf ¥8,835でも上）。**本命の土俵＝¥13,000のOrganic Ujiライン（月200kg=年2.4t）→ALg（¥10,800・organic和束/京都）が"organic京都"かつ価格で下回る＝ドンピシャ**。卸相手＝landed原価/供給安定/欠品リスク＋ホワイトレーベルで攻める。**手渡しサンプル（7/31）＝Cf・AEf・FA005**。NA=[Rui]ALg中心に提案（11月サンプル導線）／数量コミット前に在庫引当必須。※Tracxnは"deadpooled"表示だが明らかに営業中＝誤タグ
 - **Chatime Australia（★S級大口・1月まで保留／2026-07-30 商談実施 Rui＋長野・シドニー）**: 台湾発バブルティー世界最大級チェーンの豪州法人（旧Infinite Plus／親La Kaffa=六角國際・台湾上場2732.TWO）。**豪州170店超・2009年進出・売上NT$6億超・FC本部セントラル調達（本部1社で全店の抹茶を決定）**。窓口＝**Danny He（danny.he@chatimeGroup.com.au／0421 526 695／Suite 2 Level 7, 66 Goulburn St, Sydney NSW 2000）**。シドニーで偶然の出会いから商談。用途＝抹茶ラテ等・**月100kg+ポテンシャル（年1.2t+）**。**⚠️結論＝今季は現行サプライヤーに1年コミット済→6ヶ月は新規評価・切替なし→1月に再協議で合意**。要件＝**premiumグレード（culinaryとceremonialの中間・"苦すぎない"＝豪消費者は苦味を嫌う）／味の一貫性が最優先（味変＝品質低下と受け取られる）／価格上限AUD120/kg（現行見積135/kgは高いと判断）／LT＝発注6ヶ月前確保＋発注後納品約1ヶ月**。市場＝抹茶は豪で最速成長カテゴリ／緑茶工場閉鎖等で来季価格に不確実性。刺さる軸＝①固定価格②安定供給（欠品＝全店影響）③専用ブレンドのスペック統一。**✅Rui→Danny 送信済み：「AUD120レンジ・年5トン・FOB」で提案準備し1月2027に再協議」**（＝提案前提＝年5t／AUD120 FOB。FOB＝送料関税は先方持ち→AUD120 FOB≒USD$77/kg原産地でCf/専用ブレンドなら乗る可能性・FA005$100は不可）。**NA＝[Rui/社]AUD120-FOBに収まる5t提案（premium非苦味・一貫性）を1月に向け設計＋現行offeringサンプル準備＋1月MTG設定＋先方の実使用量を確定**（※即コンタクトはしない＝先方が6ヶ月動かない）。⚠️月100kg+はFA002タイト化・FA005僅少に直撃→数量コミット前に引当照合／スケーラブルな器（FA002 or 専用ブレンド or 有機Dg=在庫4,500kg）で設計。⚠️Gemini話者混同注意：「Rui発言」に見える上限120/現行135高い/premium要件/1年コミットは**実はDanny=Chatime側の要件**。"Shiza"=滋賀
+- **MEET FOREST（South Yarra・新規／2026-08-02）**: 飛び込み新規開拓。**FA003・FA005サンプル配布済み**。→フォロー予定（現行仕入・規模・オーナー在店をヒアリング）
 - **新規開拓リスト（お茶ギフト系卸・JSY/T2型・MEL/SYD 12社）**: Simply Native（★FA001ド本命/Surry Hills）・Lupicia・Storm in a Teacup・Impala&Peacock/Mary Eats Cake・**Tea Drop（★7/29訪問済＝FA005＋非FA全種を手渡し・サンプル評価待ち）**・Larsen&Thompson・Tea Tonic・T Totaler・Taka Tea Garden・The Tea Centre・The Rabbit Hole・cha-no-wa
 
 ### 10枠ボード（月20kg×10の進捗）
