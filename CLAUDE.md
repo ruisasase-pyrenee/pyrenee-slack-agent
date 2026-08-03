@@ -59,7 +59,7 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 
 ### 発送済みサンプルの追跡（返信待ち）
 - **Zen Wonders**（Robert）: FA001-004（1週間前発送・音沙汰なし）
-- **Elle Collective**（Perth）: FA002-004（1週間前発送・音沙汰なし）
+- **Elle Collective**（Perth）: FA002-004（1週間前発送・音沙汰なし）。⚠️**2026-08-03: 「Ellie」からPayPal決済希望のメッセージ（豪州の銀行のため日本口座へ送金不可→PayPalリンクを希望・今後の購入も全てPayPal）。Ellie＝Elle Collectiveか要特定（別顧客の可能性）。対象商品/金額も未確認。→ファイナンスにPayPal受取可否・手数料負担・為替・IPO準拠・Wiseとの整合を確認中。回答待ち＝PayPalリンク送付やcommitはしない（絶対#1）**
 - **Jaya Rajan / Analytical Laboratories & Technical Services Australia**（85 River Ave, Merbein South VIC 3505 / +61 409 213 706）: FA001-003（音沙汰なし・検査目的の確認待ち）
 - **Deiji Matcha**（Angela）: FA001-004＋AFb（発送済み・感謝メール＋会社資料も送付済み）
 - 現地手渡し（7/21-22）: BALIBOA・Attakai・ハレルヤに各FA001-004
