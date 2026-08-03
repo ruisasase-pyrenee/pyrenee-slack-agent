@@ -172,7 +172,7 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 
 ## ブランド表記（正）
 - **社名**: first agri inc.（一番農業株式会社）
-- **タグライン**: 「一次産業を、一番産業に。」＝英語 **"Primary to Prime"**（⚠️"Elevating the primary industry"等は誤り・使わない）
+- **タグライン**: 「一次産業を、一番産業に。」＝英語(正式) **"We're transforming agriculture — from Primary to Prime."**（短縮=**"Primary to Prime"**）。⚠️"Elevating the primary industry"等は誤り・使わない
 - ブランドカラー: 緑 #38761D。ロゴ＝緑ストライプのアイコン＋"first agri inc."ワードマーク
 
 ## アウトリーチ文面の型
