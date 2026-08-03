@@ -54,7 +54,7 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 - AFb ×9｜Cf ×9｜Dg ×5｜AFc ×4｜AEf ×4｜FA005 ×15（試飲サンプルは配布開始）
 - 発送引当（**送付決定**）: Matcha Society＝Cf ／ Calder＝Cf＋FA004＋Dg＋FA003
 - ※元の到着分: Cf×10・AEf×5・AFc×5・Dg×5・AFb×10・FA001〜005×20ずつ（"AEf"が正。"AFe"＝$18の別SKUで未所持）
-- 直近配布: BALIBOA（カリナリー）にCf＋AEf 各1（7/22）／Matcha Mami商談でFA001-004 各1（7/22）／CBD4カフェ(Naau/Miyama/Hikari/Regulars)にFA001-004 各1ずつ＝計16（7/23）／7/24飛び込み: Sneaker Laundry(FA001-005各1＋FA003/FA004各+1＋AFc1)・MINIYAMA(FA001-005各1)・Matcha Mami(FA005×1)／7/25飛び込み: Groove(FA001-005各1＋FA001+1)・Midori pop-up(FA001-005各1)／7/29訪問: Tea Drop(FA005＋非FA全種=AFb/Cf/Dg/AFc/AEf)・Clement/St Ali(AFc＋FA005)／7/31 Hello Matcha商談(Cf＋AEf＋FA005)・飛び込みMatcha Mami(年間ペイメントプラン提出・オーナー不在)/Miniyama(オーナー不在)→両店に感謝メール＋農園紹介(汎用PDF)＋写真/動画 送付済(フォロー完了)。Miniyamaはオーナー水曜在店で再訪予定／**8/2: 新規MEET FOREST(South Yarra)＋Itteki South Yarra店に FA003・FA005 を配布 → FA003サンプル在庫=0（枯渇）**
+- 直近配布: BALIBOA（カリナリー）にCf＋AEf 各1（7/22）／Matcha Mami商談でFA001-004 各1（7/22）／CBD4カフェ(Naau/Miyama/Hikari/Regulars)にFA001-004 各1ずつ＝計16（7/23）／7/24飛び込み: Sneaker Laundry(FA001-005各1＋FA003/FA004各+1＋AFc1)・MINIYAMA(FA001-005各1)・Matcha Mami(FA005×1)／7/25飛び込み: Groove(FA001-005各1＋FA001+1)・Midori pop-up(FA001-005各1)／7/29訪問: Tea Drop(FA005＋非FA全種=AFb/Cf/Dg/AFc/AEf)・Clement/St Ali(AFc＋FA005)／7/31 Hello Matcha商談(Cf＋AEf＋FA005)・飛び込みMatcha Mami(年間ペイメントプラン提出・オーナー不在)/Miniyama(オーナー不在)→両店に感謝メール＋農園紹介(汎用PDF)＋写真/動画 送付済(フォロー完了)。Miniyamaはオーナー水曜在店で再訪予定／**8/2: 新規MEET FOREST(South Yarra)＋Itteki South Yarra店に FA003・FA005 を配布 → FA003サンプル在庫=0（枯渇）／8/3: KUMO(CBD)のGraciaさんに抹茶サンプル手渡し(SKU要確認)**
 - 配布禁止/温存: FA005。**FA003サンプルは枯渇(0)＝補充まで新規配布不可**（在庫も残僅少で来季予約導線）
 
 ### 発送済みサンプルの追跡（返信待ち）
@@ -113,6 +113,8 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 - **本日飛び込み（2026-07-25・2件）: Midori Matcha pop-up ＆ Groove**
   - **Midori pop-up**（Rose St/Fitzroyマーケット）: Matthew本人はベトナム（近く帰国予定）→スタンドは**Joanna & Rita**が対応。RuiがMatthew用にサンプル/資料を預かり
   - **Groove**（オーナー=**Sunny**）: 抹茶~100g/日・**現行は豪州サプライヤー（インフルエンサー紹介）・IG集客型**。→**10kgトライアル発注で合意**（品質確認後に定期化＝10kg/週 or 10kg/10日は評価後決定）。受注後挽き・1ヶ月LT・FA005はMOQ100kgと説明・WhatsAppグループ作成・お土産も渡した。次[Rui]＝**商品詳細＋PDF見積もり＋追加サンプル**をメール送付／[Sunny]＝パートナーと協議
+
+- **本日飛び込み（2026-08-03）: KUMO（CBDメルボルンの抹茶カフェ）**: 対応＝**Graciaさん**に抹茶サンプルを手渡し（⚠️SKU要確認）。→フォロー予定（現行仕入・規模・オーナー在店をヒアリング）
 
 ### C. 卸・EC・その他パイプライン
 - **Calder Dryden**（豪カフェ/ホテル系）: 月70-80kg＋コロンビア月200kg構想＝年3.4t級の潜在大口。現行$80。FA005完売の代替で**Cf $58.9提案**、**サンプル（Cf+FA004+Dg+FA003）送付決定**。送付先＝**Cosecha, 4/6 Northview St, Mermaid Waters QLD 4218（ゴールドコースト）・月曜発送**（週末AusPost休み）。先方の質問＝「FA005 $100が最安か＋"great colour but not ceremonial"のグレードはあるか」→FA005は下限$100(値引き不可)・発色系の非セレモニアルはAEc($63.3)/Cf($58.9)/AEf($60)が該当（サンプルに追加検討）。**Calderは100gトライアル発注（月曜発送・MOQ未満の少量トライアル）→評価後に月70-80kg級の本発注へ育てる**
