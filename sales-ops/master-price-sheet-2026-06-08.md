@@ -46,9 +46,12 @@
 | ALf | 京都（和束） | Ceremonial | やぶきた | 1st | $450.0 | ¥67,500 | 100kg | 有機 | |
 | ALg | 京都（和束） | Latte | おくみどり,やぶきた | autumn | $72.0 | ¥10,800 | 4000kg | 有機 | Not available・Hello Matcha狙い(organic京都) |
 
-## ⚠️ このシートに載っていないSKU（別途 藤本真一 管理）
-- **AEg**：価格マスターに無し＝**価格未確定**（O3にサンプル送付済／再送中）。要 藤本真一 確認
-- **AEh（hojicha）**：シート外。**藤本真一 提示価格＝¥12,500/kg＝USD $83.33/kg（EXW）**（2026-08-03・Rui経由）。O3のhojicha枠採用。豪州landed概算 ≈ AUD $160-165/kg
+## ⚠️ このシートに載っていないSKU（＝ほうじ茶ライン・別シート管理）
+本マトリクスは抹茶中心のため、ほうじ茶AEg/AEh/AFcは非掲載。価格は `quote-matcha-mate-2026-07-01.md`（Matcha Mate向けサンプル発送シート）で判明：
+- **AEg（ほうじ茶・鹿児島Premium・有機・8,000kg）＝USD $77.1/kg（EXW）**
+- **AEh（ほうじ茶・鹿児島Ceremonial・非有機・5,000kg）＝USD $51.4/kg（EXW）** ※Ruiメモ「¥8,333」と整合
+- **AFc（ほうじ茶・宇治/京都・10,000kg）＝USD $61.7/kg（EXW）**
+- ⚠️上記はMatcha Mate個別提示の可能性（同シートAEa=$87.4 < マスター$102）→他顧客は割引前の標準価格か要確認
 - AEb・AEd も本シートに無し
 
 ## 既存 full-catalog-2026-06.json との差分メモ
