@@ -1,0 +1,48 @@
+services:
+  - type: worker
+    name: pyrenee-slack-agent
+    env: python
+    region: oregon
+    plan: starter          # $7/mo — スリープなし・常時起動
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    disk:
+      name: agent-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1            # SQLite DB 永続化
+    envVars:
+      # ── Anthropic ──────────────────────────────────────────────────────────
+      - key: ANTHROPIC_API_KEY
+        sync: false        # Renderダッシュボードで手動入力
+
+      # ── Slack ──────────────────────────────────────────────────────────────
+      - key: SLACK_BOT_TOKEN
+        sync: false
+      - key: SLACK_APP_TOKEN
+        sync: false
+
+      # ── Google（base64エンコードしたJSONを貼る） ────────────────────────────
+      - key: GOOGLE_TOKEN_JSON
+        sync: false        # base64 -i token.json | pbcopy でコピー
+      - key: GOOGLE_CREDENTIALS_JSON
+        sync: false        # base64 -i credentials.json | pbcopy でコピー
+      - key: GOOGLE_CALENDAR_ID
+        value: primary
+
+      # ── Notion ─────────────────────────────────────────────────────────────
+      - key: NOTION_API_KEY
+        sync: false
+      - key: NOTION_MEETINGS_DB_ID
+        value: 3646f494-84f3-47c8-a6f0-779d2b150847
+
+      # ── Agent 設定 ──────────────────────────────────────────────────────────
+      - key: RUI_SLACK_USER_ID
+        sync: false        # U09MX4BLYKX
+      - key: MORNING_DIGEST_HOUR
+        value: "8"
+      - key: MORNING_DIGEST_MIN
+        value: "30"
+      - key: TRIAGE_INTERVAL_HOURS
+        value: "2"
+      - key: MINUTES_CHANNEL
+        value: ""          # 空欄=DM直送、チャンネルIDを入れると投稿
