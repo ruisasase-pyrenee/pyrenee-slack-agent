@@ -74,6 +74,7 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 - ※元の到着分: Cf×10・AEf×5・AFc×5・Dg×5・AFb×10・FA001〜005×20ずつ（"AEf"が正。"AFe"＝$18の別SKUで未所持）
 - 直近配布: BALIBOLA（カリナリー）にCf＋AEf 各1（7/22）／Matcha Mami商談でFA001-004 各1（7/22）／CBD4カフェ(Naau/Miyama/Hikari/Regulars)にFA001-004 各1ずつ＝計16（7/23）／7/24飛び込み: Sneaker Laundry(FA003-005各1＋FA003/FA004各+1＋AFc1／※FA001-002は渡してない)・MINIYAMA(FA001-005各1)・Matcha Mami(FA005×2＝2回渡し／商談分FA001-004に加え)／7/25飛び込み: Groove(FA001-005各1)・Midori pop-up(FA001-005各1)／7/29訪問: Tea Drop(FA005＋非FA全種=AFb/Cf/Dg/AFc/AEf)・Clement/St Ali(FA001-004＋AFc＋FA005)／7/31 Hello Matcha商談(Cf＋AEf＋FA005)・飛び込みMatcha Mami(年間ペイメントプラン提出・オーナー不在)/Miniyama(オーナー不在)→両店に感謝メール＋農園紹介(汎用PDF)＋写真/動画 送付済(フォロー完了)。Miniyamaはオーナー水曜在店で再訪予定／**8/2: MEET FOREST(South Yarra)に FA003・FA005／Itteki South Yarra店に FA001-002・FA004-005 を配布 → FA003サンプル在庫=0（枯渇・補充手配要）**／8/3: KUMO(CBD)のGraciaさんに FA001・FA002 手渡し／8/3: **Calder(Cosecha)＋Zen Wondersの2便で全在庫クリア（8/3クリア計＝FA001×2/002×1/004×2/005×8＋Cf×7/AEf×2/AFc×2/Dg×4/AFb×8＝残0。FA003は既に枯渇0でこの便に含まず。Calder=FA001-002/004-005＋非FA全種(AFb/Cf/Dg/AFc/AEf)、Zen=FA005＋非FA全種(AFb/Cf/Dg/AFc/AEf)）**（reconciliation=手持ち残の表）
 - **⚠️全SKUサンプル 0（8/3・全種枯渇）＝補充まで新規配布は手渡し・発送とも不可**。FA003・FA005は在庫本体も残僅少で来季予約導線
+- ⚠️**上記「残0」は8/3時点。以降もAFb・Cfの手渡し配布が継続しているため、補充が入った可能性が高い＝棚卸しの再確認が必要**（ima Asa Yoru＝AFb／Bench Coffee＝Cf+AFb）
 
 ### 発送済みサンプルの追跡（返信待ち）
 - **Zen Wonders**（Robert）: FA001-004（初回・1週間前発送）＋**8/3 2回目=FA005＋非FA全種(AFb/Cf/Dg/AFc/AEf)**
@@ -137,6 +138,9 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
   - **Midori pop-up**（Rose St/Fitzroyマーケット）: Matthew本人はベトナム（近く帰国予定）→スタンドは**Joanna & Rita**が対応。RuiがMatthew用にサンプル/資料を預かり
   - **Groove**（オーナー=**Sunny**）: 抹茶~100g/日・**現行は豪州サプライヤー（インフルエンサー紹介）・IG集客型**。→**10kgトライアル発注で合意**（品質確認後に定期化＝10kg/週 or 10kg/10日は評価後決定）。受注後挽き・1ヶ月LT・FA005はMOQ100kgと説明・WhatsAppグループ作成・お土産も渡した。次[Rui]＝**商品詳細＋PDF見積もり＋追加サンプル**をメール送付／[Sunny]＝パートナーと協議
 
+- **2026-08上旬 訪問（⚠️日付は要確認）**
+  - **ima Asa Yoru（Brunswick・1 Duckett St, Nightingale Village／旧 Ima Project）**: オーナー＝**AKOさん**（日本の方の可能性）。窓口＝**とらさん**が取次ぎ中。**AFb（有機セレモニアル）＋資料を とらさんへ手渡し**、後日オーナー不在のまま再訪→フォローメール送付。業態＝朝昼は定食/チラシ/まぜそば、夜は居酒屋＋日本酒。**メニューに single-origin の抹茶＋ほうじ茶ラテ**（＝ほうじ茶AFc/AEh/AEgの導線あり）。**隣に日本食材店「ima Pantry」併設＝リテール枠の芽**。公開連絡先 hello@imacafe.co。⚠️先方は"single-origin"訴求＝FAシリーズ(ブレンド)と正面衝突しないよう、単一品種ロット(FA005/AL系)も並べて提案する
+  - **Bench Coffee**: **ゆうかさんへ Cf＋AFb を手渡し**。⚠️**BALIBOLAの「ゆうかさん」（群馬出身・日本人・日本語直撃ルート）と同一人物か要確認**（同一なら2店舗にまたがる強い人的パイプ／別人なら別リード）
 - **本日飛び込み（2026-08-03）: KUMO（CBDメルボルンの抹茶カフェ）**: 対応＝**Graciaさん**に **FA001・FA002** を手渡し。→フォロー予定（現行仕入・規模・オーナー在店をヒアリング）
 
 ### C. 卸・EC・その他パイプライン
