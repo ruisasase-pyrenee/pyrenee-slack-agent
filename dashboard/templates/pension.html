@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pyrenee Capital — 年金ファンド LP一覧</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+           background: #0a0a0f; color: #e8e8f0; min-height: 100vh; }
+    nav { padding: 12px 40px; border-bottom: 1px solid #1e1e2e;
+          display: flex; align-items: center; gap: 24px; font-size: 0.82rem; }
+    nav a { color: #6060a0; text-decoration: none; transition: color .15s; }
+    nav a:hover { color: #a0a0e0; }
+    nav a.active { color: #e8e8f0; font-weight: 600; }
+    header { padding: 28px 40px 20px; border-bottom: 1px solid #1e1e2e;
+             display: flex; align-items: flex-end; justify-content: space-between; }
+    header h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
+    header .sub { font-size: 0.78rem; color: #6060a0; margin-top: 4px; }
+    .badge { background: #1a2a3a; color: #60a5fa; font-size: 0.7rem;
+             padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+    .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+               gap: 14px; padding: 28px 40px; }
+    .kpi { background: #111120; border: 1px solid #1e1e35; border-radius: 10px; padding: 18px; }
+    .kpi .label { font-size: 0.7rem; color: #7070a0; text-transform: uppercase;
+                  letter-spacing: 0.08em; margin-bottom: 6px; }
+    .kpi .val { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.03em; }
+    .kpi .hint { font-size: 0.72rem; color: #5050a0; margin-top: 4px; }
+    .green  { color: #4ade80; }
+    .blue   { color: #60a5fa; }
+    .yellow { color: #fbbf24; }
+    .purple { color: #a78bfa; }
+
+    section { padding: 24px 40px; }
+    section h2 { font-size: 0.9rem; font-weight: 700; color: #8080b0;
+                 text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+    th { text-align: left; padding: 9px 14px; border-bottom: 1px solid #1e1e35;
+         color: #5050a0; font-weight: 500; font-size: 0.73rem; text-transform: uppercase; white-space: nowrap; }
+    td { padding: 12px 14px; border-bottom: 1px solid #12122a; vertical-align: middle; }
+    tr:hover td { background: #0f0f22; }
+
+    .status-badge { padding: 3px 9px; border-radius: 5px; font-size: 0.7rem; font-weight: 700; white-space: nowrap; }
+    .s-met              { background:#1a2a3a; color:#60a5fa; }
+    .s-meeting_scheduled{ background:#1a3a2a; color:#4ade80; }
+    .s-intro_sent       { background:#2a2a14; color:#fbbf24; }
+    .s-prospect         { background:#1e1e30; color:#7070b0; }
+    .s-committed        { background:#142a3a; color:#34d399; }
+
+    .type-tag { background:#1a1a30; color:#8080c0; padding:2px 8px;
+                border-radius:4px; font-size:0.72rem; white-space: nowrap; }
+    .tier-dot { display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:6px; }
+    .tier1-dot { background:#4ade80; }
+    .tier2-dot { background:#60a5fa; }
+    .tier3-dot { background:#a78bfa; }
+
+    /* Allocation bar */
+    .alloc-wrap { display: flex; flex-direction: column; gap: 4px; min-width: 120px; }
+    .alloc-label { display: flex; justify-content: space-between; font-size: 0.72rem; color: #6060a0; }
+    .alloc-track { height: 5px; background: #1e1e35; border-radius: 3px; position: relative; }
+    .alloc-current { position: absolute; height: 100%; border-radius: 3px; background: #60a5fa; }
+    .alloc-target  { position: absolute; height: 100%; border-radius: 3px;
+                     background: transparent; border-right: 2px solid #fbbf24; }
+
+    /* Opportunity heat */
+    .heat { display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 0.7rem; font-weight: 700; }
+    .heat-hot  { background:#1a3a28; color:#4ade80; }
+    .heat-warm { background:#2a2a14; color:#fbbf24; }
+    .heat-cold { background:#1e1e30; color:#6060a0; }
+
+    .note-cell { color:#7070a0; font-size:0.79rem; max-width:260px;
+                 white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    @media(max-width:900px){ section{padding:16px;} .kpi-row{padding:16px;} }
+
+    .search-row { display:flex; gap:12px; margin-bottom:16px; }
+    .search-row input { flex:1; background:#111120; border:1px solid #1e1e35;
+                        color:#e8e8f0; padding:9px 14px; border-radius:8px;
+                        font-size:0.88rem; outline:none; }
+    .search-row input:focus { border-color:#3030a0; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/">ディールパイプライン</a>
+  <a href="/pension" class="active">年金ファンド LP</a>
+</nav>
+
+<header>
+  <div>
+    <div style="font-size:0.7rem;color:#4040a0;margin-bottom:4px">PRIVATE & CONFIDENTIAL</div>
+    <h1>年金ファンド LP ポートフォリオ</h1>
+    <div class="sub">Pyrenee Capital — 機関投資家エンゲージメント管理</div>
+  </div>
+  <span class="badge">PENSION FUNDS</span>
+</header>
+
+<!-- KPIs -->
+<div class="kpi-row">
+  <div class="kpi">
+    <div class="label">年金LP総数</div>
+    <div class="val blue">{{ lps|length }}</div>
+    <div class="hint">機関</div>
+  </div>
+  <div class="kpi">
+    <div class="label">合計 AUM</div>
+    <div class="val purple">{{ "%.0f"|format(total_aum) }}<span style="font-size:1rem;font-weight:500"> B JPY</span></div>
+    <div class="hint">管理資産合計</div>
+  </div>
+  <div class="kpi">
+    <div class="label">ターゲット出資額合計</div>
+    <div class="val yellow">{{ "%.0f"|format(total_target_ticket) }}<span style="font-size:1rem;font-weight:500"> M JPY</span></div>
+    <div class="hint">Pyrenee Capital 目標コミット</div>
+  </div>
+  <div class="kpi">
+    <div class="label">アクティブ商談</div>
+    <div class="val green">
+      {{ lps | selectattr("status", "in", ["met","meeting_scheduled","intro_sent"]) | list | length }}
+    </div>
+    <div class="hint">面談済み / 設定済み / 資料送付</div>
+  </div>
+  <div class="kpi">
+    <div class="label">PE配分余地 (推計)</div>
+    <div class="val green">
+      {% set headroom = namespace(val=0) %}
+      {% for lp in lps %}
+        {% if lp.aum_bn_jpy and lp.pe_target_pct and lp.pe_alloc_pct is not none %}
+          {% set h = lp.aum_bn_jpy * (lp.pe_target_pct - lp.pe_alloc_pct) / 100 * 1000 %}
+          {% if h > 0 %}{% set headroom.val = headroom.val + h %}{% endif %}
+        {% endif %}
+      {% endfor %}
+      {{ "%.0f"|format(headroom.val) }}<span style="font-size:1rem;font-weight:500"> M JPY</span>
+    </div>
+    <div class="hint">目標 PE 配分までの余力合計</div>
+  </div>
+</div>
+
+<!-- Table -->
+<section>
+  <h2>LP 一覧</h2>
+  <div class="search-row">
+    <input type="text" id="search" placeholder="機関名・タイプで検索..." oninput="filterRows(this.value)">
+  </div>
+  <table id="lp-table">
+    <thead>
+      <tr>
+        <th>機関名</th>
+        <th>タイプ</th>
+        <th>Tier</th>
+        <th>AUM (B JPY)</th>
+        <th>PE配分 現在→目標</th>
+        <th>PE余力 (M JPY)</th>
+        <th>出資目標 (M JPY)</th>
+        <th>ステータス</th>
+        <th>温度感</th>
+        <th>担当者</th>
+        <th>メモ</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for lp in lps %}
+    {% set headroom = 0 %}
+    {% if lp.aum_bn_jpy and lp.pe_target_pct is not none and lp.pe_alloc_pct is not none %}
+      {% set raw = lp.aum_bn_jpy * (lp.pe_target_pct - lp.pe_alloc_pct) / 100 * 1000 %}
+      {% set headroom = [raw, 0] | max %}
+    {% endif %}
+    {% set heat = "hot" if lp.status in ["met","meeting_scheduled"] else "warm" if lp.status == "intro_sent" else "cold" %}
+    <tr>
+      <td style="font-weight:700;color:#d0d0f0;white-space:nowrap">{{ lp.org_name }}</td>
+      <td><span class="type-tag">{{ lp.lp_type or '—' }}</span></td>
+      <td>
+        <span class="tier-dot {{ lp.tier }}-dot"></span>
+        <span style="font-size:0.78rem;color:#8080b0">{{ lp.tier or '—' }}</span>
+      </td>
+      <td style="font-weight:600;color:#a78bfa;text-align:right">
+        {{ "%.0f"|format(lp.aum_bn_jpy) if lp.aum_bn_jpy else '—' }}
+      </td>
+      <td>
+        {% if lp.pe_alloc_pct is not none and lp.pe_target_pct %}
+        <div class="alloc-wrap">
+          <div class="alloc-label">
+            <span>現在 {{ "%.1f"|format(lp.pe_alloc_pct) }}%</span>
+            <span style="color:#fbbf24">目標 {{ "%.0f"|format(lp.pe_target_pct) }}%</span>
+          </div>
+          <div class="alloc-track">
+            <div class="alloc-current" style="width:{{ [lp.pe_alloc_pct / lp.pe_target_pct * 100, 100]|min|int if lp.pe_target_pct else 0 }}%"></div>
+            <div class="alloc-target"  style="width:100%"></div>
+          </div>
+        </div>
+        {% else %}
+        <span style="color:#3a3a6a">—</span>
+        {% endif %}
+      </td>
+      <td style="font-weight:600;color:#60a5fa;text-align:right">
+        {{ "%.0f"|format(headroom) if headroom else '—' }}
+      </td>
+      <td style="font-weight:700;color:#fbbf24;text-align:right">
+        {{ "%.0f"|format(lp.ticket_mn_jpy) if lp.ticket_mn_jpy else '—' }}
+      </td>
+      <td><span class="status-badge s-{{ lp.status }}">{{ lp.status or '—' }}</span></td>
+      <td><span class="heat heat-{{ heat }}">{{ '🔥 HOT' if heat=='hot' else '☀ WARM' if heat=='warm' else '❄ COLD' }}</span></td>
+      <td style="color:#8080a0;white-space:nowrap">{{ lp.contact_name or '—' }}</td>
+      <td class="note-cell" title="{{ lp.notes or '' }}">{{ lp.notes or '—' }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<div style="text-align:center;padding:28px;color:#303060;font-size:0.73rem">
+  Pyrenee Capital Autonomous Fund Agent — Confidential / Internal Use Only
+</div>
+
+<script>
+function filterRows(q) {
+  q = q.toLowerCase();
+  document.querySelectorAll('#lp-table tbody tr').forEach(r => {
+    r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

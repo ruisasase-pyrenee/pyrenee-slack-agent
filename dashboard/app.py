@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from db.pipeline import (
     get_pipeline_summary, get_top_targets, get_universe_stats,
-    get_lp_pipeline, search_companies,
+    get_lp_pipeline, get_pension_lps, search_companies,
 )
 
 app = Flask(__name__, template_folder="templates")
@@ -40,6 +40,21 @@ def api_pipeline():
 @app.route("/api/lps")
 def api_lps():
     return jsonify(get_lp_pipeline())
+
+
+@app.route("/pension")
+def pension():
+    lps = get_pension_lps()
+    total_aum = sum(lp.get("aum_bn_jpy") or 0 for lp in lps)
+    total_target_ticket = sum(lp.get("ticket_mn_jpy") or 0 for lp in lps)
+    return render_template("pension.html", lps=lps,
+                           total_aum=total_aum,
+                           total_target_ticket=total_target_ticket)
+
+
+@app.route("/api/pension")
+def api_pension():
+    return jsonify(get_pension_lps())
 
 
 @app.route("/api/search")

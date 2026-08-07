@@ -90,6 +90,14 @@ def init_db():
         CREATE INDEX IF NOT EXISTS idx_pipeline_score  ON pipeline(score DESC);
         CREATE INDEX IF NOT EXISTS idx_companies_sector ON companies(sector);
         """)
+        # Migration: add pension-specific columns if not present
+        cols = {r[1] for r in conn.execute("PRAGMA table_info(lps)").fetchall()}
+        if "aum_bn_jpy" not in cols:
+            conn.execute("ALTER TABLE lps ADD COLUMN aum_bn_jpy REAL")
+        if "pe_alloc_pct" not in cols:
+            conn.execute("ALTER TABLE lps ADD COLUMN pe_alloc_pct REAL")
+        if "pe_target_pct" not in cols:
+            conn.execute("ALTER TABLE lps ADD COLUMN pe_target_pct REAL")
 
 
 # ── Company CRUD ──────────────────────────────────────────────────────────────
@@ -168,17 +176,20 @@ def upsert_lp(lp: dict) -> int:
                 UPDATE lps SET status=COALESCE(:status,status),
                   notes=COALESCE(:notes,notes),
                   ticket_mn_jpy=COALESCE(:ticket_mn_jpy,ticket_mn_jpy),
+                  aum_bn_jpy=COALESCE(:aum_bn_jpy,aum_bn_jpy),
+                  pe_alloc_pct=COALESCE(:pe_alloc_pct,pe_alloc_pct),
+                  pe_target_pct=COALESCE(:pe_target_pct,pe_target_pct),
                   updated_at=datetime('now')
                 WHERE org_name=:org_name
-            """, lp)
+            """, {**{"aum_bn_jpy": None, "pe_alloc_pct": None, "pe_target_pct": None}, **lp})
             return existing["id"]
         else:
             cur = conn.execute("""
                 INSERT INTO lps (org_name,contact_name,contact_email,tier,lp_type,
-                  ticket_mn_jpy,status,notes)
+                  ticket_mn_jpy,status,notes,aum_bn_jpy,pe_alloc_pct,pe_target_pct)
                 VALUES (:org_name,:contact_name,:contact_email,:tier,:lp_type,
-                  :ticket_mn_jpy,:status,:notes)
-            """, lp)
+                  :ticket_mn_jpy,:status,:notes,:aum_bn_jpy,:pe_alloc_pct,:pe_target_pct)
+            """, {**{"aum_bn_jpy": None, "pe_alloc_pct": None, "pe_target_pct": None}, **lp})
             return cur.lastrowid
 
 
@@ -252,6 +263,16 @@ def get_lp_pipeline() -> list[dict]:
         rows = conn.execute(
             "SELECT * FROM lps ORDER BY tier, status"
         ).fetchall()
+        return [dict(r) for r in rows]
+
+
+def get_pension_lps() -> list[dict]:
+    with get_conn() as conn:
+        rows = conn.execute("""
+            SELECT * FROM lps
+            WHERE lp_type IN ('企業年金','公的年金','共済組合','確定給付企業年金','基金型企業年金')
+            ORDER BY COALESCE(aum_bn_jpy,0) DESC
+        """).fetchall()
         return [dict(r) for r in rows]
 
 
