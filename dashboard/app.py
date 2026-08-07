@@ -4,14 +4,16 @@ Runs on port 5000. Read-only view of the deal database.
 """
 
 from flask import Flask, render_template, jsonify, request
+import json
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from db.pipeline import (
     get_pipeline_summary, get_top_targets, get_universe_stats,
-    get_lp_pipeline, get_pension_lps, search_companies,
+    get_lp_pipeline, search_companies,
 )
+from analytics.pension_metrics import pension_dashboard_data
 
 app = Flask(__name__, template_folder="templates")
 
@@ -44,17 +46,13 @@ def api_lps():
 
 @app.route("/pension")
 def pension():
-    lps = get_pension_lps()
-    total_aum = sum(lp.get("aum_bn_jpy") or 0 for lp in lps)
-    total_target_ticket = sum(lp.get("ticket_mn_jpy") or 0 for lp in lps)
-    return render_template("pension.html", lps=lps,
-                           total_aum=total_aum,
-                           total_target_ticket=total_target_ticket)
+    data = pension_dashboard_data()
+    return render_template("pension.html", d=data, data_json=json.dumps(data, ensure_ascii=False))
 
 
 @app.route("/api/pension")
 def api_pension():
-    return jsonify(get_pension_lps())
+    return jsonify(pension_dashboard_data())
 
 
 @app.route("/api/search")
