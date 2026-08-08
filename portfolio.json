@@ -18,6 +18,7 @@
     "notify_channel": null
   },
   "holdings": [
+    {"ticker": "AAPL", "quantity": 2,  "avg_price": 302.84,  "bought_at": "2026-08-08", "note": "スクショで新規確認"},
     {"ticker": "SPCX", "quantity": 3,  "avg_price": 135.00, "bought_at": "2026-07-17", "note": "lot2 - 8/6ロックアップ解除通過済み"},
     {"ticker": "TSLA", "quantity": 2,  "avg_price": 383.265, "bought_at": "2026-07-17"},
     {"ticker": "TSM",  "quantity": 1,  "avg_price": 391.94,  "bought_at": "2026-07-17"},
