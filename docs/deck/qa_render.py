@@ -39,11 +39,25 @@ def emu_px(v):
 
 issues = []
 
+# ── font check: the defect a pixel renderer can never see ────────────────
+import zipfile as _zf
+_z = _zf.ZipFile(PPTX)
+_LATIN_ONLY = ("Cambria", "Calibri", "Arial", "Times New Roman", "Aptos")
+for _n in _z.namelist():
+    if _n.endswith(".xml") and "/slides/" in _n:
+        _t = _z.read(_n).decode("utf-8")
+        for _f in _LATIN_ONLY:
+            _c = _t.count(f'<a:ea typeface="{_f}"')
+            if _c:
+                issues.append(f"{_n}: FONT — {_c} run(s) route Japanese to "
+                              f"'{_f}', which has no CJK glyphs (mojibake)")
+
 for idx, slide in enumerate(prs.slides, 1):
     # background
     bg = (10, 14, 31)
     img = Image.new("RGB", (PW, PH), bg)
     d = ImageDraw.Draw(img)
+    boxes, shapes = [], []
 
     for sh in slide.shapes:
         if sh.left is None or sh.top is None:
@@ -61,9 +75,9 @@ for idx, slide in enumerate(prs.slides, 1):
         if "PICTURE" in st:
             try:
                 from io import BytesIO
-                pic = Image.open(BytesIO(sh.image.blob)).convert("RGB")
+                pic = Image.open(BytesIO(sh.image.blob)).convert("RGBA")
                 pic = pic.resize((max(1, int(w)), max(1, int(h))))
-                img.paste(pic, (int(x), int(y)))
+                img.paste(pic, (int(x), int(y)), pic)   # honour alpha
             except Exception:
                 d.rectangle([x, y, x + w, y + h], outline=(90, 100, 130), width=2)
             continue
@@ -81,6 +95,7 @@ for idx, slide in enumerate(prs.slides, 1):
         except Exception:
             pass
         if fill_col:
+            shapes.append((x, y, w, h))
             if "ROUNDED" in st or "OVAL" in st or "ELLIPSE" in st:
                 if "OVAL" in st or "ELLIPSE" in st:
                     d.ellipse([x, y, x + w, y + h], fill=fill_col)
@@ -137,6 +152,8 @@ for idx, slide in enumerate(prs.slides, 1):
             issues.append(f"S{idx}: TEXT OVERFLOW  \"{txt[:34]}...\"  "
                           f"needs {total/SCALE:.2f}in, box {h/SCALE:.2f}in")
 
+        boxes.append((x, y, w, min(h, total), txt))
+
         ty = y + 2
         for ln in lines:
             tw = d.textlength(ln, font=f)
@@ -147,6 +164,29 @@ for idx, slide in enumerate(prs.slides, 1):
                 tx = x + w - tw - 3
             d.text((tx, ty), ln, font=f, fill=col)
             ty += lh
+
+    # ── overlap + edge-margin checks on real geometry ──────────────────
+    for i in range(len(boxes)):
+        for j in range(i + 1, len(boxes)):
+            (ax, ay, aw, ah, at), (bx, by, bw, bh, bt) = boxes[i], boxes[j]
+            ox = min(ax + aw, bx + bw) - max(ax, bx)
+            oy = min(ay + ah, by + bh) - max(ay, by)
+            if ox > 6 and oy > 6:                       # >0.06in on both axes
+                issues.append(f"S{idx}: TEXT OVERLAP  \"{at[:20]}\" x \"{bt[:20]}\"  "
+                              f"({ox/SCALE:.2f} x {oy/SCALE:.2f} in)")
+    for (bx, by, bw, bh, bt) in boxes:
+        for (sx, sy, sw, sh_) in shapes:
+            ox = min(bx + bw, sx + sw) - max(bx, sx)
+            oy = min(by + bh, sy + sh_) - max(by, sy)
+            inside = bx >= sx - 2 and by >= sy - 2 and \
+                     bx + bw <= sx + sw + 2 and by + bh <= sy + sh_ + 2
+            if ox > 6 and oy > 6 and not inside:
+                issues.append(f"S{idx}: TEXT ON SHAPE EDGE  \"{bt[:22]}\" "
+                              f"straddles a card boundary ({ox/SCALE:.2f} x {oy/SCALE:.2f} in)")
+    for (bx, by, bw, bh, bt) in boxes:
+        if bx < 0.45 * SCALE or by < 0.25 * SCALE or \
+           bx + bw > PW - 0.45 * SCALE or by + bh > PH - 0.2 * SCALE:
+            issues.append(f"S{idx}: EDGE MARGIN  \"{bt[:24]}\" too close to slide edge")
 
     img.save(f"qa-{idx:02d}.jpg", quality=88)
 

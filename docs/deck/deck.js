@@ -76,11 +76,6 @@ function pageNo(s, n) {
     path: 'art-launch.png', x: 8.35, y: 0, w: 4.95, h: HT,
     sizing: { type: 'cover', w: 4.95, h: HT },
   });
-  // soft blend so the artwork edge doesn't cut hard against the text column
-  s.addShape(pres.ShapeType.rect, {
-    x: 8.35, y: 0, w: 1.5, h: HT, fill: { color: BG, transparency: 35 }, line: { width: 0 },
-  });
-
   s.addText('SPACE EXPLORATION TECHNOLOGIES  |  NASDAQ: SPCX', {
     x: M, y: 1.55, w: 7.3, h: 0.3, margin: 0,
     fontFace: B, fontSize: 11, bold: true, color: FLAME, charSpacing: 1.6,
@@ -172,8 +167,8 @@ function pageNo(s, n) {
   events.forEach(([yr, h, d], i) => {
     const col = i % 2, row = Math.floor(i / 2);
     const x = M + col * 6.05;
-    const y = 1.72 + row * 1.35;
-    card(s, x, y, 5.85, 1.18, row % 2 === 0 ? CARD : CARD2);
+    const y = 1.72 + row * 1.28;
+    card(s, x, y, 5.85, 1.12, row % 2 === 0 ? CARD : CARD2);
     s.addText(yr, {
       x: x + 0.2, y: y + 0.16, w: 1.15, h: 0.34, margin: 0,
       fontFace: H, fontSize: 16, bold: true, color: FLAME,
@@ -271,7 +266,7 @@ function pageNo(s, n) {
     labels: ['SpaceX\n社内原価', 'SpaceX\n外販価格', 'Ariane 6\n(欧州)', 'ULA Vulcan\n(米)'],
     values: [17.5, 74, 100, 155],
   }], {
-    x: M, y: 1.78, w: 7.15, h: 4.05,
+    x: M, y: 1.78, w: 7.15, h: 4.42,
     barDir: 'bar', barGapWidthPct: 50,
     chartColors: [FLAME, GOLD, '5A6685', '3E4763'],
     varyColors: true,
@@ -288,7 +283,7 @@ function pageNo(s, n) {
     showLegend: false,
   });
 
-  card(s, 8.2, 1.78, 4.4, 1.62);
+  card(s, 8.2, 1.78, 4.4, 1.70);
   s.addText('約75%', {
     x: 8.42, y: 1.92, w: 3.95, h: 0.72, margin: 0,
     fontFace: H, fontSize: 38, bold: true, color: FLAME,
@@ -304,7 +299,7 @@ function pageNo(s, n) {
     ['売り手市場', '2026年2月に$70M→$74Mへ値上げ。それでも席が足りない'],
   ];
   notes.forEach(([h, d], i) => {
-    const y = 3.62 + i * 0.78;
+    const y = 3.70 + i * 0.84;
     s.addShape(pres.ShapeType.ellipse, {
       x: 8.2, y: y + 0.08, w: 0.16, h: 0.16, fill: { color: GOLD }, line: { width: 0 },
     });
@@ -318,7 +313,7 @@ function pageNo(s, n) {
     });
   });
   s.addText('※ 社内原価は非公開。Musk発言と業界推定に基づく推定値', {
-    x: M, y: 6.32, w: 7.15, h: 0.3, margin: 0,
+    x: M, y: 6.40, w: 7.15, h: 0.3, margin: 0,
     fontFace: B, fontSize: 10, color: MUTED,
   });
   pageNo(s, 5);
@@ -394,8 +389,8 @@ function pageNo(s, n) {
   title(s, 'Starlink — 利益エンジンの正体', '打ち上げ1回が13ヶ月で元を取る構造');
 
   s.addImage({
-    path: 'art-constellation.png', x: 6.9, y: 1.78, w: 5.7, h: 4.25,
-    sizing: { type: 'cover', w: 5.7, h: 4.25 },
+    path: 'art-constellation.png', x: 6.9, y: 1.78, w: 5.7, h: 4.56,
+    sizing: { type: 'cover', w: 5.7, h: 4.56 },
   });
 
   const stats = [
@@ -512,24 +507,27 @@ function pageNo(s, n) {
   const s = slide();
   title(s, 'なぜ核融合ではなく「宇宙」なのか', 'AI電力戦争の三つ巴と、Muskの一貫した論理');
 
-  // quote block
-  card(s, M, 1.75, 7.3, 1.72, CARD2);
+  // quote block with an illustrated speaker portrait
+  card(s, M, 1.72, 7.6, 2.06, CARD2);
+  s.addImage({
+    path: 'art-portrait.png', x: M + 0.22, y: 1.96, w: 1.52, h: 1.52,
+  });
   s.addText('“', {
-    x: M + 0.18, y: 1.70, w: 0.6, h: 0.95, margin: 0,
-    fontFace: H, fontSize: 54, bold: true, color: FLAME,
+    x: M + 1.90, y: 1.82, w: 0.5, h: 0.86, margin: 0,
+    fontFace: H, fontSize: 46, bold: true, color: FLAME,
   });
   s.addText('空にすでに巨大な核融合炉が浮かんでいる。\n太陽という名前で、無料で、メンテナンス不要だ。', {
-    x: M + 0.78, y: 1.98, w: 6.3, h: 0.86, margin: 0,
+    x: M + 2.46, y: 2.16, w: 4.95, h: 0.9, margin: 0,
     fontFace: H, fontSize: 15.5, italic: true, color: WHITE, lineSpacingMultiple: 1.2,
   });
   s.addText('— Elon Musk（宇宙太陽光をめぐる持論より）', {
-    x: M + 0.78, y: 2.92, w: 6.3, h: 0.3, margin: 0,
+    x: M + 2.46, y: 3.16, w: 4.95, h: 0.3, margin: 0,
     fontFace: B, fontSize: 11, color: GOLD,
   });
 
   s.addImage({
-    path: 'art-orbital-dc.png', x: 8.3, y: 1.75, w: 4.3, h: 1.72,
-    sizing: { type: 'cover', w: 4.3, h: 1.72 },
+    path: 'art-orbital-dc.png', x: 8.6, y: 1.72, w: 4.0, h: 2.06,
+    sizing: { type: 'cover', w: 4.0, h: 2.06 },
   });
 
   const camps = [
@@ -542,27 +540,27 @@ function pageNo(s, n) {
   ];
   camps.forEach(([n, bet, c, d], i) => {
     const x = M + i * 4.07;
-    card(s, x, 3.68, 3.86, 1.92);
+    card(s, x, 4.04, 3.86, 1.88);
     s.addText(n, {
-      x: x + 0.2, y: 3.84, w: 3.46, h: 0.32, margin: 0,
+      x: x + 0.2, y: 4.19, w: 3.46, h: 0.32, margin: 0,
       fontFace: B, fontSize: 12, color: MUTED,
     });
     s.addText(bet, {
-      x: x + 0.2, y: 4.16, w: 3.46, h: 0.44, margin: 0,
+      x: x + 0.2, y: 4.51, w: 3.46, h: 0.44, margin: 0,
       fontFace: H, fontSize: 20, bold: true, color: c,
     });
     s.addText(d, {
-      x: x + 0.2, y: 4.68, w: 3.46, h: 0.92, margin: 0,
+      x: x + 0.2, y: 5.03, w: 3.46, h: 0.82, margin: 0,
       fontFace: B, fontSize: 10.5, color: BODY, lineSpacingMultiple: 1.14,
     });
   });
 
   s.addText('移行期の現実解はTesla Megapack — 2025年売上$12.8B(+27%)。AIデータセンターが送電網を待つ間の緩衝材として売れている。', {
-    x: M, y: 6.18, w: W - M * 2, h: 0.34, margin: 0,
+    x: M, y: 6.14, w: W - M * 2, h: 0.34, margin: 0,
     fontFace: B, fontSize: 11.5, italic: true, color: GOLD,
   });
-  s.addText('※ 引用は発言の主旨を日本語に要約したもの', {
-    x: M, y: 6.56, w: 6.0, h: 0.28, margin: 0,
+  s.addText('※ 引用は発言の主旨を日本語に要約したもの。肖像はオリジナルのイラストであり写真ではありません', {
+    x: M, y: 6.52, w: 8.6, h: 0.28, margin: 0,
     fontFace: B, fontSize: 9.5, color: MUTED,
   });
   pageNo(s, 9);
@@ -635,7 +633,7 @@ function pageNo(s, n) {
   });
 
   s.addText('本資料は情報提供を目的としたもので、投資勧誘ではありません。数値には推定を含み、最終判断はご自身の責任で行ってください。', {
-    x: M, y: 6.62, w: W - M * 2, h: 0.3, margin: 0,
+    x: M, y: 6.62, w: 11.2, h: 0.3, margin: 0,
     fontFace: B, fontSize: 9.5, color: MUTED,
   });
   pageNo(s, 10);
