@@ -18,9 +18,12 @@
     "notify_channel": null
   },
   "holdings": [
-    {"ticker": "SPCX", "quantity": 18, "avg_price": 118.33, "bought_at": "2026-08-08", "note": "lot2(3@135)+lot3(15@115) 合算 - ポートフォリオ集中率58%超"},
+    {"ticker": "SPCX", "quantity": 3,  "avg_price": 135.00, "bought_at": "2026-07-17", "note": "lot2 - 8/6ロックアップ解除通過済み"},
     {"ticker": "TSLA", "quantity": 2,  "avg_price": 383.265, "bought_at": "2026-07-17"},
     {"ticker": "TSM",  "quantity": 1,  "avg_price": 391.94,  "bought_at": "2026-07-17"},
     {"ticker": "UBER", "quantity": 5,  "avg_price": 73.62,   "bought_at": "2026-07-17"}
+  ],
+  "pending_orders": [
+    {"ticker": "SPCX", "action": "BUY", "quantity": 15, "limit_price": 115.00, "good_til": "2026-08-12", "note": "約定すればSPCX比率58%超。10%上限ルールに抵触するため約定前に再検討推奨"}
   ]
 }
