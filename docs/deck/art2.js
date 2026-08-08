@@ -16,11 +16,13 @@ function stars(n, w, h, seedStart = 1) {
   return s;
 }
 
-/* ── Stylized speaker portrait (flat vector, deliberately non-photographic) ── */
+/* ── Caricature of Elon Musk (original flat-vector illustration, not a photo).
+   Likeness cues: high hairline with deep temple recession, full lower cheeks
+   and a heavy rounded chin, one-sided smirk, black crew-neck tee. ── */
 const portrait = `
 <svg xmlns="http://www.w3.org/2000/svg" width="620" height="620" viewBox="0 0 620 620">
   <defs>
-    <radialGradient id="rim" cx="18%" cy="26%">
+    <radialGradient id="rim" cx="18%" cy="24%">
       <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.30"/>
       <stop offset="55%" stop-color="#FF6B35" stop-opacity="0.09"/>
       <stop offset="100%" stop-color="#FF6B35" stop-opacity="0"/>
@@ -29,15 +31,15 @@ const portrait = `
       <stop offset="0%" stop-color="#243055"/>
       <stop offset="100%" stop-color="#141B33"/>
     </linearGradient>
-    <linearGradient id="suit" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#232C48"/>
-      <stop offset="52%" stop-color="#2E3A5E"/>
-      <stop offset="100%" stop-color="#1B2238"/>
+    <linearGradient id="tee" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#151B2B"/>
+      <stop offset="50%" stop-color="#222A40"/>
+      <stop offset="100%" stop-color="#111623"/>
     </linearGradient>
-    <linearGradient id="skin" x1="0" y1="0" x2="1" y2="0.6">
-      <stop offset="0%" stop-color="#F0C9A8"/>
-      <stop offset="62%" stop-color="#DFB08A"/>
-      <stop offset="100%" stop-color="#B98A66"/>
+    <linearGradient id="skin" x1="0.1" y1="0" x2="1" y2="0.7">
+      <stop offset="0%" stop-color="#F3CFAE"/>
+      <stop offset="58%" stop-color="#E2B48C"/>
+      <stop offset="100%" stop-color="#BE8E69"/>
     </linearGradient>
     <clipPath id="round"><circle cx="310" cy="310" r="300"/></clipPath>
   </defs>
@@ -45,39 +47,60 @@ const portrait = `
   <g clip-path="url(#round)">
     <rect width="620" height="620" fill="url(#disc)"/>
     ${stars(55, 620, 620, 13)}
-    <!-- soft rim light from the left, ties the portrait to the deck accent -->
     <rect width="620" height="620" fill="url(#rim)"/>
 
-    <!-- shoulders / suit -->
-    <path d="M40 620 q4 -186 152 -232 l236 0 q148 46 152 232 Z" fill="url(#suit)"/>
-    <!-- collar + open shirt -->
-    <path d="M252 404 l58 74 58 -74 32 14 -90 118 -90 -118 Z" fill="#E9EDF6"/>
-    <path d="M262 400 l48 78 -22 26 -66 -84 Z" fill="#151C31"/>
-    <path d="M358 400 l-48 78 22 26 66 -84 Z" fill="#151C31"/>
-
     <!-- neck -->
-    <path d="M276 334 h68 v70 q-34 24 -68 0 Z" fill="#C08F6B"/>
-    <ellipse cx="310" cy="336" rx="34" ry="12" fill="#A97B58" opacity="0.55"/>
-    <!-- head -->
-    <path d="M310 118 q88 0 88 106 q0 22 -6 44 q-14 66 -82 66 q-68 0 -82 -66 q-6 -22 -6 -44 q0 -106 88 -106 Z" fill="url(#skin)"/>
-    <!-- ears -->
-    <ellipse cx="222" cy="252" rx="13" ry="19" fill="#D5A67F"/>
-    <ellipse cx="398" cy="252" rx="13" ry="19" fill="#D5A67F"/>
-    <!-- hair: short, swept -->
-    <path d="M310 104 q94 0 96 100 q-10 -34 -40 -44 q-56 20 -118 4 q-24 8 -34 40 q2 -100 96 -100 Z" fill="#2B2622"/>
-    <path d="M222 214 q10 -46 46 -58 q-30 24 -32 60 Z" fill="#221E1A"/>
+    <path d="M264 336 h92 v78 q-46 28 -92 0 Z" fill="#C2916C"/>
+    <ellipse cx="310" cy="338" rx="46" ry="14" fill="#A87A57" opacity="0.5"/>
 
-    <!-- brows -->
-    <rect x="252" y="228" width="42" height="7" rx="3.5" fill="#2B2622"/>
-    <rect x="326" y="228" width="42" height="7" rx="3.5" fill="#2B2622"/>
+    <!-- broad shoulders in a black crew-neck tee -->
+    <path d="M16 620 q10 -182 168 -230 l252 0 q158 48 168 230 Z" fill="url(#tee)"/>
+
+    <!-- neckline + rib -->
+    <path d="M238 400 q72 62 144 0 l18 20 q-90 74 -180 0 Z" fill="#0D111C"/>
+    <path d="M247 407 q63 52 126 0" fill="none" stroke="#39435F"
+          stroke-width="4" stroke-linecap="round" opacity="0.75"/>
+
+    <!-- ears sit outside the face silhouette -->
+    <ellipse cx="200" cy="274" rx="15" ry="25" fill="#D7A87F"/>
+    <ellipse cx="420" cy="274" rx="15" ry="25" fill="#D7A87F"/>
+
+    <!-- face: wide cheeks tapering to a heavy rounded chin -->
+    <path d="M310 152 q106 0 106 120 q0 44 -14 80 q-23 62 -92 62 q-69 0 -92 -62
+             q-14 -36 -14 -80 q0 -120 106 -120 Z" fill="url(#skin)"/>
+    <!-- jaw weight -->
+    <path d="M222 322 q28 82 88 84 q60 -2 88 -84 q-10 72 -88 80 q-78 -8 -88 -80 Z"
+          fill="#C99669" opacity="0.38"/>
+
+    <!-- hair: high forehead, deep recession at both temples, combed back -->
+    <path d="M204 254 q2 -110 106 -114 q104 4 106 114
+             q-24 -66 -74 -72 q-14 22 -32 22 q-18 0 -32 -22 q-50 6 -74 72 Z"
+          fill="#3A2E26"/>
+    <path d="M204 258 q8 -76 50 -100 q-34 38 -36 100 Z" fill="#2C221B"/>
+    <path d="M416 258 q-8 -76 -50 -100 q34 38 36 100 Z" fill="#2C221B"/>
+    <!-- sideburns -->
+    <path d="M218 258 q7 36 5 56 q-16 -20 -16 -56 Z" fill="#3A2E26"/>
+    <path d="M402 258 q-7 36 -5 56 q16 -20 16 -56 Z" fill="#3A2E26"/>
+
+    <!-- heavier brows -->
+    <path d="M246 258 q28 -13 56 -2 l0 10 q-28 -9 -56 3 Z" fill="#3A2E26"/>
+    <path d="M374 258 q-28 -13 -56 -2 l0 10 q28 -9 56 3 Z" fill="#3A2E26"/>
     <!-- eyes -->
-    <ellipse cx="273" cy="252" rx="13" ry="9" fill="#FFFFFF"/>
-    <ellipse cx="347" cy="252" rx="13" ry="9" fill="#FFFFFF"/>
-    <circle cx="275" cy="252" r="5.4" fill="#3B3229"/>
-    <circle cx="349" cy="252" r="5.4" fill="#3B3229"/>
-    <!-- nose + mouth -->
-    <path d="M310 262 q9 26 -2 34 q-7 5 -14 1" fill="none" stroke="#B4835F" stroke-width="5" stroke-linecap="round"/>
-    <path d="M288 322 q22 11 44 0" fill="none" stroke="#9C6B4C" stroke-width="5.5" stroke-linecap="round"/>
+    <ellipse cx="268" cy="286" rx="15" ry="9.5" fill="#FFFFFF"/>
+    <ellipse cx="352" cy="286" rx="15" ry="9.5" fill="#FFFFFF"/>
+    <circle cx="270" cy="287" r="6" fill="#4A3B2C"/>
+    <circle cx="354" cy="287" r="6" fill="#4A3B2C"/>
+    <path d="M253 279 q15 -9 30 -3" fill="none" stroke="#C4906A" stroke-width="3"/>
+    <path d="M337 276 q15 -6 30 3" fill="none" stroke="#C4906A" stroke-width="3"/>
+
+    <!-- nose -->
+    <path d="M310 296 q12 32 -2 43 q-10 6 -19 1" fill="none"
+          stroke="#B4835F" stroke-width="5.5" stroke-linecap="round"/>
+    <!-- asymmetric smirk: right corner lifts -->
+    <path d="M276 360 q30 15 58 -7" fill="none" stroke="#9C6B4C"
+          stroke-width="6.5" stroke-linecap="round"/>
+    <path d="M332 356 q7 -4 9 -10" fill="none" stroke="#9C6B4C"
+          stroke-width="5" stroke-linecap="round"/>
   </g>
 
   <circle cx="310" cy="310" r="300" fill="none" stroke="${GOLD}" stroke-width="6" opacity="0.85"/>
