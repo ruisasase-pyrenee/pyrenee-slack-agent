@@ -580,66 +580,201 @@ UNIVERSE: list[dict] = [
 ]
 
 
+
 # ── LP seed data ──────────────────────────────────────────────────────────────
+#
+# 2026-08-09 の調査（research/FINDINGS_lp_universe.md）で実在が確認できた主体のみ。
+# それ以前のシードは全件フィクションだったため削除した。
+#
+# confidence の意味:
+#   中     — 複数の独立ソース（公式リリース・日経等）が一致。ただし原文は未読
+#   低     — 単一の検索スニペットのみ。再検索で未再現
+#   未調査 — ソース取得に失敗し、クレームを1件も抽出できなかった
+#
+# ⚠️ 本調査ではネットワークegress制限により一次ソースを1件も直接読めていない。
+#    confidence「高」は存在しない。数値を外部資料へ転記する前に §7 の検証を通すこと。
+
+_SRC_COALIS   = "https://www.mizuhobank.co.jp/release/pdf/20251009release_jp.pdf"
+_SRC_FIDUCIA  = "https://prtimes.jp/main/html/rd/p/000000001.000096346.html"
+_SRC_SMRJ     = "https://www.smrj.go.jp/supporter/fund_investment/index.html"
 
 LP_SEED: list[dict] = [
-    {"org_name": "東北みらい銀行", "contact_name": "佐々木部長", "contact_email": "sasaki@tohoku-mirai-bank.example.com",
-     "tier": "tier1", "lp_type": "地方銀行", "ticket_mn_jpy": 300, "status": "meeting_scheduled",
-     "notes": "来週木曜10時zoom。日本政策投資銀行経由。代替投資枠30億円を新設。初めてのPEファンド投資候補。"},
-    {"org_name": "Sony Innovation Fund", "contact_name": "田村VP", "contact_email": "tamura@sony-if.example.com",
-     "tier": "tier1", "lp_type": "事業法人CVC", "ticket_mn_jpy": 500, "status": "met",
-     "notes": "先週初回面談済。医療・介護AIへの戦略的関心あり。DD資料送付待ち。"},
-    {"org_name": "田中ファミリーオフィス", "contact_name": "田中太郎", "contact_email": "tanaka@tanaka-fo.example.com",
-     "tier": "tier2", "lp_type": "ファミリーオフィス", "ticket_mn_jpy": 200, "status": "intro_sent",
-     "notes": "3日前メール送付済み。返信待ち。製造業創業家。"},
-    {"org_name": "関西電力企業年金基金", "contact_name": "松本理事", "contact_email": "matsumoto@kepf.example.or.jp",
-     "tier": "tier2", "lp_type": "企業年金", "ticket_mn_jpy": 500, "status": "prospect",
-     "aum_bn_jpy": 80, "pe_alloc_pct": 0, "pe_target_pct": 5,
-     "notes": "代替投資比率5→8%引き上げ方針を発表。未コンタクト。PE初投資検討中。"},
-    {"org_name": "Sequoia Heritage（アジア枠）", "contact_name": "James Chen", "contact_email": "jchen@seq-heritage.example.com",
-     "tier": "tier3", "lp_type": "外資機関投資家", "ticket_mn_jpy": 1000, "status": "met",
-     "aum_bn_jpy": None, "pe_alloc_pct": None, "pe_target_pct": None,
-     "notes": "4月面談済み。5週間放置中。ファーストクローズ後に再アプローチが現実的。"},
 
-    # ── 年金ファンド拡充 ──────────────────────────────────────────────────────────
-    {"org_name": "トヨタ自動車企業年金基金", "contact_name": "高橋CIO", "contact_email": "takahashi@toyota-pf.example.or.jp",
-     "tier": "tier1", "lp_type": "企業年金", "ticket_mn_jpy": 2000, "status": "prospect",
-     "aum_bn_jpy": 800, "pe_alloc_pct": 3.2, "pe_target_pct": 8,
-     "notes": "AUM 8,000億円。PE配分を3.2%→8%に引き上げ方針。国内成長株PEへの初投資を検討中。CIO経由でアプローチ予定。"},
-    {"org_name": "NTTグループ企業年金基金", "contact_name": "伊藤常務", "contact_email": "ito@ntt-pension.example.or.jp",
-     "tier": "tier1", "lp_type": "企業年金", "ticket_mn_jpy": 3000, "status": "intro_sent",
-     "aum_bn_jpy": 1200, "pe_alloc_pct": 2.5, "pe_target_pct": 6,
-     "notes": "AUM 1.2兆円、日本最大規模の企業年金の一つ。2週間前にLP向け資料送付済み。返信待ち。DX推進中でテックPEに関心。"},
-    {"org_name": "ソニーグループ企業年金基金", "contact_name": "中村理事長", "contact_email": "nakamura@sony-pension.example.or.jp",
-     "tier": "tier1", "lp_type": "確定給付企業年金", "ticket_mn_jpy": 1500, "status": "met",
-     "aum_bn_jpy": 300, "pe_alloc_pct": 4.0, "pe_target_pct": 10,
-     "notes": "先月初回面談。PE配分積極的、目標10%。医療AI・エンタメテックを戦略テーマに合致として評価。DD資料送付中。"},
-    {"org_name": "日立グループ企業年金基金", "contact_name": "小林部長", "contact_email": "kobayashi@hitachi-pension.example.or.jp",
-     "tier": "tier2", "lp_type": "企業年金", "ticket_mn_jpy": 1000, "status": "prospect",
-     "aum_bn_jpy": 450, "pe_alloc_pct": 1.8, "pe_target_pct": 5,
-     "notes": "AUM 4,500億円。製造DX・サプライチェーンAIへの戦略的関心と合致。未コンタクト。インフラ系VCへの実績あり。"},
-    {"org_name": "NEC企業年金基金", "contact_name": "山田専務理事", "contact_email": "yamada@nec-pension.example.or.jp",
-     "tier": "tier2", "lp_type": "企業年金", "ticket_mn_jpy": 800, "status": "meeting_scheduled",
-     "aum_bn_jpy": 200, "pe_alloc_pct": 2.0, "pe_target_pct": 7,
-     "notes": "来月15日に面談設定済み。NECとの事業シナジーも議論予定。SaaS・AI特化PEへの初投資を真剣検討。"},
-    {"org_name": "地方公務員共済組合連合会", "contact_name": "渡辺理事", "contact_email": "watanabe@laicpf.example.or.jp",
-     "tier": "tier1", "lp_type": "共済組合", "ticket_mn_jpy": 2500, "status": "prospect",
-     "aum_bn_jpy": 500, "pe_alloc_pct": 1.0, "pe_target_pct": 3,
-     "notes": "AUM 5,000億円。PE配分1%→3%引き上げ方針。コンプライアンス基準が厳しく時間軸長め。中長期候補。"},
-    {"org_name": "キヤノン企業年金基金", "contact_name": "斉藤CIO", "contact_email": "saito@canon-pension.example.or.jp",
-     "tier": "tier2", "lp_type": "確定給付企業年金", "ticket_mn_jpy": 600, "status": "intro_sent",
-     "aum_bn_jpy": 120, "pe_alloc_pct": 3.5, "pe_target_pct": 8,
-     "notes": "AUM 1,200億円。PE経験あり（海外VC実績）。国内成長株PEは初挑戦。製造・医療機器テック関心高。"},
-    {"org_name": "パナソニック企業年金基金", "contact_name": "田辺副理事長", "contact_email": "tanabe@panasonic-pension.example.or.jp",
-     "tier": "tier2", "lp_type": "企業年金", "ticket_mn_jpy": 700, "status": "prospect",
-     "aum_bn_jpy": 280, "pe_alloc_pct": 2.2, "pe_target_pct": 6,
-     "notes": "AUM 2,800億円。スマートファクトリー・物流AI分野の投資実績あり。Pyreneeのサプライチェーン案件に関心。"},
-    {"org_name": "大阪市職員共済組合", "contact_name": "藤本理事", "contact_email": "fujimoto@osaka-city-kyosai.example.or.jp",
-     "tier": "tier2", "lp_type": "共済組合", "ticket_mn_jpy": 400, "status": "prospect",
-     "aum_bn_jpy": 80, "pe_alloc_pct": 0, "pe_target_pct": 2,
-     "notes": "AUM 800億円。PE投資初挑戦予定。大阪府・市のスタートアップ支援政策と方向性合致。議会承認が必要。"},
-    {"org_name": "住友グループ企業年金連合会", "contact_name": "井上専務", "contact_email": "inoue@sumitomo-pension.example.or.jp",
-     "tier": "tier2", "lp_type": "基金型企業年金", "ticket_mn_jpy": 900, "status": "met",
-     "aum_bn_jpy": 150, "pe_alloc_pct": 5.0, "pe_target_pct": 10,
-     "notes": "AUM 1,500億円。PE配分5%→10%の積極姿勢。2週間前に面談済み。医療・金融インフラ領域の関心強い。"},
+    # ── Tier 1: 政府系・準政府系 ────────────────────────────────────────────
+    {
+        "org_name": "独立行政法人 中小企業基盤整備機構", "tier": "tier1",
+        "lp_type": "政府系", "status": "prospect",
+        "first_time_fund_ok": "実績あり", "access_route": "公募",
+        "track_record_req": "不明（要件PDF未入手）",
+        "recent_activity": "SCCM1号に30億円出資決定・2025/10/01組成（要検証）／One Capital 1号の追加募集に参画（要検証）",
+        "notes": "現在アクティブな公募3件を確認: 中小企業経営力強化支援出資事業／同 第2回サーチファンド型／再生支援出資事業。"
+                 "ファンド出資事業は起業支援・中小企業成長支援・事業承継型の3類型。"
+                 "出資比率上限・最低ファンド総額・GP要件・中小企業限定の目的制限はいずれも未取得。"
+                 "『中小企業経営力強化支援ファンド出資事業の主な要件』PDFの入手が最優先。",
+        "source_url": _SRC_SMRJ, "as_of": "2026-08-09", "confidence": "中",
+    },
+    {
+        "org_name": "株式会社産業革新投資機構（JIC）", "tier": "tier1",
+        "lp_type": "政府系", "status": "prospect",
+        "first_time_fund_ok": "不明", "access_route": "不明",
+        "notes": "今回ソース取得に失敗（claimCount 0）。まったく手つかず。次回調査の最優先。",
+        "source_url": "https://www.j-ic.co.jp/", "as_of": "2026-08-09", "confidence": "未調査",
+    },
+    {
+        "org_name": "株式会社日本政策投資銀行（DBJ）", "tier": "tier1",
+        "lp_type": "政府系", "status": "prospect",
+        "first_time_fund_ok": "不明", "access_route": "不明",
+        "notes": "今回ソース取得に失敗（claimCount 0）。未調査。",
+        "source_url": "https://www.dbj.jp/", "as_of": "2026-08-09", "confidence": "未調査",
+    },
+    {
+        "org_name": "株式会社地域経済活性化支援機構（REVIC）", "tier": "tier1",
+        "lp_type": "政府系", "status": "prospect",
+        "first_time_fund_ok": "不明", "access_route": "不明",
+        "notes": "今回ソース取得に失敗（claimCount 0）。未調査。",
+        "source_url": "https://www.revic.co.jp/business/lp/index.html",
+        "as_of": "2026-08-09", "confidence": "未調査",
+    },
+
+    # ── Tier 2: ゲートキーパー / FoF ───────────────────────────────────────
+    {
+        "org_name": "AI Capital株式会社", "tier": "tier2",
+        "lp_type": "独立系FoF", "status": "prospect",
+        "first_time_fund_ok": "実績あり", "access_route": "不明",
+        "recent_activity": "Fiducia GrowthTech 1号（FC 32.6億円）にLP参加（要検証）",
+        "notes": "Pyreneeに最も規模が近いFiducia 1号のLPとして名前が挙がった主体。"
+                 "ただし単一スニペットのみで再検索では未再現。最優先の要検証先。",
+        "source_url": _SRC_FIDUCIA, "as_of": "2026-08-09", "confidence": "低",
+    },
+    {
+        "org_name": "ニッセイアセットマネジメント株式会社", "tier": "tier2",
+        "lp_type": "FoF（生保系）", "status": "prospect",
+        "first_time_fund_ok": "可", "access_route": "不明",
+        "recent_activity": "NISSAY Startup Support Fund I を2024/02/22新設（300億円・期間20年）",
+        "notes": "EMP（新興運用者への資金供給プログラム）に資する取組と位置づけ、"
+                 "『優良な新興運用者』を投資対象に明記。ただし投資対象は『国内ベンチャーキャピタルが"
+                 "運用するファンド』と限定されており、グロースエクイティPEのPyreneeは対象外の可能性。"
+                 "資金源は日本生命の自己勘定であり企業年金マネーではない。要確認。",
+        "source_url": "https://www.nam.co.jp/news/info/240222.html",
+        "as_of": "2026-08-09", "confidence": "低",
+    },
+
+    # ── Tier 3: 地域金融機関・大学系 ───────────────────────────────────────
+    {
+        "org_name": "株式会社南都銀行", "tier": "tier3",
+        "lp_type": "地方銀行", "status": "prospect",
+        "first_time_fund_ok": "実績あり", "access_route": "不明",
+        "recent_activity": "Fiducia GrowthTech 1号（FC 32.6億円）にLP参加（要検証）",
+        "notes": "奈良県の地銀。運用実績のない1号ファンドに実名でLP参加したとされる事例。"
+                 "事実なら『地銀は実績要件で門前払い』という前提への反証になる。単一スニペットのため要検証。",
+        "source_url": _SRC_FIDUCIA, "as_of": "2026-08-09", "confidence": "低",
+    },
+    {
+        "org_name": "東京理科大学インベストメント・マネジメント株式会社", "tier": "tier3",
+        "lp_type": "大学系運用法人", "status": "prospect",
+        "first_time_fund_ok": "実績あり", "access_route": "不明",
+        "recent_activity": "Fiducia GrowthTech 1号にLP参加（要検証）",
+        "notes": "大学系運用法人が1号ファンドのLPになった事例。単一スニペットのため要検証。",
+        "source_url": _SRC_FIDUCIA, "as_of": "2026-08-09", "confidence": "低",
+    },
+
+    # ── Tier 4: 事業会社・CVC・金融機関 ────────────────────────────────────
+    {
+        "org_name": "株式会社みずほ銀行", "tier": "tier4",
+        "lp_type": "メガバンク", "status": "prospect",
+        "first_time_fund_ok": "実績あり", "access_route": "不明",
+        "recent_activity": "Coalis1号に最大65億円を出資（2025/10/09 FC）",
+        "notes": "総額200億円予定のファンドに対し約32.5%相当。単一LPが『総額の10〜20%以内』という"
+                 "一般則を超えて1号ファンドに出資した実例。ただし対象は200億円ファンドであり、"
+                 "50億円ファンドに同水準が出る根拠にはならない。同社公式PDF・日経・PR TIMESの3経路で一致。",
+        "source_url": _SRC_COALIS, "as_of": "2026-08-09", "confidence": "中",
+    },
+    {
+        "org_name": "住友商事株式会社", "tier": "tier4",
+        "lp_type": "総合商社", "status": "prospect",
+        "first_time_fund_ok": "実績あり", "access_route": "不明",
+        "recent_activity": "Coalis1号に最大50億円を出資（2025/10/09 FC）",
+        "notes": "自社公式リリースあり（sumitomocorp.com/ja/jp/news/release/2025/group/20430）。"
+                 "『国内初、グロース期のスタートアップにマジョリティ投資する専門ファンドに参画』。",
+        "source_url": "https://www.sumitomocorp.com/ja/jp/news/release/2025/group/20430",
+        "as_of": "2026-08-09", "confidence": "中",
+    },
+    {
+        "org_name": "SOMPO Growth Partners株式会社", "tier": "tier4",
+        "lp_type": "CVC", "status": "prospect",
+        "first_time_fund_ok": "実績あり", "access_route": "不明",
+        "recent_activity": "Coalis1号にLP参加（2025/10/09 FC）。出資額は非公表",
+        "notes": "SOMPOグループのCVC。CVCが1号ファンドの外部LPになった事例。",
+        "source_url": _SRC_COALIS, "as_of": "2026-08-09", "confidence": "中",
+    },
+    {
+        "org_name": "三井住友信託銀行株式会社", "tier": "tier4",
+        "lp_type": "信託銀行", "status": "prospect",
+        "first_time_fund_ok": "実績あり", "access_route": "不明",
+        "recent_activity": "Coalis1号にLP参加（2025/10/09 FC）。出資額は非公表",
+        "notes": "信託銀行が1号ファンドのLPになった事例。企業年金の運用受託機関でもあるため、"
+                 "Tier 5（企業年金）への導線としても意味を持つ可能性。",
+        "source_url": _SRC_COALIS, "as_of": "2026-08-09", "confidence": "中",
+    },
+]
+
+
+# ── 1号ファンドの前例（設問1の回答の実体） ────────────────────────────────
+#
+# Pyrenee Capital I（目標50億円 / FC 20億円）が、過去の1号ファンドと比べて
+# どの規模帯に位置するかを示すための実例集。
+
+PRECEDENT_SEED: list[dict] = [
+    {
+        "fund_name": "Coalis1号投資事業有限責任組合", "manager": "株式会社Coalis Capital",
+        "fund_number": "1号", "target_mn_jpy": 20000, "first_close_mn_jpy": None,
+        "close_date": "2025-10-09", "strategy": "スタートアップ特化グロースバイアウト（マジョリティ取得）",
+        "lps": "みずほ銀行(最大65億)／住友商事(最大50億)／SOMPO Growth Partners／三井住友信託銀行",
+        "source_url": _SRC_COALIS, "confidence": "中",
+        "notes": "運用会社は2024年設立。中小機構の関与は再検索で確認できず、"
+                 "調査中に出た『中小機構30億円』はSCCM1号との混同の可能性が高い。",
+    },
+    {
+        "fund_name": "ALPHA-1投資事業有限責任組合", "manager": "株式会社alpha",
+        "fund_number": "1号", "target_mn_jpy": 15000, "first_close_mn_jpy": 10000,
+        "close_date": "2025-07", "strategy": "VC",
+        "lps": "機関投資家が約85%（実名は取得できず）",
+        "source_url": "https://alphavc.jp/posts/ALPHA1_firstclose", "confidence": "低",
+        "notes": "GP3名の個人としての投資実績（90社超投資・イグジット40社超・IPO25社）が"
+                 "ファンド実績の代替として評価されたとされる。目標150億円・最大200億円。",
+    },
+    {
+        "fund_name": "One Capital 1号ファンド", "manager": "One Capital株式会社",
+        "fund_number": "1号", "target_mn_jpy": 16000, "first_close_mn_jpy": None,
+        "close_date": "2021-05", "strategy": "VC（SaaS/クラウド）",
+        "lps": "中小機構が追加募集に参画（要検証）",
+        "source_url": "https://thebridge.jp/2021/05/one-capital-1st-fund-final-close",
+        "confidence": "低",
+        "notes": "当初目標50億円 = Pyreneeと同額。最終160億円で目標の3倍超に着地。",
+    },
+    {
+        "fund_name": "SCCM1号投資事業有限責任組合", "manager": "SynClover Capital Management",
+        "fund_number": "1号", "target_mn_jpy": None, "first_close_mn_jpy": None,
+        "close_date": "2025-10-01", "strategy": "不明",
+        "lps": "中小機構(30億円・出資決定)",
+        "source_url": "https://www.smrj.go.jp/sme/funding/fund/news/fbrion0000001zma-att/hkj3i800000069x3.pdf",
+        "confidence": "低",
+        "notes": "PDF原本がegress遮断で未読。中小機構が1号ファンドへ単独30億円を出した事例として重要だが要検証。",
+    },
+    {
+        "fund_name": "Fiducia GrowthTech有限責任投資事業組合", "manager": "Fiducia株式会社",
+        "fund_number": "1号", "target_mn_jpy": None, "first_close_mn_jpy": 3260,
+        "close_date": "2024", "strategy": "テクノロジー／社会課題解決",
+        "lps": "AI Capital／東京理科大学インベストメント・マネジメント／南都銀行／Pavilion Capital（いずれも要検証）",
+        "source_url": _SRC_FIDUCIA, "confidence": "低",
+        "notes": "★Pyrenee Capital I（FC 20億円）に最も規模が近い前例。FC 32.6億円。"
+                 "LP構成が『独立系FoF＋大学系＋地銀＋海外FoF』であれば、Pyreneeの現実的なテンプレートになる。",
+    },
+    {
+        "fund_name": "Pyrenee Capital I（自社・参考）", "manager": "Pyrenee Capital",
+        "fund_number": "1号", "target_mn_jpy": 5000, "first_close_mn_jpy": 2000,
+        "close_date": "2026（予定）", "strategy": "国内グロースエクイティ（AI-native縦型SaaS）",
+        "lps": "—", "source_url": "", "confidence": "—",
+        "notes": "比較用。前例のうちFiducia以外はすべて100億円超であり、本ファンドは最小規模帯にあたる。",
+    },
 ]

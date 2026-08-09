@@ -90,14 +90,45 @@ def init_db():
         CREATE INDEX IF NOT EXISTS idx_pipeline_score  ON pipeline(score DESC);
         CREATE INDEX IF NOT EXISTS idx_companies_sector ON companies(sector);
         """)
-        # Migration: add pension-specific columns if not present
+        # Research-backed LP fields. Every sourced value carries its own
+        # provenance (source_url / as_of / confidence) because most of what is
+        # knowable about Japanese LPs is second-hand.
         cols = {r[1] for r in conn.execute("PRAGMA table_info(lps)").fetchall()}
-        if "aum_bn_jpy" not in cols:
-            conn.execute("ALTER TABLE lps ADD COLUMN aum_bn_jpy REAL")
-        if "pe_alloc_pct" not in cols:
-            conn.execute("ALTER TABLE lps ADD COLUMN pe_alloc_pct REAL")
-        if "pe_target_pct" not in cols:
-            conn.execute("ALTER TABLE lps ADD COLUMN pe_target_pct REAL")
+        for name, decl in [
+            ("aum_bn_jpy",         "REAL"),
+            ("pe_alloc_pct",       "REAL"),
+            ("pe_target_pct",      "REAL"),
+            ("first_time_fund_ok", "TEXT"),   # 実績あり / 可 / 不可 / 不明
+            ("min_ticket_mn_jpy",  "REAL"),
+            ("max_ticket_mn_jpy",  "REAL"),
+            ("track_record_req",   "TEXT"),
+            ("access_route",       "TEXT"),
+            ("recent_activity",    "TEXT"),
+            ("source_url",         "TEXT"),
+            ("as_of",              "TEXT"),
+            ("confidence",         "TEXT"),   # 高=一次ソース / 中=複数報道一致 / 低=単一 / 未調査
+        ]:
+            if name not in cols:
+                conn.execute(f"ALTER TABLE lps ADD COLUMN {name} {decl}")
+
+        # First-time-fund precedents — the evidence base for "can a 1号ファンド
+        # actually raise from this kind of LP?". Kept separate from `lps`
+        # because a precedent is an event, not a counterparty.
+        conn.execute("""
+        CREATE TABLE IF NOT EXISTS precedents (
+            id              INTEGER PRIMARY KEY AUTOINCREMENT,
+            fund_name       TEXT NOT NULL UNIQUE,
+            manager         TEXT,
+            fund_number     TEXT,
+            target_mn_jpy   REAL,
+            first_close_mn_jpy REAL,
+            close_date      TEXT,
+            strategy        TEXT,
+            lps             TEXT,
+            source_url      TEXT,
+            confidence      TEXT,
+            notes           TEXT
+        )""")
 
 
 # ── Company CRUD ──────────────────────────────────────────────────────────────
@@ -166,31 +197,59 @@ def log_interaction(company_id: str, itype: str, note: str, actor: str = "agent"
         )
 
 
+_LP_FIELDS = [
+    "org_name", "contact_name", "contact_email", "tier", "lp_type",
+    "ticket_mn_jpy", "status", "notes", "aum_bn_jpy", "pe_alloc_pct",
+    "pe_target_pct", "first_time_fund_ok", "min_ticket_mn_jpy",
+    "max_ticket_mn_jpy", "track_record_req", "access_route",
+    "recent_activity", "source_url", "as_of", "confidence",
+]
+
+
 def upsert_lp(lp: dict) -> int:
+    row = {f: lp.get(f) for f in _LP_FIELDS}
     with get_conn() as conn:
         existing = conn.execute(
-            "SELECT id FROM lps WHERE org_name=?", (lp["org_name"],)
+            "SELECT id FROM lps WHERE org_name=?", (row["org_name"],)
         ).fetchone()
         if existing:
-            conn.execute("""
-                UPDATE lps SET status=COALESCE(:status,status),
-                  notes=COALESCE(:notes,notes),
-                  ticket_mn_jpy=COALESCE(:ticket_mn_jpy,ticket_mn_jpy),
-                  aum_bn_jpy=COALESCE(:aum_bn_jpy,aum_bn_jpy),
-                  pe_alloc_pct=COALESCE(:pe_alloc_pct,pe_alloc_pct),
-                  pe_target_pct=COALESCE(:pe_target_pct,pe_target_pct),
-                  updated_at=datetime('now')
-                WHERE org_name=:org_name
-            """, {**{"aum_bn_jpy": None, "pe_alloc_pct": None, "pe_target_pct": None}, **lp})
+            sets = ", ".join(f"{f}=COALESCE(:{f},{f})"
+                             for f in _LP_FIELDS if f != "org_name")
+            conn.execute(
+                f"UPDATE lps SET {sets}, updated_at=datetime('now') WHERE org_name=:org_name",
+                row)
             return existing["id"]
-        else:
-            cur = conn.execute("""
-                INSERT INTO lps (org_name,contact_name,contact_email,tier,lp_type,
-                  ticket_mn_jpy,status,notes,aum_bn_jpy,pe_alloc_pct,pe_target_pct)
-                VALUES (:org_name,:contact_name,:contact_email,:tier,:lp_type,
-                  :ticket_mn_jpy,:status,:notes,:aum_bn_jpy,:pe_alloc_pct,:pe_target_pct)
-            """, {**{"aum_bn_jpy": None, "pe_alloc_pct": None, "pe_target_pct": None}, **lp})
-            return cur.lastrowid
+        cols = ", ".join(_LP_FIELDS)
+        vals = ", ".join(f":{f}" for f in _LP_FIELDS)
+        return conn.execute(
+            f"INSERT INTO lps ({cols}) VALUES ({vals})", row).lastrowid
+
+
+def upsert_precedent(p: dict) -> int:
+    fields = ["fund_name", "manager", "fund_number", "target_mn_jpy",
+              "first_close_mn_jpy", "close_date", "strategy", "lps",
+              "source_url", "confidence", "notes"]
+    row = {f: p.get(f) for f in fields}
+    with get_conn() as conn:
+        existing = conn.execute(
+            "SELECT id FROM precedents WHERE fund_name=?", (row["fund_name"],)
+        ).fetchone()
+        if existing:
+            sets = ", ".join(f"{f}=:{f}" for f in fields if f != "fund_name")
+            conn.execute(
+                f"UPDATE precedents SET {sets} WHERE fund_name=:fund_name", row)
+            return existing["id"]
+        cols = ", ".join(fields)
+        vals = ", ".join(f":{f}" for f in fields)
+        return conn.execute(
+            f"INSERT INTO precedents ({cols}) VALUES ({vals})", row).lastrowid
+
+
+def get_precedents() -> list[dict]:
+    with get_conn() as conn:
+        return [dict(r) for r in conn.execute(
+            "SELECT * FROM precedents ORDER BY COALESCE(target_mn_jpy,0) DESC"
+        ).fetchall()]
 
 
 # ── Query helpers ─────────────────────────────────────────────────────────────

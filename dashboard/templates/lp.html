@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pyrenee Capital — LPユニバース</title>
+  <style>
+    :root {
+      --surface:#111120; --plane:#0a0a0f; --hairline:#1e1e35;
+      --grid:#1e1e35; --ink:#e8e8f0; --ink-2:#a0a0c0; --ink-muted:#7676a4;
+      /* data marks — validated for this surface (categorical + ordinal, dark) */
+      --series-1:#3987e5; --deemph:#3c3c60;
+      --conf-mid:#86b6ef; --conf-low:#3987e5; --conf-none:#184f95;
+      --warn-bg:#2a2214; --warn-fg:#fab219; --warn-br:#4a3a1c;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+         background:var(--plane);color:var(--ink);min-height:100vh}
+    nav{padding:12px 40px;border-bottom:1px solid var(--hairline);
+        display:flex;gap:24px;font-size:.82rem}
+    nav a{color:var(--ink-muted);text-decoration:none}
+    nav a:hover{color:var(--ink-2)}
+    nav a.active{color:var(--ink);font-weight:600}
+    header{padding:26px 40px 20px;border-bottom:1px solid var(--hairline)}
+    header .eyebrow{font-size:.7rem;color:#4a4a80;letter-spacing:.1em;margin-bottom:6px}
+    header h1{font-size:1.25rem;font-weight:700;letter-spacing:-.02em}
+    header .sub{font-size:.78rem;color:var(--ink-muted);margin-top:5px}
+
+    .banner{margin:22px 40px 0;background:var(--warn-bg);border:1px solid var(--warn-br);
+            border-radius:10px;padding:14px 18px;font-size:.8rem;line-height:1.7;color:#e0d5b8}
+    .banner b{color:var(--warn-fg)}
+
+    .hero{padding:26px 40px 4px;display:grid;
+          grid-template-columns:minmax(260px,340px) 1fr;gap:38px;align-items:center}
+    .hero .label{font-size:.72rem;color:var(--ink-muted);text-transform:uppercase;
+                 letter-spacing:.09em;margin-bottom:10px}
+    .hero .figure{font-size:3.2rem;font-weight:700;letter-spacing:-.035em;line-height:1}
+    .hero .figure .unit{font-size:1.05rem;font-weight:500;color:var(--ink-2);margin-left:8px}
+    .hero .caption{font-size:.79rem;color:var(--ink-muted);margin-top:10px;line-height:1.65}
+    .qual{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}
+    .qual .cell{background:var(--surface);border:1px solid var(--hairline);
+                border-radius:9px;padding:13px 15px}
+    .qual .cell .k{font-size:.67rem;color:var(--ink-muted);text-transform:uppercase;
+                   letter-spacing:.07em;margin-bottom:5px}
+    .qual .cell .v{font-size:1.35rem;font-weight:700;letter-spacing:-.02em}
+    .qual .cell .h{font-size:.68rem;color:#5a5a88;margin-top:3px}
+
+    .charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(560px,1fr));
+            gap:18px;padding:24px 40px}
+    .chart-card{background:var(--surface);border:1px solid var(--hairline);
+                border-radius:12px;padding:20px 22px 16px;position:relative}
+    .chart-card h3{font-size:.85rem;font-weight:700;margin-bottom:3px}
+    .chart-card .desc{font-size:.73rem;color:var(--ink-muted);margin-bottom:15px;line-height:1.55}
+    .chart-card svg{width:100%;height:auto;display:block;overflow:visible}
+    .legend{display:flex;gap:15px;flex-wrap:wrap;margin-bottom:13px}
+    .legend .key{display:flex;align-items:center;gap:6px;font-size:.73rem;color:var(--ink-2)}
+    .legend .swatch{width:9px;height:9px;border-radius:50%;flex:none}
+    .tooltip{position:absolute;pointer-events:none;opacity:0;transition:opacity .12s;
+             background:#1c1c33;border:1px solid #33335c;border-radius:7px;padding:8px 11px;
+             font-size:.76rem;white-space:nowrap;z-index:20;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+    .tooltip .t-name{font-weight:700;margin-bottom:4px}
+    .tooltip .t-row{color:var(--ink-2);font-variant-numeric:tabular-nums}
+    .tooltip .t-row b{color:var(--ink);font-weight:600}
+    .hit{fill:transparent;cursor:pointer}
+
+    section{padding:14px 40px 30px}
+    section h2{font-size:.82rem;font-weight:700;color:var(--ink-2);text-transform:uppercase;
+               letter-spacing:.07em;margin-bottom:6px}
+    section .note{font-size:.73rem;color:var(--ink-muted);margin-bottom:15px;line-height:1.6}
+    .scroll{overflow-x:auto}
+    table{width:100%;border-collapse:collapse;font-size:.81rem}
+    th{text-align:left;padding:9px 12px;border-bottom:1px solid var(--hairline);
+       color:#5a5a90;font-weight:500;font-size:.7rem;text-transform:uppercase;white-space:nowrap}
+    td{padding:11px 12px;border-bottom:1px solid #14142a;vertical-align:top}
+    tr:hover td{background:#0f0f22}
+    td.wrap{white-space:normal;min-width:250px;max-width:400px;color:var(--ink-muted);
+            font-size:.77rem;line-height:1.6}
+    .tag{background:#1a1a30;color:#8f8fc4;padding:2px 8px;border-radius:4px;
+         font-size:.7rem;white-space:nowrap}
+    .badge{padding:2px 8px;border-radius:4px;font-size:.69rem;font-weight:700;white-space:nowrap}
+    .c-中{background:#14304f;color:#86b6ef}
+    .c-低{background:#1b2740;color:#5598e7}
+    .c-未調査{background:#241a1a;color:#c98a8a}
+    .ok-実績あり{background:#14301f;color:#4ade80}
+    .ok-可{background:#16233c;color:#5598e7}
+    .ok-不明{background:#1b1b32;color:#8080b8}
+    .unk{color:#4a4a72}
+    a.src{color:#5598e7;text-decoration:none;font-size:.72rem}
+    a.src:hover{text-decoration:underline}
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;gap:20px}
+      .charts{grid-template-columns:1fr}
+      nav,header,.banner,.hero,.charts,section{padding-left:16px;padding-right:16px}
+      .banner{margin-left:16px;margin-right:16px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/">ディールパイプライン</a>
+  <a href="/lp" class="active">LPユニバース</a>
+</nav>
+
+<header>
+  <div class="eyebrow">PRIVATE &amp; CONFIDENTIAL</div>
+  <h1>LPユニバース — 1号ファンド前提</h1>
+  <div class="sub">Pyrenee Capital I / 調査実施 2026-08-09</div>
+</header>
+
+<div class="banner">
+  <b>⚠ この画面のデータは一次ソース未確認です。</b>
+  調査時、<b>{{ d.primary_source_count }}件</b>しか一次ソースの原文を読めていません（ネットワークegress制限により
+  smrj.go.jp・coalis.jp・prtimes.jp 等が全面遮断）。加えて検証フェーズがセッション上限で停止し、
+  25クレーム中<b>1件</b>しか敵対的検証を通っていません。
+  全数値は検索スニペット由来の二次情報です。<b>外部資料へ転記する前に research/FINDINGS_lp_universe.md §7 の検証を通すこと。</b>
+</div>
+
+<div class="hero">
+  <div>
+    <div class="label">1号ファンド出資実績が確認できたLP</div>
+    <div class="figure">{{ d.with_precedent }}<span class="unit">社 / 全{{ d.lps|length }}社</span></div>
+    <div class="caption">
+      運用実績ゼロの1号ファンドに実名でLP参加した記録がある主体。<br>
+      当初の「政府系しか正面突破口はない」という仮説は否定された。
+    </div>
+  </div>
+  <div class="qual">
+    <div class="cell">
+      <div class="k">確信度 中</div><div class="v" style="color:#86b6ef">{{ d.by_confidence['中'] }}</div>
+      <div class="h">複数の独立ソースが一致</div>
+    </div>
+    <div class="cell">
+      <div class="k">確信度 低</div><div class="v" style="color:#3987e5">{{ d.by_confidence['低'] }}</div>
+      <div class="h">単一スニペットのみ</div>
+    </div>
+    <div class="cell">
+      <div class="k">未調査</div><div class="v" style="color:#c98a8a">{{ d.unresearched }}</div>
+      <div class="h">ソース取得に失敗</div>
+    </div>
+    <div class="cell">
+      <div class="k">一次ソース確認</div><div class="v" style="color:#fab219">{{ d.primary_source_count }}</div>
+      <div class="h">原文を読めた件数</div>
+    </div>
+    <div class="cell">
+      <div class="k">Tier 5 企業年金</div><div class="v unk">0</div>
+      <div class="h">公開データを取得できず</div>
+    </div>
+  </div>
+</div>
+
+<div class="charts">
+  <div class="chart-card">
+    <h3>1号ファンドの規模 — 前例との比較</h3>
+    <div class="desc">
+      Pyrenee Capital I は前例{{ d.peer_count }}件のうち{{ d.peer_count - d.smaller_peer_count }}件より小さい。
+      唯一近いのが Fiducia GrowthTech 1号（FC 32.6億円）で、この案件のLP構成が最も現実的なテンプレートになる。
+    </div>
+    <div class="legend">
+      <span class="key"><span class="swatch" style="background:var(--series-1)"></span>Pyrenee Capital I</span>
+      <span class="key"><span class="swatch" style="background:var(--deemph)"></span>前例（他社1号ファンド）</span>
+      <span class="key"><span class="swatch" style="background:#86b6ef;border-radius:50%"></span>ファーストクローズ実績</span>
+    </div>
+    <div id="c-size"></div><div class="tooltip" id="tt-size"></div>
+  </div>
+
+  <div class="chart-card">
+    <h3>Tier別 LP候補数 — 確信度の内訳</h3>
+    <div class="desc">
+      色が濃いほど根拠が弱い。Tier 1 の3社（JIC・DBJ・REVIC）は今回まったく手つかず、
+      Tier 5 企業年金は候補を1社も立てられていない。
+    </div>
+    <div class="legend">
+      <span class="key"><span class="swatch" style="background:#86b6ef"></span>中（複数ソース一致）</span>
+      <span class="key"><span class="swatch" style="background:#3987e5"></span>低（単一スニペット）</span>
+      <span class="key"><span class="swatch" style="background:#184f95"></span>未調査</span>
+    </div>
+    <div id="c-tier"></div><div class="tooltip" id="tt-tier"></div>
+  </div>
+</div>
+
+<section>
+  <h2>1号ファンド出資の前例 — 設問1への回答</h2>
+  <div class="note">この表が調査の中核。すべて一次ソース未確認のため、確信度列を必ず併せて読むこと。</div>
+  <div class="scroll">
+  <table>
+    <thead><tr>
+      <th>ファンド</th><th>運用会社</th><th>目標総額</th><th>FC</th><th>時期</th>
+      <th>戦略</th><th>LP</th><th>確信度</th><th>備考</th>
+    </tr></thead>
+    <tbody>
+    {% for p in d.precedents %}
+      <tr{% if p.is_self %} style="background:#101a2c"{% endif %}>
+        <td style="font-weight:700">{{ p.fund_name }}</td>
+        <td style="color:var(--ink-2)">{{ p.manager }}</td>
+        <td style="font-variant-numeric:tabular-nums">
+          {% if p.target_mn_jpy %}{{ "{:,.0f}".format(p.target_mn_jpy) }}M{% else %}<span class="unk">不明</span>{% endif %}</td>
+        <td style="font-variant-numeric:tabular-nums">
+          {% if p.first_close_mn_jpy %}{{ "{:,.0f}".format(p.first_close_mn_jpy) }}M{% else %}<span class="unk">不明</span>{% endif %}</td>
+        <td style="color:var(--ink-2)">{{ p.close_date }}</td>
+        <td class="wrap" style="min-width:150px">{{ p.strategy }}</td>
+        <td class="wrap">{{ p.lps }}</td>
+        <td>{% if p.confidence and p.confidence != '—' %}<span class="badge c-{{ p.confidence }}">{{ p.confidence }}</span>{% else %}<span class="unk">—</span>{% endif %}</td>
+        <td class="wrap">{{ p.notes }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2>LP候補ユニバース — 全 {{ d.lps|length }} 社</h2>
+  <div class="note">
+    Tier順、同Tier内は確信度の高い順。ticket（出資目標額）はまだ設定していないため列を置いていない —
+    各LPの最低投資額・分散規定が1件も取得できておらず、いま数字を置いても根拠がないため。
+  </div>
+  <div class="scroll">
+  <table>
+    <thead><tr>
+      <th>機関名</th><th>Tier</th><th>種別</th><th>1号出資</th><th>到達経路</th>
+      <th>確信度</th><th>直近の動き</th><th>メモ</th><th>ソース</th>
+    </tr></thead>
+    <tbody>
+    {% for lp in d.lps %}
+      <tr>
+        <td style="font-weight:700">{{ lp.org_name }}</td>
+        <td style="color:var(--ink-muted)">{{ lp.tier }}</td>
+        <td><span class="tag">{{ lp.lp_type }}</span></td>
+        <td><span class="badge ok-{{ lp.first_time_fund_ok or '不明' }}">{{ lp.first_time_fund_ok or '不明' }}</span></td>
+        <td style="color:var(--ink-2)">{{ lp.access_route or '不明' }}</td>
+        <td><span class="badge c-{{ lp.confidence or '未調査' }}">{{ lp.confidence or '未調査' }}</span></td>
+        <td class="wrap" style="min-width:180px">{{ lp.recent_activity or '—' }}</td>
+        <td class="wrap">{{ lp.notes }}</td>
+        <td>{% if lp.source_url %}<a class="src" href="{{ lp.source_url }}" target="_blank" rel="noopener">原典</a>{% else %}<span class="unk">—</span>{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<div style="text-align:center;padding:26px;color:#2e2e56;font-size:.72rem">
+  Pyrenee Capital Autonomous Fund Agent — Confidential / Internal Use Only
+</div>
+
+<script>
+const D = {{ data_json|safe }};
+const C = {s1:'#3987e5', deemph:'#3c3c60', fc:'#86b6ef',
+           conf:{'中':'#86b6ef','低':'#3987e5','未調査':'#184f95'},
+           grid:'#1e1e35', surface:'#111120', ink:'#e8e8f0', ink2:'#a0a0c0', muted:'#7676a4'};
+const W=560, BAR_H=14, ROW_H=30;
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+const esc=s=>String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+/* square at the baseline, 4px rounded at the data end */
+function barPath(x,y,w,h,r=4){
+  if(w<=0.5) return `M${x},${y} h0.5 v${h} h-0.5 Z`;
+  r=Math.min(r,w,h/2);
+  return `M${x},${y} H${x+w-r} A${r},${r} 0 0 1 ${x+w},${y+r} V${y+h-r} A${r},${r} 0 0 1 ${x+w-r},${y+h} H${x} Z`;
+}
+function ticks(max,n=4){
+  const raw=max/n, mag=Math.pow(10,Math.floor(Math.log10(raw)));
+  const step=[1,2,2.5,5,10].map(m=>m*mag).find(s=>s>=raw)||mag*10;
+  const out=[]; for(let v=0;v<=max+step*0.001;v+=step) out.push(v); return out;
+}
+function tips(mount,tipId){
+  const tip=document.getElementById(tipId), card=mount.closest('.chart-card');
+  mount.querySelectorAll('.hit').forEach(h=>{
+    const show=e=>{
+      tip.innerHTML=h.dataset.tip; tip.style.opacity=1;
+      const b=card.getBoundingClientRect();
+      const x=(e.clientX??b.left+b.width/2)-b.left, y=(e.clientY??b.top)-b.top;
+      tip.style.left=Math.min(Math.max(x+14,8),b.width-tip.offsetWidth-8)+'px';
+      tip.style.top=Math.max(y-tip.offsetHeight-10,6)+'px';
+    };
+    h.addEventListener('mouseenter',show); h.addEventListener('mousemove',show);
+    h.addEventListener('focus',show);
+    h.addEventListener('mouseleave',()=>tip.style.opacity=0);
+    h.addEventListener('blur',()=>tip.style.opacity=0);
+  });
+}
+
+/* ── 1. Fund size vs precedents — emphasis on our own fund ───────── */
+function chartSize(){
+  const LW=176, PR=76, plotW=W-LW-PR;
+  const rows=[...D.precedents].sort((a,b)=>(b.plot_mn_jpy||0)-(a.plot_mn_jpy||0));
+  const max=Math.max(...rows.map(r=>r.plot_mn_jpy||0));
+  const H=rows.length*ROW_H+34, sc=v=>(v/max)*plotW;
+  let s='';
+  ticks(max).forEach(t=>{
+    const x=LW+sc(t);
+    s+=`<line x1="${x}" y1="8" x2="${x}" y2="${rows.length*ROW_H+8}" stroke="${C.grid}" stroke-width="1"/>`;
+    s+=`<text x="${x}" y="${rows.length*ROW_H+24}" fill="${C.muted}" font-size="10" text-anchor="middle"
+          style="font-variant-numeric:tabular-nums">${fmt(t)}</text>`;
+  });
+  rows.forEach((r,i)=>{
+    const y=8+i*ROW_H+(ROW_H-BAR_H)/2, cy=y+BAR_H/2;
+    const name=r.fund_name.replace('投資事業有限責任組合','').replace('有限責任投資事業組合','').replace('（自社・参考）','');
+    s+=`<text x="${LW-10}" y="${cy+4}" fill="${r.is_self?C.ink:C.ink2}" font-size="10.5"
+          text-anchor="end"${r.is_self?' font-weight="700"':''}>${esc(name)}</text>`;
+    if(r.plot_mn_jpy){
+      const w=sc(r.plot_mn_jpy);
+      s+=`<path d="${barPath(LW,y,w,BAR_H)}" fill="${r.is_self?C.s1:C.deemph}"/>`;
+      s+=`<text x="${LW+w+8}" y="${cy+4}" fill="${r.is_self?C.ink:C.ink2}" font-size="10.5"
+            ${r.is_self?'font-weight="700"':''} style="font-variant-numeric:tabular-nums">${fmt(r.plot_mn_jpy)}</text>`;
+      /* first close as a dot on the same scale, 2px surface ring */
+      if(r.first_close_mn_jpy && r.first_close_mn_jpy!==r.plot_mn_jpy){
+        s+=`<circle cx="${LW+sc(r.first_close_mn_jpy)}" cy="${cy}" r="4.5" fill="${C.fc}"
+              stroke="${C.surface}" stroke-width="2"/>`;
+      }
+    } else {
+      s+=`<text x="${LW+4}" y="${cy+4}" fill="#4a4a72" font-size="10.5">規模不明</text>`;
+    }
+    s+=`<rect class="hit" x="0" y="${8+i*ROW_H}" width="${W}" height="${ROW_H}" tabindex="0"
+          data-tip="<div class='t-name'>${esc(r.fund_name)}</div>
+            <div class='t-row'>目標総額 <b>${r.target_mn_jpy?fmt(r.target_mn_jpy)+' M JPY':'不明'}</b></div>
+            <div class='t-row'>ファーストクローズ <b>${r.first_close_mn_jpy?fmt(r.first_close_mn_jpy)+' M JPY':'不明'}</b></div>
+            <div class='t-row'>確信度 <b>${esc(r.confidence)}</b></div>"/>`;
+  });
+  s+=`<text x="${W}" y="${rows.length*ROW_H+24}" fill="${C.muted}" font-size="10" text-anchor="end">M JPY</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="1号ファンドの規模比較">${s}</svg>`;
+}
+
+/* ── 2. LP count by tier, stacked by confidence (ordinal ramp) ───── */
+function chartTier(){
+  const LW=150, PR=90, plotW=W-LW-PR, RH=38, BH=20;
+  const rows=D.tiers, order=['中','低','未調査'];
+  const max=Math.max(1,...rows.map(r=>r.count));
+  const H=rows.length*RH+30, sc=v=>(v/max)*plotW;
+  let s='';
+  for(let t=0;t<=max;t++){
+    const x=LW+sc(t);
+    s+=`<line x1="${x}" y1="6" x2="${x}" y2="${rows.length*RH+6}" stroke="${C.grid}" stroke-width="1"/>`;
+    s+=`<text x="${x}" y="${rows.length*RH+22}" fill="${C.muted}" font-size="10" text-anchor="middle">${t}</text>`;
+  }
+  rows.forEach((r,i)=>{
+    const y=6+i*RH+(RH-BH)/2, cy=y+BH/2;
+    s+=`<text x="${LW-10}" y="${cy+4}" fill="${C.ink2}" font-size="10.5" text-anchor="end">${esc(r.label)}</text>`;
+    let cursor=LW;
+    order.forEach(conf=>{
+      const n=r.by_confidence[conf]||0; if(!n) return;
+      const w=sc(n);
+      /* 2px surface gap separates touching segments */
+      s+=`<path d="${barPath(cursor,y,Math.max(w-2,1),BH)}" fill="${C.conf[conf]}"/>`;
+      cursor+=w;
+    });
+    if(r.count===0){
+      s+=`<text x="${LW+4}" y="${cy+4}" fill="#4a4a72" font-size="10.5">候補なし（未調査）</text>`;
+    } else {
+      s+=`<text x="${LW+sc(r.count)+9}" y="${cy+4}" fill="${C.ink}" font-size="10.5"
+            style="font-variant-numeric:tabular-nums"><tspan font-weight="700">${r.count}社</tspan>${
+            r.with_precedent?`<tspan fill="${C.muted}"> · 実績${r.with_precedent}</tspan>`:''}</text>`;
+    }
+    s+=`<rect class="hit" x="0" y="${6+i*RH}" width="${W}" height="${RH}" tabindex="0"
+          data-tip="<div class='t-name'>${esc(r.label)}</div>
+            <div class='t-row'>${esc(r.desc)}</div>
+            <div class='t-row'>候補 <b>${r.count}</b> 社（うち1号出資実績 <b>${r.with_precedent}</b>）</div>
+            <div class='t-row'>中 <b>${r.by_confidence['中']||0}</b> / 低 <b>${r.by_confidence['低']||0}</b> / 未調査 <b>${r.by_confidence['未調査']||0}</b></div>"/>`;
+  });
+  s+=`<text x="${W}" y="${rows.length*RH+22}" fill="${C.muted}" font-size="10" text-anchor="end">LP候補数</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Tier別のLP候補数と確信度">${s}</svg>`;
+}
+
+document.getElementById('c-size').innerHTML=chartSize();
+tips(document.getElementById('c-size'),'tt-size');
+document.getElementById('c-tier').innerHTML=chartTier();
+tips(document.getElementById('c-tier'),'tt-tier');
+</script>
+</body>
+</html>

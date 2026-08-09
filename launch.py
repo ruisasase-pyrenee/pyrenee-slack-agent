@@ -17,8 +17,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from db.pipeline import init_db, upsert_lp, get_universe_stats, get_top_targets
-from deal_universe.seed_data import UNIVERSE, LP_SEED
+from db.pipeline import (init_db, upsert_lp, upsert_precedent,
+                        get_universe_stats, get_top_targets)
+from deal_universe.seed_data import UNIVERSE, LP_SEED, PRECEDENT_SEED
 from deal_universe.screener import run_batch_screen, get_priority_targets
 
 
@@ -46,7 +47,9 @@ def setup():
     print(f"{SEP}\n  Step 3/4: Seeding LP pipeline ({len(LP_SEED)} LPs)")
     for lp in LP_SEED:
         upsert_lp(lp)
-    print(f"  ✅ {len(LP_SEED)} LPs loaded\n")
+    for p in PRECEDENT_SEED:
+        upsert_precedent(p)
+    print(f"  ✅ {len(LP_SEED)} LPs / {len(PRECEDENT_SEED)} precedents loaded\n")
 
     print(f"{SEP}\n  Step 4/4: Top 10 priority targets")
     tops = get_priority_targets(10)

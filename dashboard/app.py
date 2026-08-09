@@ -13,7 +13,7 @@ from db.pipeline import (
     get_pipeline_summary, get_top_targets, get_universe_stats,
     get_lp_pipeline, search_companies,
 )
-from analytics.pension_metrics import pension_dashboard_data
+from analytics.lp_universe import lp_dashboard_data
 
 app = Flask(__name__, template_folder="templates")
 
@@ -44,15 +44,16 @@ def api_lps():
     return jsonify(get_lp_pipeline())
 
 
-@app.route("/pension")
-def pension():
-    data = pension_dashboard_data()
-    return render_template("pension.html", d=data, data_json=json.dumps(data, ensure_ascii=False))
+@app.route("/lp")
+def lp_universe():
+    data = lp_dashboard_data()
+    return render_template("lp.html", d=data,
+                           data_json=json.dumps(data, ensure_ascii=False))
 
 
-@app.route("/api/pension")
-def api_pension():
-    return jsonify(pension_dashboard_data())
+@app.route("/api/lp")
+def api_lp():
+    return jsonify(lp_dashboard_data())
 
 
 @app.route("/api/search")
