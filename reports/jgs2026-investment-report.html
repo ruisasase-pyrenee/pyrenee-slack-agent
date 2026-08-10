@@ -1,0 +1,721 @@
+<title>日本成長戦略2026 投資対象拡張レポート</title>
+
+<style>
+  :root {
+    --bg:        #F5F6F8;
+    --surface:   #FFFFFF;
+    --surface-2: #EDEFF3;
+    --ink:       #16202E;
+    --ink-2:     #3B4757;
+    --muted:     #5F6C7C;
+    --rule:      #D8DDE4;
+    --rule-soft: #E6EAEF;
+    --accent:    #1F3A5F;
+    --accent-2:  #2E5484;
+    --ochre:     #8F6316;
+    --ochre-bg:  #F3ECDD;
+    --good:      #1C6249;
+    --warn:      #8F6316;
+    --weak:      #7A5B63;
+    --quote-bg:  #EFF2F6;
+    --shadow:    0 1px 2px rgba(22,32,46,.06), 0 8px 24px -16px rgba(22,32,46,.28);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:        #12161C;
+      --surface:   #191F27;
+      --surface-2: #212832;
+      --ink:       #E7EBF1;
+      --ink-2:     #C2CAD5;
+      --muted:     #97A2B1;
+      --rule:      #2C3540;
+      --rule-soft: #232B35;
+      --accent:    #8CB2DE;
+      --accent-2:  #A8C6E9;
+      --ochre:     #D9A54A;
+      --ochre-bg:  #2A2418;
+      --good:      #63B893;
+      --warn:      #D9A54A;
+      --weak:      #C4939F;
+      --quote-bg:  #1C232C;
+      --shadow:    0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg:        #12161C;
+    --surface:   #191F27;
+    --surface-2: #212832;
+    --ink:       #E7EBF1;
+    --ink-2:     #C2CAD5;
+    --muted:     #97A2B1;
+    --rule:      #2C3540;
+    --rule-soft: #232B35;
+    --accent:    #8CB2DE;
+    --accent-2:  #A8C6E9;
+    --ochre:     #D9A54A;
+    --ochre-bg:  #2A2418;
+    --good:      #63B893;
+    --warn:      #D9A54A;
+    --weak:      #C4939F;
+    --quote-bg:  #1C232C;
+    --shadow:    0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+  }
+
+  :root {
+    --mincho: "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif JP", "Songti SC", serif;
+    --gothic: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, "Noto Sans JP", "Meiryo", system-ui, sans-serif;
+    --mono:   ui-monospace, SFMono-Regular, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+    --measure: 40rem;
+    --wide: 68rem;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--gothic);
+    font-size: 15.5px;
+    line-height: 1.85;
+    margin: 0;
+    padding: 0 1.25rem 6rem;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+  }
+
+  .doc { max-width: var(--wide); margin: 0 auto; }
+  .col { max-width: var(--measure); }
+
+  /* ---------- masthead ---------- */
+
+  .masthead {
+    border-bottom: 2px solid var(--accent);
+    padding: 3.5rem 0 1.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .kicker {
+    font-family: var(--mono);
+    font-size: .7rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ochre);
+    margin: 0;
+  }
+  h1 {
+    font-family: var(--mincho);
+    font-weight: 600;
+    font-size: clamp(1.9rem, 1.2rem + 2.6vw, 3rem);
+    line-height: 1.28;
+    letter-spacing: .01em;
+    text-wrap: balance;
+    margin: 0;
+    color: var(--ink);
+  }
+  .standfirst {
+    font-family: var(--mincho);
+    font-size: 1.06rem;
+    line-height: 1.9;
+    color: var(--ink-2);
+    max-width: 46rem;
+    margin: 0;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem 2rem;
+    font-family: var(--mono);
+    font-size: .74rem;
+    color: var(--muted);
+    letter-spacing: .02em;
+  }
+  .meta b { color: var(--ink-2); font-weight: 600; }
+
+  /* ---------- structure ---------- */
+
+  section { margin-bottom: 4rem; }
+
+  h2 {
+    font-family: var(--mincho);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    letter-spacing: .02em;
+    margin: 0 0 1.4rem;
+    padding-bottom: .55rem;
+    border-bottom: 1px solid var(--rule);
+    text-wrap: balance;
+  }
+  h2 .num {
+    font-family: var(--mincho);
+    color: var(--accent);
+    margin-right: .55em;
+  }
+  h3 {
+    font-family: var(--gothic);
+    font-weight: 700;
+    font-size: .95rem;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 2.4rem 0 .9rem;
+  }
+  h4 {
+    font-family: var(--gothic);
+    font-weight: 700;
+    font-size: .88rem;
+    margin: 1.6rem 0 .5rem;
+    color: var(--ink);
+  }
+  p { margin: 0 0 1.05rem; }
+  section > p, section > ul, section > ol, section > .note { max-width: var(--measure); }
+
+  ul, ol { margin: 0 0 1.05rem; padding-left: 1.25rem; }
+  li { margin-bottom: .45rem; }
+  li::marker { color: var(--accent); }
+
+  strong { font-weight: 700; }
+  em { font-style: normal; background: var(--ochre-bg); padding: 0 .18em; border-radius: 2px; }
+
+  /* ---------- source-page chip: the report's structural device ---------- */
+
+  .p {
+    font-family: var(--mono);
+    font-size: .68rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--ochre);
+    background: var(--ochre-bg);
+    border-radius: 3px;
+    padding: .1em .38em;
+    margin-left: .3em;
+    white-space: nowrap;
+    vertical-align: .06em;
+  }
+
+  /* ---------- quotation of the primary source ---------- */
+
+  blockquote {
+    margin: 1.3rem 0;
+    padding: .9rem 0 .9rem 1.15rem;
+    border-left: 2px solid var(--accent);
+    background: var(--quote-bg);
+    font-family: var(--mincho);
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--ink-2);
+    max-width: var(--measure);
+    border-radius: 0 3px 3px 0;
+    padding-right: 1rem;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+
+  /* ---------- key figures ---------- */
+
+  .figures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+  .fig { background: var(--surface); padding: 1.1rem 1.15rem 1.2rem; display: flex; flex-direction: column; gap: .3rem; }
+  .fig dt { font-size: .74rem; color: var(--muted); letter-spacing: .03em; }
+  .fig dd {
+    margin: 0;
+    font-family: var(--mincho);
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .fig dd small { font-size: .95rem; font-weight: 400; color: var(--ink-2); margin-left: .15em; }
+  .fig .sub { font-size: .7rem; color: var(--muted); font-family: var(--mono); }
+
+  /* ---------- tables ---------- */
+
+  .scroll {
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: var(--surface);
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow);
+  }
+  table { border-collapse: collapse; width: 100%; font-size: .8rem; line-height: 1.65; }
+  th, td { text-align: left; vertical-align: top; padding: .62rem .8rem; border-bottom: 1px solid var(--rule-soft); }
+  thead th {
+    background: var(--surface-2);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: var(--accent);
+    white-space: nowrap;
+    border-bottom: 1px solid var(--rule);
+    position: sticky;
+    top: 0;
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.n { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--muted); white-space: nowrap; }
+  td.nowrap { white-space: nowrap; }
+  .tbl-note { font-size: .75rem; color: var(--muted); margin: -.6rem 0 1.8rem; max-width: var(--measure); }
+
+  .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: .66rem;
+    letter-spacing: .04em;
+    padding: .08em .4em;
+    border-radius: 3px;
+    border: 1px solid currentColor;
+    white-space: nowrap;
+  }
+  .t-high { color: var(--good); }
+  .t-mid  { color: var(--warn); }
+  .t-low  { color: var(--weak); }
+
+  /* ---------- blindspots ---------- */
+
+  .spots { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+  .spot { background: var(--surface); padding: 1.4rem 1.4rem 1.5rem; display: grid; grid-template-columns: 2.6rem 1fr; gap: 0 1rem; }
+  .spot .rank {
+    font-family: var(--mincho);
+    font-size: 1.6rem;
+    line-height: 1.1;
+    color: var(--ochre);
+    font-variant-numeric: tabular-nums;
+  }
+  .spot h4 { margin: .1rem 0 .5rem; font-size: 1rem; grid-column: 2; }
+  .spot p { grid-column: 2; margin: 0 0 .6rem; font-size: .92rem; }
+  .spot p:last-child { margin-bottom: 0; }
+  .spot .rank { grid-row: 1 / span 1; }
+
+  /* ---------- timeline ---------- */
+
+  .timeline { border-left: 2px solid var(--rule); margin: 1.5rem 0; padding: 0; list-style: none; }
+  .timeline li { position: relative; padding: 0 0 1.15rem 1.35rem; margin: 0; }
+  .timeline li::before {
+    content: "";
+    position: absolute;
+    left: -5px; top: .62rem;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .timeline .when {
+    font-family: var(--mono);
+    font-size: .72rem;
+    letter-spacing: .04em;
+    color: var(--ochre);
+    display: block;
+    font-variant-numeric: tabular-nums;
+  }
+  .timeline .what { font-size: .9rem; }
+
+  /* ---------- callout ---------- */
+
+  .note {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--ochre);
+    border-radius: 0 4px 4px 0;
+    padding: 1rem 1.15rem;
+    font-size: .88rem;
+    margin: 1.6rem 0;
+  }
+  .note p:last-child { margin-bottom: 0; }
+  .note .label {
+    font-family: var(--mono);
+    font-size: .68rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ochre);
+    display: block;
+    margin-bottom: .35rem;
+  }
+
+  /* ---------- contents ---------- */
+
+  nav.toc { margin: 0 0 3.5rem; }
+  nav.toc ol { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .1rem 2rem; }
+  nav.toc li { margin: 0; border-bottom: 1px solid var(--rule-soft); }
+  nav.toc a {
+    display: flex;
+    gap: .7rem;
+    padding: .5rem 0;
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: .85rem;
+  }
+  nav.toc a:hover { color: var(--accent); }
+  nav.toc a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  nav.toc .num { font-family: var(--mincho); color: var(--accent); min-width: 1.4rem; }
+
+  a { color: var(--accent); text-underline-offset: .18em; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 4rem;
+    padding-top: 1.6rem;
+    font-size: .78rem;
+    color: var(--muted);
+    max-width: var(--measure);
+  }
+
+  @media (max-width: 640px) {
+    body { font-size: 15px; padding: 0 1rem 4rem; }
+    .masthead { padding-top: 2.25rem; }
+    .spot { grid-template-columns: 1fr; gap: .2rem; }
+    .spot h4, .spot p { grid-column: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<div class="doc">
+
+  <header class="masthead">
+    <p class="kicker">Research Memo — Primary Source Read</p>
+    <h1>日本成長戦略から投資対象を広げる</h1>
+    <p class="standfirst">2026年7月21日閣議決定「日本成長戦略」本文73ページの全文読了に基づき、17の戦略分野・62の主要な製品・技術等・８つの分野横断的課題を目標と政策手段に分解し、投資候補の探索範囲を９つの軸で拡張したもの。反証を通過した20件と、除外した８類型を記載する。</p>
+    <div class="meta">
+      <span><b>一次資料</b>　内閣官房「日本成長戦略」2026年7月21日 閣議決定（本文73ページ）</span>
+      <span><b>作成</b>　2026年8月10日</span>
+      <span><b>注記</b>　<span class="p">p.00</span> は本文の印刷ページ番号</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="目次">
+    <ol>
+      <li><a href="#summary"><span class="num">要</span><span>要旨</span></a></li>
+      <li><a href="#premise"><span class="num">前</span><span>前提と限界</span></a></li>
+      <li><a href="#s1"><span class="num">Ⅰ</span><span>一次資料の分解</span></a></li>
+      <li><a href="#s2"><span class="num">Ⅱ</span><span>拡張の９軸</span></a></li>
+      <li><a href="#s3"><span class="num">Ⅲ</span><span>候補一覧（20件）</span></a></li>
+      <li><a href="#s4"><span class="num">Ⅳ</span><span>反証で除外したもの</span></a></li>
+      <li><a href="#s5"><span class="num">Ⅴ</span><span>盲点トップ５</span></a></li>
+      <li><a href="#s6"><span class="num">Ⅵ</span><span>検証アクションと期限</span></a></li>
+      <li><a href="#s7"><span class="num">Ⅶ</span><span>この見立てが外れる条件</span></a></li>
+    </ol>
+  </nav>
+
+  <!-- ============ 要旨 ============ -->
+  <section id="summary">
+    <h2><span class="num">要</span>要旨</h2>
+
+    <p>この文書は「何に金が出るか」を読む文書ではない。目標値は各分野に大きく書かれているが、投資判断に効くのは各品目の末尾にある<strong>政策手段</strong>の記述である。政府調達、アンカーテナンシー、補助金、税制、規制改革、標準化のどれが選ばれているかで、金が誰の口座に入るかが変わる。</p>
+
+    <p>９つの軸を一周させた結果、拡張の実りは三つに集約された。</p>
+
+    <ol>
+      <li><strong>政策が手当てしていない物理ボトルネック。</strong> 本文は産業立地の課題として工業用水・道路・鉄道・港湾を挙げるが<span class="p">p.41</span>、変圧器と受変電には一言も触れていない。手当てされない制約こそ価格が上がる。熟練工と修繕ドックも同じ構造にある。</li>
+      <li><strong>数値目標が実質の調達義務になっている資源循環。</strong> 磁石原材料の約３割、鉄スクラップ高品位化の年200万トン追加、アルミ展伸材の約４割、電解銅の約３割<span class="p">p.22-24</span>。達成を迫られるのは素材メーカーだが、売り手になるのは原料を集める中間業者である。</li>
+      <li><strong>法制度が新しい収入を作る箇所。</strong> レコード演奏・伝達権の導入<span class="p">p.39</span>、のれんの非償却<span class="p">p.47</span>、上場ベンチャーファンド市場の要件緩和<span class="p">p.46</span>、家事支援サービスの国家資格と税制措置<span class="p">p.61-62</span>。設備も工場も要らず、制度が変わった瞬間に売上が立つ。</li>
+    </ol>
+
+    <p>最大のリスクは政策の失敗ではない。文書自身が「個別事業の短期的な成否ではなく、17の戦略分野全体として…評価」<span class="p">p.2</span>「投資誘発効果の薄い予算は柔軟に見直していく」<span class="p">p.72</span>と宣言している。<strong>62品目はポートフォリオとして運用され、個別は死ぬ前提で設計されている。</strong>単一品目に賭けた場合、戦略が成功しても外れうる。</p>
+
+    <p>直近で最大の検証イベントは<strong>今月末に公表される令和9年度概算要求</strong>である。本戦略は要求にシーリングを設けないと明記しているため<span class="p">p.72</span>、62品目にいくら要求されたかが数字で出るのはこれが初めてになる。</p>
+
+    <dl class="figures">
+      <div class="fig"><dt>62品目の官民投資（2040年度まで累計）</dt><dd>370<small>兆円超</small></dd><span class="sub">p.3</span></div>
+      <div class="fig"><dt>国内民間設備投資の官民目標</dt><dd>250<small>兆円</small></dd><span class="sub">2040年度／p.40</span></div>
+      <div class="fig"><dt>戦略的に特定された製品・技術</dt><dd>62<small>品目</small></dd><span class="sub">17分野／p.3</span></div>
+      <div class="fig"><dt>最も近い期限（電子カルテ100％）</dt><dd>2028<small>年度</small></dd><span class="sub">200床以上／p.8</span></div>
+    </dl>
+  </section>
+
+  <!-- ============ 前提 ============ -->
+  <section id="premise">
+    <h2><span class="num">前</span>前提と限界</h2>
+
+    <p><strong>投資家プロファイルは仮置きである。</strong>依頼時に空欄だったため、事業会社経営者の個人ポートフォリオ／時間軸3〜10年／リスク許容度ミドル／実行市場は日本株・米国株・投信（未上場は事業提携・参入検討の枠）／除外は「AI半導体関連」「防衛関連」で真っ先に名前が挙がる大型株、と置いた。資金規模と除外リストが埋まれば、下記20件は5件程度に絞り込める。</p>
+
+    <p><strong>本書は投資助言ではない。</strong>記載した企業名はすべて論理から逆算した候補であり、事業構成・受注実態・業績・バリュエーションはいずれも未検証である。一次情報での裏取りを前提とした仮説として扱うこと。</p>
+
+    <p><strong>圧縮による欠落がある。</strong>62品目の個票をすべて再現すると分量が破綻するため、Ⅰ章の一覧は分野単位に圧縮した。品目ごとの詳細は本文ではなく「官民投資ロードマップ」本体にあり、本書はそれを参照していない。</p>
+  </section>
+
+  <!-- ============ Ⅰ ============ -->
+  <section id="s1">
+    <h2><span class="num">Ⅰ</span>一次資料の分解</h2>
+
+    <h3>戦略の骨格</h3>
+
+    <p>成長の軌道は二本立てで設計されている。</p>
+
+    <blockquote>
+      <p>第一に、様々なリスクを最小化する「危機管理投資」。……経済的威圧の動きが顕在化する中にあっても、日本の「自律性」を確保する。第二に、先端技術を花開かせる「成長投資」。<span class="p">p.1</span></p>
+    </blockquote>
+
+    <p>財源側には『「強く豊かな日本」投資枠』が置かれ、経済安全保障上特に重要な分野は<strong>特別会計で別枠管理</strong>、<strong>償還財源の裏付けのあるつなぎ国債</strong>で規模を確保するとされる<span class="p">p.3, p.71</span>。予算要求の作法も変えられている。</p>
+
+    <blockquote>
+      <p>要求上限、いわゆる「シーリング」を設けることなく、事項要求も含めて必要額を適切に要求できる仕組みとする。<span class="p">p.72</span></p>
+    </blockquote>
+
+    <p>同時に、切られ方も明記されている。「投資誘発効果の薄い予算は柔軟に見直していく」<span class="p">p.72</span>。ロードマップ策定の基本的考え方には、投資家として最も使える一文がある。</p>
+
+    <blockquote>
+      <p>民間投資のボトルネック（不確実性要因、リソース制約）の解消と、更なる投資を促すアクセラレーターの保有を両輪とする。<span class="p">p.4</span></p>
+    </blockquote>
+
+    <h3>17分野の目標と政策手段</h3>
+
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>分野</th><th>主要目標（原文）</th><th>政策手段の型</th><th class="nowrap">p.</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="nowrap">AI・半導体</td><td>AIロボット「2040年に世界シェア３割超、20兆円」／半導体「2030年に15兆円、2040年に40兆円」／バーティカルAI「2030年に世界で５兆円以上」</td><td><strong>政府調達・制度改革による初期需要創出</strong>、ロボットOEM育成、アナログ・レガシー半導体と部素材の一体強化</td><td class="n">4-6</td></tr>
+          <tr><td class="nowrap">デジタル・サイバー</td><td>クラウド「2035年までに30兆円」／セキュリティ「2035年までに約３兆円超」／電子カルテ「<strong>2028年度までに</strong>200床以上の普及率100％」</td><td><strong>国産クラウド・セキュリティ製品の政府率先導入</strong>、複数年度にわたる計画的投資</td><td class="n">6-9</td></tr>
+          <tr><td class="nowrap">情報通信</td><td>光伝送装置「2030年までに世界シェア10％」／海底ケーブル「世界シェア35％程度」／次世代ワイヤレス「2035年までに国内市場10兆円拡大」</td><td>国際標準化、<strong>敷設・保守船の確保</strong>、陸揚局の地方分散・堅牢化</td><td class="n">9-11</td></tr>
+          <tr><td class="nowrap">量子</td><td>QKD「2035年に世界シェアの３割」「20か国で展開」／センシング「世界市場の20％」</td><td><strong>公共調達による需要創出</strong>、G-QuATを「国家戦略上の重要生産基盤」に位置付け</td><td class="n">11-13</td></tr>
+          <tr><td class="nowrap">防衛産業</td><td>小型無人航空機「2030年時点で８万台の機体・重要部品の供給を確保」</td><td><strong>ファストパス調達</strong>、防衛省版SBIR、DISTI、<strong>政府系金融機関等による投資促進</strong></td><td class="n">13-15</td></tr>
+          <tr><td class="nowrap">航空・宇宙</td><td>完成機事業「年間約６兆円規模以上」／衛星「2040年に世界で約12兆円」／打上げ「国内打上げ比率60〜80％以上」</td><td>設備投資支援、<strong>アンカーテナンシー（公共調達による初期需要確保）</strong>、JAXA設備の民間共用</td><td class="n">15-18</td></tr>
+          <tr><td class="nowrap">海洋</td><td>海洋無人機「世界市場で３割のシェア」／MDA「８か国程度に展開」／マンガン団塊「2030年代前半の商業生産開始」</td><td><strong>アンカーテナンシー制度の創設</strong>、SBIR、超深海探査母船の建造</td><td class="n">18-19</td></tr>
+          <tr><td class="nowrap">造船</td><td>次世代船舶「2035年に1,800万総トン、市場規模約５兆円」／LNG運搬船「年間３〜５隻」</td><td><strong>造船業再生基金</strong>、IMOでのルール策定主導、<strong>修繕ドック・クレーン・塗装洗浄設備の機能拡充</strong>、同志国ドックの確保</td><td class="n">20-21</td></tr>
+          <tr><td class="nowrap">マテリアル</td><td>磁石「原材料の約３割をリサイクル」／グリーン鉄「年間約300万トン以上」「スクラップ高品位化を年間約200万トン追加」／「アルミ展伸材の約４割を再生原料由来」／「電解銅の約３割を再生資源由来」／「ベースメタルの自給率80％以上」</td><td><strong>公共工事におけるグリーン鉄の調達</strong>、グリーン購入法、JOGMEC出資、<strong>国家備蓄の強化</strong></td><td class="n">21-24</td></tr>
+          <tr><td class="nowrap">合成生物学・バイオ</td><td>バイオものづくり「2040年に世界シェア10％、11.9兆円」／バイオ医薬「世界シェア10％、33.4兆円」</td><td>基盤技術開発、<strong>公共調達等による初期需要の創出</strong>、製造受託実績の積上げ</td><td class="n">25-26</td></tr>
+          <tr><td class="nowrap">創薬・先端医療</td><td>医療機器「2040年に28兆円」（現状は「0.7兆円の輸入超過」）／免疫グロブリン「国内自給率100％」／ワクチン「約1.2億人分」</td><td><strong>買上げ・備蓄</strong>、薬事制度の柔軟運用、原料血漿確保、スタートアップのM&amp;A支援</td><td class="n">26-28</td></tr>
+          <tr><td class="nowrap">資源・エネルギー・GX</td><td>ペロブスカイト「2040年までに国内約20GW」「<strong>2035年までに５GW</strong>（公共施設・インフラ）」／水素「2040年に年間1,200万トン」／地熱「2040年に約1.4GW」／洋上風力「2040年までに国内調達比率65％」</td><td><strong>政府調達等を最大限活用</strong>、価格差支援、GX戦略地域制度、<strong>地域間連系線・系統用蓄電池</strong>、温泉法等の規制整理</td><td class="n">28-32</td></tr>
+          <tr><td class="nowrap">フュージョン</td><td>「世界に先駆けた2030年代の発電実証」「シェア約３割」</td><td>国家プロジェクト、NEDOの資金供給機能強化、スタートアップ技術の取込み</td><td class="n">32</td></tr>
+          <tr><td class="nowrap">防災・国土強靱化</td><td>海外売上総額「約１兆円から2030年に約２兆円」</td><td>防災庁設置、<strong>カタログ化と公共調達による需要創出</strong>、ODA活用</td><td class="n">32-33</td></tr>
+          <tr><td class="nowrap">港湾ロジスティクス</td><td>荷役機械「米国市場の３割程度」／サイバーポート「約11,000社」「待ち時間０分」／倉庫「<strong>普通倉庫200万m²、冷蔵倉庫40万設備トン</strong>」</td><td><strong>低利融資や税制特例</strong>、国際コンテナ戦略港湾の機能強化、規格の海外展開</td><td class="n">33-35</td></tr>
+          <tr><td class="nowrap">フードテック</td><td>植物工場・陸上養殖「世界市場のシェア３割」／食品機械・新規食品「世界市場での売上額３兆円」</td><td>実証支援、<strong>公的研究機関での調達やオフテイク購買</strong>、認証取得支援、国際標準の策定</td><td class="n">35-37</td></tr>
+          <tr><td class="nowrap">コンテンツ</td><td>ゲーム「2033年に海外売上げ12兆円」／アニメ６兆円／マンガ１兆円／音楽0.7兆円／実写0.5兆円</td><td>大規模作品製作支援、日系配信PF・グッズ流通網の整備、海賊版対策、<strong>レコード演奏・伝達権の導入</strong></td><td class="n">37-39</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">62品目を分野単位に圧縮している。この圧縮は情報を落としており、品目別の目標・道筋・政策手段は「官民投資ロードマップ」本体を参照する必要がある。</p>
+
+    <h3>８つの分野横断的課題で金の流れが変わる箇所</h3>
+
+    <p>投資対象の拡張という観点では、17分野より横断課題のほうが実りが多い。制度そのものが書き換えられているためである。</p>
+
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>課題</th><th>投資判断に効く記述</th><th class="nowrap">p.</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="nowrap">1 新技術立国</td><td>「2040年度<strong>250兆円</strong>の国内投資目標」「官民研究開発投資額…2026-2030年度合計で<strong>180兆円</strong>」／「産業立地に必要な<strong>工業用水</strong>、道路、鉄道、港湾施設等の整備」／GX戦略地域制度／国家戦略特区／令和8年度税制改正の投資促進税制・研究開発税制／会社法改正（2026年度中に結論）</td><td class="n">40-44</td></tr>
+          <tr><td class="nowrap">2 スタートアップ</td><td>投資額「<strong>2027年度に10兆円規模</strong>」（2025年は7,613億円）／中小機構の債務保証拡充、DBJ・JICのエクイティ／<strong>東証の上場ベンチャーファンド市場の要件緩和（2026年夏）とNISA経由の個人資金流入拡大</strong>／<strong>のれんの非償却の導入</strong>／特定投資家への移行要件緩和（2026年夏）／SBIR抜本強化「戦略製品・技術等政府実装加速化プログラム」／自治体の「４号随契」活用促進</td><td class="n">45-48</td></tr>
+          <tr><td class="nowrap">3 金融</td><td>家計金融資産に占める株式・投信・債券の割合「<strong>2040年までに40％</strong>」（2025年3月末 約23％）／銀行が政府系金融機関と共同出資する際の<strong>リスク・ウェイトを250％→100％</strong>／大口信用供与規制の特例／カーブアウト案件への銀行子会社100％出資／<strong>プライベート資産に特化した投資信託の枠組み整備</strong>／GPIFのオルタナ上限5％／<strong>ステーブルコイン・トークン化預金の実装・普及</strong></td><td class="n">48-52</td></tr>
+          <tr><td class="nowrap">4 人材育成</td><td>理工農・デジタル・保健系の定員「35％→2040年までに５割」／博士「年２万人」／工学系女子学生「18％→36％」</td><td class="n">52-56</td></tr>
+          <tr><td class="nowrap">5 労働市場改革</td><td>「17の戦略分野の投資促進により需要の高まる<strong>工場建設等を担う人材の育成・確保</strong>」／建設キャリアアップシステムの普及促進／介護テクノロジーの複数年度導入支援</td><td class="n">56-61</td></tr>
+          <tr><td class="nowrap">6 家事等の負担軽減</td><td>家事支援サービスに係る<strong>国家資格（技能検定）を創設し2027年秋に第１回試験</strong>／2027年春から民間講習プログラム／<strong>税制措置を含む新たな支援策を検討</strong></td><td class="n">61-62</td></tr>
+          <tr><td class="nowrap">7 賃上げ環境整備</td><td>中小企業の労働生産性「5年で15％」／最低賃金「全国平均1,500円」／<strong>「省力化投資促進プラン」</strong>（対象16業種を脚注で列挙）／中小企業省力化投資補助金・デジタル化AI導入補助金／<strong>官公需の単価・予算を見直す</strong>／低入札価格調査基準の業種別見直し／中小M&amp;Aの<strong>個人資格制度の創設</strong>／事業承継税制</td><td class="n">62-67</td></tr>
+          <tr><td class="nowrap">8 サイバーセキュリティ</td><td>重要インフラの防護策実施率「<strong>2031年度末までに100％</strong>」／<strong>SCS評価制度を2026年度末までに構築し、投資支援策の要件とする</strong>／IoT製品認証制度の拡充と<strong>セキュリティサービスの信頼性認定制度の創設</strong>／<strong>高機密ソブリンクラウド</strong>（2026年中に結論）／PQC移行を2035年までに（2026年度中に工程表）</td><td class="n">67-71</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ Ⅱ ============ -->
+  <section id="s2">
+    <h2><span class="num">Ⅱ</span>拡張の９軸</h2>
+
+    <p>有名な受益企業を並べないために、以下の９軸を機械的に一周させた。各軸で最低３件、重複なしを条件とした。</p>
+
+    <h4>1. バリューチェーン軸</h4>
+    <p>完成品より上流と運用・保守を厚く見る。文書自身がその構造を持っている。半導体は「アナログ半導体（センサー・マイコン等）や電子部品等の<strong>製造装置・部素材まで含めた</strong>技術・製造基盤を…一体的に強化」<span class="p">p.5</span>と書かれており、狙うべきは先端ロジックではなくアナログ／レガシーの後工程・部材層になる。運用保守層には船舶修繕<span class="p">p.20-21</span>と海底ケーブルの「敷設・保守船確保」<span class="p">p.10</span>がある。</p>
+
+    <h4>2. イネーブラー軸（ピック＆ショベル）</h4>
+    <p>分野を問わず投資が実行されれば必ず消費されるもの。電力・受変電、工業用水<span class="p">p.41</span>、EPC・電気工事・空調、計測検査、産業ガス、認証・試験、人材、保険（「自グループのリスクのみを引き受ける保険会社の制度創設」＝キャプティブ<span class="p">p.51</span>）、リース・プロジェクトファイナンス。</p>
+
+    <h4>3. 物理ボトルネック軸</h4>
+    <p>政策が資金を出しても物理的に足りず、価格が上がり納期が伸びるもの。電力容量と変圧器、熟練工と施工キャパ、船台と修繕ドック、重要鉱物（「輸出国の貿易管理措置により…減少・不安定化」<span class="p">p.23-24</span>）、用地と工業用水、そしてヨウ素（「主原料のヨウ素のシェアの約３割を我が国が占め」<span class="p">p.29</span>＝日本が握る側の制約）。</p>
+
+    <h4>4. 交差点軸</h4>
+    <p>２分野以上に同時に効くもの。AI×電力×半導体×蓄電池。防衛×造船×港湾×海洋（USV/UUV、外国艦艇の修繕需要取り込み<span class="p">p.14</span>、MDA）。量子センシング×防衛×防災×医療×半導体<span class="p">p.12-13</span>。バイオものづくり×新規食品（同じ発酵基盤）。医療DX×サイバーセキュリティ×クラウド。港湾×フードテック（冷蔵倉庫とコールドチェーン規格）。</p>
+
+    <h4>5. 政策手段の受益者軸</h4>
+    <p>政府調達・アンカーテナンシーが明記された品目は、ペロブスカイト、グリーン鉄、低炭素金属、量子センシング、量子通信、防災技術、宇宙、海洋無人機、国産クラウド・セキュリティ製品、バイオものづくり、植物工場。補助金は受け取る側より<strong>設備を売る側</strong>が確実に取る。規制改革では、温泉法の整理、L2++優良認定制度の創設、目視外飛行の制度整備、レコード演奏・伝達権、上場VCファンド市場の要件緩和、のれん非償却が新市場を立てる。</p>
+
+    <h4>6. 時間軸</h4>
+    <p>条文に期限が書かれているものと、2030年・2040年の目標に分けた。Ⅵ章に一覧を置く。</p>
+
+    <h4>7. 資産クラス軸</h4>
+    <p>上場中小型、実物資産（産業用地<span class="p">p.41</span>、冷蔵倉庫<span class="p">p.35</span>、電源・系統用蓄電池）、コモディティ（ヨウ素、銅、リチウム・ニッケル・コバルト。国家備蓄強化は買い手が増えることを意味する）、事業投資・M&amp;A。</p>
+
+    <h4>8. 地理軸</h4>
+    <p>日本の政策が海外企業の需要になる箇所が明示されている。「同志国の修繕ドックの活用や確保」<span class="p">p.21</span>、「海外風車メーカーとの協業」による国内拠点創出<span class="p">p.31</span>、「同志国が有する建造ノウハウ等の戦略的な組合せによるLNG運搬船の供給体制」<span class="p">p.21</span>。認証・試験も当面は海外機関の売上になる。</p>
+
+    <h4>9. 反証軸</h4>
+    <p>実需の発注書が来ない／織り込み済み／補助金依存で利益率が上がらない／予算縮小で消える／価格決定力がない、で自ら潰した。結果はⅣ章。</p>
+  </section>
+
+  <!-- ============ Ⅲ ============ -->
+  <section id="s3">
+    <h2><span class="num">Ⅲ</span>候補一覧（反証通過20件）</h2>
+
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th class="nowrap">#</th><th>候補</th><th>紐付く分野・品目</th><th class="nowrap">軸</th><th>何の需要が誰の売上になるか</th><th class="nowrap">価格決定力</th><th class="nowrap">収益化</th><th class="nowrap">織り込み</th><th class="nowrap">確度</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="n">1</td><td>変圧器・受変電機器</td><td>クラウド・DC<span class="p">8</span>／洋上風力の系統<span class="p">31</span>／大型革新電炉<span class="p">22</span></td><td>ボトルネック</td><td>DC・半導体工場・電炉・水電解の新増設に伴う受変電一式。電力会社と需要家の設備投資が受注に直結</td><td>高</td><td class="n">26-30</td><td>中</td><td><span class="tag t-high">高</span></td></tr>
+          <tr><td class="n">2</td><td>方向性電磁鋼板</td><td>同上＋グリーン鉄<span class="p">22</span></td><td>ボトルネック上流</td><td>変圧器の鉄心材。世界寡占構造で、変圧器需要増が数量と単価の両方に効く</td><td>高</td><td class="n">26-30</td><td>低</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">3</td><td>金属リサイクル中間業者</td><td>磁石3割／スクラップ+200万t／アルミ4割／電解銅3割<span class="p">22-24</span></td><td>政策＋数値目標</td><td>数値目標が実質の調達義務として効く。スクラップの集荷力を持つ側に価格決定力が移る</td><td>中〜高</td><td class="n">27-30</td><td>低</td><td><span class="tag t-high">高</span></td></tr>
+          <tr><td class="n">4</td><td>船舶修繕・ドック周辺（塗料、修繕能力）</td><td>造船②船舶修繕<span class="p">20-21</span></td><td>運用保守層</td><td>外航船修繕の国内回帰と官公庁船修繕の平準化。ドック・クレーン・塗装洗浄設備の機能拡充が明記</td><td>高</td><td class="n">27-32</td><td>低</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">5</td><td>病院向け電子カルテ・医療SIer</td><td>医療DX基盤<span class="p">8</span>／基幹インフラ制度に医療追加<span class="p">69</span></td><td>時間軸＋規制</td><td>2028年度までに200床以上で普及率100％。期限が切られた実質的な義務</td><td>中</td><td class="n">26-29</td><td>低〜中</td><td><span class="tag t-high">高</span></td></tr>
+          <tr><td class="n">6</td><td>建設・技術者派遣</td><td>横断課題5<span class="p">57</span>／全17分野の工場建設</td><td>ボトルネック</td><td>「工場建設等を担う人材の育成・確保」が明記。人が付かなければ着工しない</td><td>中〜高</td><td class="n">26-32</td><td>中</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">7</td><td>電気工事・空調衛生</td><td>DC・半導体・クリーンルーム<span class="p">8,41</span></td><td>イネーブラー</td><td>施工キャパが制約となり、選別受注で利益率が上がる</td><td>高</td><td class="n">26-30</td><td>中〜高</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">8</td><td>水処理</td><td>工業用水<span class="p">41</span>／陸上養殖の水処理・浄化技術<span class="p">36</span>／半導体超純水</td><td>交差点</td><td>工業用水整備が政策に明記され、陸上養殖の中核技術も水処理と明記されている</td><td>中</td><td class="n">27-33</td><td>中</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">9</td><td>冷蔵倉庫・コールドチェーン</td><td>次世代型倉庫<span class="p">35</span></td><td>実物資産</td><td>2030年代までに冷蔵倉庫40万設備トンを整備。低利融資と税制特例が付き、規格の海外展開も支援</td><td>中</td><td class="n">27-33</td><td>極低</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">10</td><td>船舶電子・水中音響</td><td>海洋無人機・MDA<span class="p">18-19</span>／自動運航船<span class="p">20</span>／USV・UUV<span class="p">14</span></td><td>交差点（4分野）</td><td>航法・ソナー・レーダーが4分野の共通部材になる</td><td>中</td><td class="n">27-33</td><td>低</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">11</td><td>ヨウ素</td><td>次世代型太陽電池<span class="p">29</span></td><td>日本が握る制約</td><td>ペロブスカイトの主原料。世界シェア約3割が日本。2035年公共5GW、2040年国内20GW</td><td>高</td><td class="n">28-35</td><td>中</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">12</td><td>省力化補助金のカタログ登録メーカー</td><td>省力化投資促進プラン（対象16業種）<span class="p">66</span></td><td>政策受益者</td><td>補助金は受け取る側より設備を売る側が取る。カタログ登録が需要の確定を意味する</td><td>低〜中</td><td class="n">26-29</td><td>中</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">13</td><td>レコード演奏・伝達権の権利者</td><td>コンテンツ④音楽<span class="p">39</span></td><td>規制改革の新市場</td><td>商業用レコードの演奏に対する新たな対価還元。恒久的なライセンス収入が新設される</td><td>極高（法定）</td><td class="n">28-33</td><td>極低</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">14</td><td>上場VCファンド／プライベート資産投信</td><td>横断課題2<span class="p">46</span>／3<span class="p">50</span></td><td>規制改革</td><td>2026年夏の東証要件緩和とNISA経由の資金流入。プライベート資産特化型投信の枠組み整備</td><td>中</td><td class="n">26-29</td><td>極低</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">15</td><td>資産運用・証券インフラ</td><td>横断課題3<span class="p">49</span></td><td>政策＋時間軸</td><td>家計金融資産の株式・投信比率23％→40％は、口座・投信・年金の裏方システムに恒常需要を生む</td><td>中</td><td class="n">27-40</td><td>中</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">16</td><td>M&amp;A仲介・連続買収企業</td><td>出口の多様化<span class="p">47</span>／事業承継<span class="p">65</span></td><td>会計制度の受益者</td><td>のれん非償却が導入されるとM&amp;A巧者の会計利益が構造的に増える。中小M&amp;A資格制度で仲介の裾野も広がる</td><td>中</td><td class="n">28-32</td><td>低</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">17</td><td>認証・試験機関（海外勢）</td><td>無人機・空飛ぶクルマの認証<span class="p">16</span>／国内認証機関の強化<span class="p">43</span>／SCS評価制度<span class="p">68</span></td><td>地理拡張</td><td>認証取得能力の向上が全分野で要求されるが、国内機関が弱く当面は海外機関の売上になる</td><td>高</td><td class="n">27-32</td><td>低</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">18</td><td>同志国の修繕ドック・海外風車メーカー</td><td>造船②<span class="p">21</span>／洋上風力<span class="p">31</span></td><td>地理拡張</td><td>日本の政策が明示的に海外企業を招いている</td><td>中</td><td class="n">27-33</td><td>低</td><td><span class="tag t-mid">中</span></td></tr>
+          <tr><td class="n">19</td><td>産業用地（電力付き工業団地）</td><td>立地競争力の強化<span class="p">41</span>／GX戦略地域制度</td><td>実物資産</td><td>自治体向け長期低利融資で産業用地を整備。用地・電力・工業用水が揃う区画は複合的に希少</td><td>高</td><td class="n">27-35</td><td>低</td><td><span class="tag t-low">低〜中</span></td></tr>
+          <tr><td class="n">20</td><td>家事支援サービス・資格講習</td><td>横断課題6<span class="p">61-62</span></td><td>政策（資格＋税制）</td><td>2027年秋に国家試験、同時に税制措置を検討。供給側の単価引上げと需要創出が同時に設計されている</td><td>低〜中</td><td class="n">27-31</td><td>極低</td><td><span class="tag t-low">低〜中</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">「収益化」は売上・利益に反映され始めると想定する年（西暦下2桁）。「織り込み」は市場の織り込み度合いについての主観評価。企業の特定は本書では行っていない（前提と限界を参照）。</p>
+  </section>
+
+  <!-- ============ Ⅳ ============ -->
+  <section id="s4">
+    <h2><span class="num">Ⅳ</span>反証で除外したもの</h2>
+
+    <div class="scroll">
+      <table>
+        <thead><tr><th>除外した候補</th><th>理由</th></tr></thead>
+        <tbody>
+          <tr><td class="nowrap">空飛ぶクルマ</td><td>重要性の欄には「2040年には…世界市場は約200兆円」と書きながら、目標は「2040年頃に世界で約1,500億円の市場の獲得」<span class="p">p.16</span>。文書自身が期待値の低さを露呈している</td></tr>
+          <tr><td class="nowrap">月面探査・低軌道</td><td>目標が月面8,000億円、低軌道3,300億円<span class="p">p.18</span>。上場企業の利益に効く規模ではない</td></tr>
+          <tr><td class="nowrap">フュージョン</td><td>「いまだ研究開発段階」<span class="p">p.32</span>。発電実証が2030年代で、想定した投資時間軸の外にある</td></tr>
+          <tr><td class="nowrap">ペロブスカイト本体（パネルメーカー）</td><td>14円/kWh未達リスクに加え、補助金依存で売上は増えても利益率が上がらない構造。原料のヨウ素側に寄せた（候補11）</td></tr>
+          <tr><td class="nowrap">造船の完成船建造</td><td>2035年で市場5兆円、船台と人手が制約で上振れしにくく、中韓との価格競争が続く。修繕・舶用機器・塗料に寄せた（候補4）</td></tr>
+          <tr><td class="nowrap">先端ロジック半導体・国策プロジェクト</td><td>織り込み済み、国費依存、成否が二値。アナログ・レガシー、電子部品、後工程部材に寄せた</td></tr>
+          <tr><td class="nowrap">コンテンツの制作会社</td><td>「製作・制作会社の成果報酬率向上の構造改革」<span class="p">p.38</span>は、元請け側の取り分を削ることを意味する。IP保有と流通・権利側に寄せた（候補13）</td></tr>
+          <tr><td class="nowrap">防災技術の純粋プレイヤー</td><td>海外売上1兆→2兆円は倍増だが、担い手が広く分散しており純粋プレイヤーが乏しい</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ Ⅴ ============ -->
+  <section id="s5">
+    <h2><span class="num">Ⅴ</span>盲点トップ５</h2>
+
+    <p>一般的な「関連銘柄リスト」にはまず出てこないが、論理的に外せないもの。</p>
+
+    <div class="spots">
+      <article class="spot">
+        <span class="rank">1</span>
+        <h4>レコード演奏・伝達権の導入</h4>
+        <p>62品目の中で唯一、<strong>新しい徴収権を法律で作る</strong>と書かれた項目。「レコード演奏・伝達権の導入によりイコールフッティングを確保する」<span class="p">p.39</span>。導入されれば、商業施設や飲食店等での商業用レコードの再生に対して、レコード会社と実演家に恒久的なライセンス収入が新設される。</p>
+        <p>設備投資も工場も人員も要らない。原盤を保有しているだけで売上が立ち、価格決定力は法定の独占に等しい。市場はこの一文をまったく見ていない。</p>
+      </article>
+
+      <article class="spot">
+        <span class="rank">2</span>
+        <h4>変圧器と方向性電磁鋼板</h4>
+        <p>本文は産業立地のボトルネックとして「工業用水、道路、鉄道、港湾施設等の整備」を挙げ<span class="p">p.41</span>、系統用蓄電池と北海道・本州間海底直流送電にも触れる<span class="p">p.31</span>。ところが<strong>変圧器・受変電設備への言及が一切ない</strong>。</p>
+        <p>データセンター、半導体工場、大型革新電炉、水電解装置のすべてが受変電を要求する一方、変圧器は世界的に納期が逼迫している。政策で手当てされないボトルネックこそ、価格が上がる。鉄心材の方向性電磁鋼板は世界寡占構造にある。</p>
+      </article>
+
+      <article class="spot">
+        <span class="rank">3</span>
+        <h4>リサイクル数値目標の実質的な調達義務化</h4>
+        <p>磁石原材料の約３割、鉄スクラップ高品位化の年200万トン追加、アルミ展伸材の約４割、電解銅の約３割<span class="p">p.22-24</span>。これらは目標の形をしているが、達成を迫られるのは素材メーカーであり、原料を集める中間業者が売り手の側に立つ。</p>
+        <p>スクラップの集荷網は短期に増やせないため、価格決定力が中間業者側に移る。素材大手を買うより集荷側を買うほうが筋が通る。</p>
+      </article>
+
+      <article class="spot">
+        <span class="rank">4</span>
+        <h4>冷蔵倉庫40万設備トン</h4>
+        <p>港湾ロジスティクスの三番目の品目に埋もれているが、「普通倉庫200万m²、冷蔵倉庫40万設備トン」という具体的な数量目標に、「低利融資や税制特例」という具体的な手段が付いている<span class="p">p.35</span>。</p>
+        <p>さらに「高品質なコールドチェーン物流サービス規格の海外展開」でフードテックと交差する。物流不動産の中でも冷蔵倉庫は建設単価と電力消費が高く参入障壁がある。これを成長戦略の項目として読んでいる者がいない。</p>
+      </article>
+
+      <article class="spot">
+        <span class="rank">5</span>
+        <h4>家事支援サービスの国家資格化と税制</h4>
+        <p>2027年春に民間講習プログラムの受講開始、2027年秋に第１回の国家資格試験、そして「税制措置を含む新たな支援策を検討」<span class="p">p.61-62</span>。</p>
+        <p>資格制度は供給側の単価を引き上げ、税制措置は需要を作る。<strong>両方が同時に来る設計になっている</strong>にもかかわらず、投資テーマとして語られているのを見たことがない。</p>
+      </article>
+    </div>
+
+    <div class="note">
+      <span class="label">次点</span>
+      <p>東証の上場ベンチャーファンド市場の要件緩和とNISA資金の流入<span class="p">p.46</span>、のれんの非償却<span class="p">p.47</span>、認証・試験機関（当面は海外勢の売上になる）<span class="p">p.16 / 43 / 68</span>。</p>
+    </div>
+  </section>
+
+  <!-- ============ Ⅵ ============ -->
+  <section id="s6">
+    <h2><span class="num">Ⅵ</span>検証アクションと期限</h2>
+
+    <h3>今週から着手できる検証</h3>
+
+    <ol>
+      <li><strong>各省庁の令和9年度概算要求（今月末公表）を品目単位で読む。</strong> 本戦略は「シーリングを設けることなく、事項要求も含めて必要額を適切に要求できる仕組み」<span class="p">p.72</span>と明記しているため、62品目にいくら要求されたかが数字で出るのはこれが初めてになる。今年最大の情報イベント。</li>
+      <li><strong>「官民投資ロードマップ」本体（62品目の個票）を入手し、「政策手段」の欄だけを品目別に一覧化する。</strong> 本文には要旨しかない。金の出口は個票側にある。</li>
+      <li><strong>中小企業省力化投資補助金のカタログ登録製品一覧の更新履歴を取る。</strong> 登録された製品は需要が確定した製品であり、登録メーカーの構成比の変化がそのまま受注の先行指標になる。</li>
+      <li><strong>変圧器・受変電各社の決算説明資料から「受注残」と「納期」の記述を拾う。</strong> 納期が延びているかどうかが、ボトルネック仮説が生きているかどうかの唯一の実証になる。</li>
+      <li><strong>文化審議会著作権分科会の議事録でレコード演奏・伝達権の検討段階を確認する。</strong> 法案提出時期の目処が立っているかどうかで、候補13の収益化が2028年か2033年かに分かれる。</li>
+    </ol>
+
+    <h3>条文に期限が書かれているもの</h3>
+
+    <ul class="timeline">
+      <li><span class="when">2026年 夏</span><span class="what">重要インフラ統一基準の策定<span class="p">p.68</span>／東証の上場ベンチャーファンド市場の要件緩和<span class="p">p.46</span>／特定投資家への移行要件の緩和<span class="p">p.47</span></span></li>
+      <li><span class="when">2026年 8月末</span><span class="what">令和9年度概算要求（シーリングなし・事項要求可）<span class="p">p.72</span></span></li>
+      <li><span class="when">2026年 10月</span><span class="what">サイバー対処能力強化法に基づく新協議会の立上げ<span class="p">p.70</span></span></li>
+      <li><span class="when">2026年中／年度中</span><span class="what">高機密ソブリンクラウドの調達方法に結論<span class="p">p.69</span>／会社法改正に結論<span class="p">p.42</span>／PQC移行の工程表策定<span class="p">p.71</span>／防衛省版SBIRの創設<span class="p">p.43</span></span></li>
+      <li><span class="when">2026年度末</span><span class="what">SCS評価制度の構築（以後、投資支援策の要件となる）<span class="p">p.68</span></span></li>
+      <li><span class="when">2027年 春／秋</span><span class="what">家事支援サービスの民間講習開始／国家資格 第１回試験<span class="p">p.62</span></span></li>
+      <li><span class="when">2027年度</span><span class="what">企業年金の運用状況比較システム稼働<span class="p">p.51</span>／医療分野の基幹インフラ点検開始<span class="p">p.69</span>／家庭用IoT機器対策の開始<span class="p">p.70</span>／スタートアップ投資額10兆円規模<span class="p">p.46</span></span></li>
+      <li><span class="when">2027年度末</span><span class="what">官公需の価格転嫁措置を国等・地方公共団体で100％実施<span class="p">p.65</span></span></li>
+      <li><span class="when">2028年度</span><span class="what">200床以上の病院で電子カルテ普及率100％<span class="p">p.8</span>／電子渡航認証制度（JESTA）の導入<span class="p">p.60</span></span></li>
+      <li><span class="when">2030年前後</span><span class="what">国内半導体売上高15兆円／QKDの東名阪社会実装／マンガン団塊の商業生産開始／次世代型地熱の実用化／グリーン鉄300万トン／防災の海外売上2兆円</span></li>
+      <li><span class="when">2040年度</span><span class="what">62品目の官民投資 累計370兆円超／国内民間設備投資 250兆円<span class="p">p.3, p.40</span></span></li>
+    </ul>
+  </section>
+
+  <!-- ============ Ⅶ ============ -->
+  <section id="s7">
+    <h2><span class="num">Ⅶ</span>この見立てが外れる条件</h2>
+
+    <h4>1. 『「強く豊かな日本」投資枠』が縮小する</h4>
+    <p>財源は「償還財源の裏付けのあるつなぎ国債」<span class="p">p.71</span>という条件付きで書かれている。財政規律論の再燃、金利上昇、政権交代のいずれかでシーリングなしの前提が崩れれば、370兆円の官民投資は民間の自己負担に置き換わり、ほぼ全候補の前提が消える。</p>
+
+    <h4>2. PDCAで個別品目が切られる</h4>
+    <p>文書自身が「投資誘発効果の薄い予算は柔軟に見直していく」<span class="p">p.72</span>「個別事業の短期的な成否ではなく、17の戦略分野全体として…成果を評価」<span class="p">p.2</span>と書いている。62品目はポートフォリオとして運用され、個別は死ぬ前提で設計されている。<strong>単一品目に賭けた候補は、戦略が全体として成功しても外れうる。</strong></p>
+
+    <h4>3. 供給制約が需要を殺す</h4>
+    <p>予算が付いても電力と人手が付かず、着工が2〜3年後ろ倒しになるケース。受注は出るが売上計上が遅れ、株価は先に期待を織り込んだ後に剥落する。この場合、ボトルネック軸の候補（1・6・7）だけが残り、他は全滅する。</p>
+
+    <div class="note">
+      <span class="label">方法論についての所見</span>
+      <p>今回使用したプロンプトには構造的な欠陥があった。STEP 0で「62品目を原文引用と出典ページ付きで表に落とす」を求めると、この分量の一次資料では出力の大半を分解作業が消費し、肝心の拡張が薄くなる。実運用では<strong>STEP 0を別プロンプトに切り出して個票を先に構造化し、その出力を渡してSTEP 1以降を回す</strong>２段構えが正しい。</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>一次資料: 内閣官房「日本成長戦略」（2026年7月21日 閣議決定、本文73ページ）。ページ番号は本文の印刷ページ番号を指す。本書は投資助言ではなく、一次情報での検証を前提とした仮説の記録である。記載した候補領域について、企業の事業構成・受注実態・業績・バリュエーションはいずれも未検証。</p>
+  </footer>
+
+</div>
