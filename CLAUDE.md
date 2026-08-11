@@ -104,10 +104,11 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 - 直近配布: BALIBOLA（カリナリー）にCf＋AEf 各1（7/22）／Matcha Mami商談でFA001-004 各1（7/22）／CBD4カフェ(Naau/Miyama/Hikari/Regulars)にFA001-004 各1ずつ＝計16（7/23）／7/24飛び込み: Sneaker Laundry(FA003-005各1＋FA003/FA004各+1＋AFc1／※FA001-002は渡してない)・MINIYAMA(FA001-005各1)・Matcha Mami(FA005×2＝2回渡し／商談分FA001-004に加え)／7/25飛び込み: Groove(FA001-005各1)・Midori pop-up(FA001-005各1)／7/29訪問: Tea Drop(FA005＋非FA全種=AFb/Cf/Dg/AFc/AEf)・Clement/St Ali(FA001-004＋AFc＋FA005)／7/31 Hello Matcha商談(Cf＋AEf＋FA005)・飛び込みMatcha Mami(年間ペイメントプラン提出・オーナー不在)/Miniyama(オーナー不在)→両店に感謝メール＋農園紹介(汎用PDF)＋写真/動画 送付済(フォロー完了)。Miniyamaはオーナー水曜在店で再訪予定／**8/2: MEET FOREST(South Yarra)に FA003・FA005／Itteki South Yarra店に FA001-002・FA004-005 を配布 → FA003サンプル在庫=0（枯渇・補充手配要）**／8/3: KUMO(CBD)のGraciaさんに FA001・FA002 手渡し／8/3: **Calder(Cosecha)＋Zen Wondersの2便で全在庫クリア（8/3クリア計＝FA001×2/002×1/004×2/005×8＋Cf×7/AEf×2/AFc×2/Dg×4/AFb×8＝残0。FA003は既に枯渇0でこの便に含まず。Calder=FA001-002/004-005＋非FA全種(AFb/Cf/Dg/AFc/AEf)、Zen=FA005＋非FA全種(AFb/Cf/Dg/AFc/AEf)）**（reconciliation=手持ち残の表）
 - ✅**補充到着（2026-08上旬）＝サンプル14SKU・計152本。8/3の「全種枯渇」は解消済み**
   - FA001×10／FA002×10／**FA003×20**／FA004×20／FA005×20
-  - AFa×10／AFb×10／**AEg×10（ほうじ茶・有機）**／AEa×8／De×7／Dg×7／Cf×3／**Il×10**／**Ij×7（ほうじ茶 $55.60）**
-  - ⚠️**Ij は産地・グレード・有機の有無が未確認**（価格$55.60のみ判明）。仕入れ側へ照会中。サンプルラインナップ資料ではTBC表記
-  - ⚠️**AEg $77.1・Ij $55.60 は Matcha Mate 個別シート由来の可能性**→標準価格を照会中（同シートAEa=$87.4はマスター$102より14%安）
-  - ⚠️**「Ii」＝Il の読み違い**（静岡・Ceremonial・$90・非有機・1,200kg）で確定済み
+  - AFa×10／AFb×10／**AEg×10（ほうじ茶・鹿児島・有機）**／AEa×8／De×7／Dg×7／Cf×3／**Il×10（静岡・抹茶Ceremonial $90）**／**Ij×7（静岡・ほうじ茶Ceremonial・有機 $55.60）**
+  - ✅**Ij スペック確定（2026-08-11 仕入れシートで判明）＝静岡・かねはち茶園（鈴木専務）／ほうじ茶 Ceremonial／✅有機／原価¥5,000・販価 $55.60＝¥8,333／⚠️供給は月30kgのみ**。認証＝Certificate of Origin・Healthcare Certificate・COA・FDA・**Halal**・JFS・FSSC22000
+  - ✅**❌訂正: 「Ii」は Il の読み違いではなく実在する別SKU**＝静岡・かねはち茶園／ほうじ茶 Ceremonial／**非有機**／原価¥4,500・販価 **$50.0＝¥7,500**／⚠️供給は月30kgのみ／認証はIjと同一。※Il（静岡・抹茶Ceremonial・$90・1,200kg）とは全く別物
+  - ⚠️**Ii/Ij は供給が月30kgずつしかない**＝MOQ20kg/SKUなので実質1店舗分。**卸・大口には出せない。小口の"静岡の有機ほうじ茶"という珍しさで刺す玉**
+  - ⚠️Ii のシート内説明文は「静岡県産秋摘み**抹茶**…**製菓用グレード**」とあるが、商品分類はHojicha・グレード欄はCeremonial＝**説明文が別SKUのものと入れ違っている可能性**。対外資料に転記しない
 - ⚠️**配布時の供給リスク（サンプル数と在庫本体が逆相関）**
   - **FA004（20本）＝残1.5t・再現困難・MOQ100kg引上げ方向** → 新規大口へのプッシュ不可
   - **FA005（20本）＝残僅少**（Rocky's／Den's 1,500kg／Itteki年3.2tで消化） → 少量のみ
