@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  pyrenee:
+    build: .
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    volumes:
+      - ./db:/app/db          # SQLite persistence
+      - ./simulation:/app/simulation  # Generated docs
+    restart: unless-stopped
