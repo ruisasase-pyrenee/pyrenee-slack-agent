@@ -18,6 +18,7 @@
 - `sales-ops/fa-catalog.json` — FAシリーズ+有機ラインのSKUデータとSKU選定ルール
 - `sales-ops/finance-master-2026.md` — 価格マスター・ロット原価・過去受注実績・5ヶ年計画の索引
 - `sales-ops/zaimu-2026-fulltext.txt` — 財務管理PDF全文（grepで検索）
+- `sales-ops/sheets/` — **顧客提出用PDF（価格シート・請求書）＋生成用HTML/スクリプト**。有機ほうじ茶・サンプルラインナップ・O3向け・Cf・ALg・Purematchaインボイス・7月分請求書。⚠️AUD換算は全シート **1 USD = 1.428** で統一
 - `sales-ops/lead-tracker.csv` / `follow-up-checklist.md` / `outreach-templates.md`
 - Google Drive（接続時）: 豪州ABMマスターリストv2 / Inboundリード管理 / 凸リスト / SKU在庫引当管理 / インセンティブ計算シート / エクイティ提案書v2
 - Googleマップ共有リスト「🇦🇺 Potential Client · Rui」（今後営業するメンバー用・まずMEL/SYD）※環境からは直接読めない（要スクショ or Takeout CSV）
