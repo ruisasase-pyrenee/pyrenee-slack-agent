@@ -7,6 +7,7 @@
 | ファイル | 内容 | 宛先/用途 | 通貨基準 |
 |---|---|---|---|
 | `FirstAgri_Hojicha_Organic_2026-08.pdf` | **有機ほうじ茶2種**（AEg $90.00／Ij $55.60） | 汎用（Tea Drop・OSOI・Tori's 等ほうじ茶実需のある先） | AUD = USD × 1.428 |
+| `FirstAgri_Samples_OnHand_2026-08.pdf` | **今手元にある非FA 9SKU**（AFb/De/AFa/Dg/AEa/Cf＋ほうじ茶Ii/AEg/Ij） | 汎用・訪問時の手渡し（★最新） | AUD = USD × 1.428 |
 | `FirstAgri_Sample_Lineup_2026-08.pdf` | 豪州手持ちサンプル（非FA 9SKU） | 汎用・訪問時の手渡し | AUD = USD × 1.428 |
 | `FirstAgri_Hojicha_PriceSheet_O3.pdf` | ほうじ茶（AEh／AEg） | O3（Rachel）向け・2026-08-03発行 | AUD = USD × 1.428 |
 | `FirstAgri_Matcha_PriceSheet_O3_2026-08-03.pdf` | 抹茶 | O3（Rachel）向け | |
@@ -25,6 +26,9 @@
 ## 作り直し方
 
 ```bash
+# 手持ちサンプル一覧
+python3 render_oh.py    # onhand_src.html → FirstAgri_Samples_OnHand_2026-08.pdf
+
 # 有機ほうじ茶シート
 python3 render_hj.py        # hojicha_src.html → FirstAgri_Hojicha_Organic_2026-08.pdf
 

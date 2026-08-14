@@ -26,7 +26,7 @@
 
 ### 到着の内訳
 - **7月着**: FA001-005 各20／Cf 10／AEf 5／AFc 5／Dg 5／AFb 10
-- **8月上旬 補充着**: FA001 10／FA002 10／FA003 20／FA004 20／FA005 20／AFa 10／AFb 10／AEg 10／AEa 8／De 7／Dg 7／Cf 3／Il 10／Ij 7
+- **8月上旬 補充着**: FA001 10／FA002 10／FA003 20／FA004 20／FA005 20／AFa 10／AFb 10／AEg 10／AEa 8／De 7／Dg 7／Cf 3／Ii 10／Ij 7
 
 ### 🔴 補充が必要
 - **AFc（−1）・AEf（0）** ＝ 在庫本体は厚い（AFc 10,000kg／AEf 6,000kg）のに手元ゼロ。⚠️どちらも8月の補充便に入っていなかった
@@ -37,7 +37,7 @@
 - **AFc が −1**。到着5個に対し配布6件（Sneaker Laundry／Tea Drop／Clement・St Ali／Zen Wonders／Calder／TAKEZO）。1件は別SKUだった可能性が高い
 
 ### ⭐ 一度も配っていない（余裕あり）
-**AFa 10／AFb 13／Il 10／AEa 8／De 7／Dg 9**。⚠️ただし **AEa は10月末に在庫消滅の可能性**、**De は在庫200kgのみ**なので配布先を選ぶ
+**AFa 10／AFb 13／Ii 10／AEa 8／De 7／Dg 9**。⚠️ただし **AEa は10月末に在庫消滅の可能性**、**De は在庫200kgのみ**なので配布先を選ぶ
 
 ---
 
