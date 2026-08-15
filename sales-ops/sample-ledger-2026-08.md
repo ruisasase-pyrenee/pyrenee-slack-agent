@@ -13,8 +13,8 @@
 | **FA005** | 鹿児島さえみどり単一品種 | 40 | 32 | **8** |
 | **AEg** | ほうじ茶・鹿児島・有機 | 10 | 4 | **6** |
 | **Ij** | ほうじ茶・静岡・有機 | 7 | 4 | **3** |
-| **AFa** | 有機ラテ（鹿児島/宮崎） | 10 | 2 | **8** |
-| **AFb** | 有機セレモニアル | 20 | 7 | **13** |
+| **AFa** | 有機ラテ（鹿児島/宮崎） | 10 | 1 | **9** |
+| **AFb** | 有機セレモニアル | 20 | 8 | **12** |
 | **AEa** | 鹿児島プレミアム | 8 | 1 | **7** |
 | **Il** | 静岡セレモニアル | 10 | 0 | **10** |
 | **De** | 有機やぶきた単一 | 7 | 1 | **6** |
@@ -37,7 +37,7 @@
 - **AFc が −1**。到着5個に対し配布6件（Sneaker Laundry／Tea Drop／Clement・St Ali／Zen Wonders／Calder／TAKEZO）。1件は別SKUだった可能性が高い
 
 ### ⭐ 一度も配っていない（余裕あり）
-**AFb 13／Ii 10／AFa 8／Dg 8／AEa 7／De 6**。⚠️ただし **AEa は10月末に在庫消滅の可能性**、**De は在庫200kgのみ**なので配布先を選ぶ
+**AFb 12／Ii 10／AFa 9／Dg 8／AEa 7／De 6**。⚠️ただし **AEa は10月末に在庫消滅の可能性**、**De は在庫200kgのみ**なので配布先を選ぶ
 
 ---
 
@@ -86,7 +86,7 @@
 | A3 (Central Park) | FA003・FA004・FA005 | シドニー・宇治抹茶使用 |
 | T Totler | FA003・FA004・FA005・AEg・Ij・Cf | シドニー・8/14にCf/AEg/Ij追加 |
 | Social Butterfly Tea & Dessert | FA003・FA004・FA005 | シドニー |
-| Offset Matcha（Stephan） | FA003・FA004・FA005 ＋**8/15 AFa・De** | シドニー。⚠️旧記録の「AFb」は誤り＝AFaが正 |
+| Offset Matcha（Stephan） | FA003・FA004・FA005 ＋**8/15 AFb・De** | シドニー・窓口Stephan |
 | The Tea Centre Piccadilly | FA003・FA004・FA005 | ⭐**8/17朝にフィードバック予定**。Est.1993の老舗卸／プライスレンジ逆算 ¥22,600〜42,000 |
 | Mado Matcha | FA004 | シドニー・414 Elizabeth St／Central駅2分・小箱 |
 | Issho Cafe | FA001・FA002・FA003 | ⭐シドニー Haymarket・710 George St。ドリンク$14＋席料$10・メニューに「おくみどり」表記 |
