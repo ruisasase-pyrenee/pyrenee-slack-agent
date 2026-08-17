@@ -6,6 +6,7 @@
 
 | ファイル | 内容 | 宛先/用途 | 通貨基準 |
 |---|---|---|---|
+| `FirstAgri_FA25_2026-08.pdf` | **FA2.5 単品**（Kyoto/Ceremonial/1st・在庫4,000kg・FA003↔FA002のラダー付き） | 中間価格帯を求める先・US遠征（★最新） | AUD = USD × 1.428 ⚠️**価格未確定** |
 | `FirstAgri_Hojicha_Organic_2026-08.pdf` | **有機ほうじ茶2種**（AEg $90.00／Ij $55.60） | 汎用（Tea Drop・OSOI・Tori's 等ほうじ茶実需のある先） | AUD = USD × 1.428 |
 | `FirstAgri_Samples_OnHand_2026-08.pdf` | **今手元にある非FA 9SKU**（AFb/De/AFa/Dg/AEa/Cf＋ほうじ茶Ii/AEg/Ij） | 汎用・訪問時の手渡し（★最新） | AUD = USD × 1.428 |
 | `FirstAgri_Sample_Lineup_2026-08.pdf` | 豪州手持ちサンプル（非FA 9SKU） | 汎用・訪問時の手渡し | AUD = USD × 1.428 |
@@ -26,6 +27,9 @@
 ## 作り直し方
 
 ```bash
+# FA2.5 単品シート
+python3 render_fa25.py  # fa25_src.html → FirstAgri_FA25_2026-08.pdf
+
 # 手持ちサンプル一覧
 python3 render_oh.py    # onhand_src.html → FirstAgri_Samples_OnHand_2026-08.pdf
 
@@ -43,4 +47,5 @@ Playwright + Chromium（`/opt/pw-browsers/chromium`）でA4 1枚に自動フィ�
 - **AUD換算は 1 USD = 1.428 で全シート統一**。⚠️過去に 1.451 で作った版があり、混在すると同一SKUで2つの金額が出るので、必ず既存シートに合わせる
 - **価格の一次ソースは `../supplier-master-2026-08.md`**。Matcha Mate個別シートの数字（標準の0.857倍）を転記しないこと
 - `Ij` はグレード・焙煎・品種が **TBC**。鈴木専務（かねはち茶園）への照会待ち
+- 🔴 **FA2.5 の価格は未確定**。シートは US遠征の設定値 **¥25,000／$166.7／A$238.05** で作ってあるが、仕入マスターは **⚠️未定（¥24,000〜26,000）**。⚠️**社内で確定してから客に渡すこと**（¥24,000なら $160.0／A$228.48）
 - PDFは配布した相手と日付を CLAUDE.md 側に必ず記録する

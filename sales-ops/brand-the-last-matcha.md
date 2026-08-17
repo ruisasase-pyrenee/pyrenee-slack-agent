@@ -67,6 +67,23 @@
 
 ---
 
+## 英語ブランドデッキ（12ページ・2026-08-17 Rui共有）
+
+対外用の英語デッキが既に存在する（"THE LAST MATCHA / FIRST AGRI, INC. 2026"）。構成＝表紙／Origin: Hino, Shiga／蒲生氏郷（出典＝日野町役場 `town.shiga-hino.lg.jp/0000000236.html` を明記）／Inheritance／Tencha／Kyoto master craft／Makers／**Commercial specification**／The meaning of LAST／A tea that continues／Transparency／Closing。
+
+**⚠️デッキ上の商品スペックが社内データと食い違う**
+| 項目 | 英語デッキ（p.8） | 社内データ |
+|---|---|---|
+| 価格 | ¥20,000/kg | ✅一致 |
+| **在庫** | **2,100 kg** | ⚠️**3,000 kg**（仕入マスター・US遠征目標も3,000kg＝¥60,000,000） |
+| 構成 | **自社茶園（日野）の碾茶 30%**・100% 一番茶・Origin: Uji | 記載なし |
+
+🔴**US遠征の定量目標 3,000kg は在庫 2,100kg を超えている**。どちらが正か確定させること（デッキが古いのか、3,000kgが引当前の数字か）。
+✅**「自社茶園産 30%」＝残り70%は提携農園**という整理なら、「THE LAST MATCHA＝自社茶園産」と単純に言い切らないこと（FAシリーズとの区別の説明も、この30%の建て付けに合わせる）。
+※デッキは barcode トレーサビリティを **"planned for future implementation"** と正しく将来形で書いてある＝この表現を口頭でも崩さない。
+
+---
+
 ## 事実関係（対外的に使う前に確認すること）
 
 **✅裏付けのある要素**

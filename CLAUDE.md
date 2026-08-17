@@ -19,6 +19,7 @@
 - `sales-ops/fa-catalog.json` — FAシリーズ+有機ラインのSKUデータとSKU選定ルール
 - `sales-ops/finance-master-2026.md` — 価格マスター・ロット原価・過去受注実績・5ヶ年計画の索引
 - `sales-ops/zaimu-2026-fulltext.txt` — 財務管理PDF全文（grepで検索）
+- `sales-ops/sheets/FirstAgri_FA25_2026-08.pdf` — **FA2.5 単品シート（1ページ）**。⚠️**価格未確定のまま作成**＝US遠征設定値 ¥25,000／$166.7／**A$238.05** で記載。仕入マスターは⚠️未定（¥24,000〜26,000）→**社内確定後に渡す**
 - `sales-ops/sheets/` — **顧客提出用PDF（価格シート・請求書）＋生成用HTML/スクリプト**。有機ほうじ茶・サンプルラインナップ・O3向け・Cf・ALg・Purematchaインボイス・7月分請求書。⚠️AUD換算は全シート **1 USD = 1.428** で統一
 - `sales-ops/lead-tracker.csv` / `follow-up-checklist.md` / `outreach-templates.md`
 - Google Drive（接続時）: 豪州ABMマスターリストv2 / Inboundリード管理 / 凸リスト / SKU在庫引当管理 / インセンティブ計算シート / エクイティ提案書v2
