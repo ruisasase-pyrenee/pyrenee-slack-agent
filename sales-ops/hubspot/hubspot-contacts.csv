@@ -1,7 +1,7 @@
 ﻿First Name,Last Name,Email,Phone Number,Job Title,Company name,Lifecycle Stage,Lead Status,FA_決裁権,FA_対応言語,FA_豪州出張メモ
 Calder,Dryden,,,,Cosecha,customer,OPEN_DEAL,決裁者,English,メール・電話とも未記録。送付先住所のみ判明
 Sunny,,,,オーナー,Groove,customer,OPEN_DEAL,決裁者,English,WhatsAppグループ作成済（番号未記録）。パートナーと共同決裁
-Ellie,Dunne,,0437 900 130,,Elle Collective,customer,OPEN_DEAL,決裁者,English,FA004受注。PayPal決済希望
+Ellie,Dunne,,+61 437 900 130,,Elle Collective,customer,OPEN_DEAL,決裁者,English,FA004受注。PayPal決済希望
 Olivia,,,,Head of Buying,T2 Tea,opportunity,OPEN_DEAL,決裁者,English,窓口は長野代表がリード。最終承認はCFO
 Emma,,,,Junior Buyer,T2 Tea,opportunity,IN_PROGRESS,取次ぎ,English,日常のやりとり担当
 Eugene,,,,オーナー,Sneaker Laundry,opportunity,OPEN_DEAL,決裁者,English,稟議の最終判断。窓口はNick経由
@@ -15,12 +15,12 @@ Ken,,,,CFO兼CMO,Matcha Mate,opportunity,OPEN_DEAL,決裁者,,⚠️Little Rogue
 Chen,,,,,Matcha Mate,opportunity,IN_PROGRESS,取次ぎ,,物流・管理費の協議相手
 Ricky,,,,共同創業者クラス,Hello Matcha,salesqualifiedlead,IN_PROGRESS,決裁者,English,⚠️連絡先なし。US側で扱う
 Ami,,,,共同創業者,Hello Matcha,salesqualifiedlead,IN_PROGRESS,決裁者,English,
-Danny,He,danny.he@chatimeGroup.com.au,0421 526 695,,Chatime Australia,salesqualifiedlead,BAD_TIMING,決裁者,English,2027年1月まで動かない。即コンタクトしない
+Danny,He,danny.he@chatimeGroup.com.au,+61 421 526 695,,Chatime Australia,salesqualifiedlead,BAD_TIMING,決裁者,English,2027年1月まで動かない。即コンタクトしない
 Dylan,Nadelman,,+61 432 011 928,CEO,Matcha Maiden,salesqualifiedlead,IN_PROGRESS,決裁者,English,面談窓は木曜12-14時
 Jeff,Nadelman,,,オーナー,Matcha Maiden,salesqualifiedlead,IN_PROGRESS,決裁者,English,
 Jasmine,,,,品質/テイストマスター,Matcha Maiden,salesqualifiedlead,IN_PROGRESS,取次ぎ,English,🔑カスタムブレンドの味の合否を握るキーパーソン
-Grenville,Rodrigues,grenville@matchamaiden.com,0410 098 525,Operations Manager,Matcha Maiden,salesqualifiedlead,IN_PROGRESS,取次ぎ,English,サンプル送受の窓口
-Mevan,,Mevan@teadrop.com.au,0491 269 876,,Tea Drop,salesqualifiedlead,IN_PROGRESS,取次ぎ,English,8/10本社商談。Ruiとともに過去ドバイ在住
+Grenville,Rodrigues,grenville@matchamaiden.com,+61 410 098 525,Operations Manager,Matcha Maiden,salesqualifiedlead,IN_PROGRESS,取次ぎ,English,サンプル送受の窓口
+Mevan,,Mevan@teadrop.com.au,+61 491 269 876,,Tea Drop,salesqualifiedlead,IN_PROGRESS,取次ぎ,English,8/10本社商談。Ruiとともに過去ドバイ在住
 Helen,Samaras,helen@teadrop.com.au,,,Tea Drop,salesqualifiedlead,UNQUALIFIED,取次ぎ,English,7/31メールがノーレス。Mevanを主窓口に切替
 Ashok,Dias,,,創業者,Tea Drop,salesqualifiedlead,NEW,決裁者,English,未面会
 Tina,Denkova,tina@mamot.com.au,+61 420 990 343,,MAMOT Solutions,lead,ATTEMPTED_TO_CONTACT,要確認,English,期日超過
@@ -32,12 +32,12 @@ Matthew,Youn,,+61 430 006 064,,Maison Koko Pty Ltd,lead,ATTEMPTED_TO_CONTACT,要
 Stephany,,hello@maisonkoko.com,,Procurement,Maison Koko Pty Ltd,lead,ATTEMPTED_TO_CONTACT,取次ぎ,English,再折り返し待ち
 Brad,Matthews,,,創業者/Director,Morning Made,lead,NEW,決裁者,English,LinkedIn bradcm01 で接触。未接触
 Sterra,,,,スタッフ,Attakai Matcha,salesqualifiedlead,IN_PROGRESS,取次ぎ,English,オーナーへ取次ぎ中
-Zara,,,0428 314 275,オーナー,BALIBOLA,salesqualifiedlead,IN_PROGRESS,決裁者,English,ご両親との家族経営＝実質3人の合議
+Zara,,,+61 428 314 275,オーナー,BALIBOLA,salesqualifiedlead,IN_PROGRESS,決裁者,English,ご両親との家族経営＝実質3人の合議
 Yuka,,,,スタッフ,BALIBOLA,salesqualifiedlead,IN_PROGRESS,情報提供者,Japanese,群馬出身の日本人。⚠️Bench Coffeeのゆうかさんと同一人物か要確認
 Nahm,,hello@toris.com.au,,,Tori's,salesqualifiedlead,IN_PROGRESS,決裁者,English,Tori's側の責任者
 Sutinee,Suntivatana,,,グループ創業者,Tori's,salesqualifiedlead,IN_PROGRESS,決裁者,English,Tinee Su。5店舗グループの最上位決裁者
 Chyanne,,,,,Tori's,salesqualifiedlead,IN_PROGRESS,取次ぎ,English,
-Takafumi,Kumayama,takahumik@hotmail.com,0421 366 817,,Matcha Haus Okaeri,salesqualifiedlead,NEW,要確認,Japanese,熊山貴文。⚠️本人には未面会。オーナー名も未確認
+Takafumi,Kumayama,takahumik@hotmail.com,+61 421 366 817,,Matcha Haus Okaeri,salesqualifiedlead,NEW,要確認,Japanese,熊山貴文。⚠️本人には未面会。オーナー名も未確認
 Eddy,,,,オーナー,Kona Matcha,lead,NEW,決裁者,Japanese,日本人。未連絡。⚠️競合でもある
 Meta,,,,スタッフ,Kona Matcha,lead,NEW,取次ぎ,English,Eddyへ取次ぎ
 SHY,,,,オーナー,OSOI,salesqualifiedlead,IN_PROGRESS,決裁者,English,ご夫婦で創業。旦那さまは弁護士＝条件は細かく詰められる前提
@@ -62,5 +62,5 @@ Po Wei,Su,chisame7@gmail.com,+61 422 461 933,,YOWHIRL,lead,NEW,要確認,English
 Vinca,Chainiago,vincachainiago1@yahoo.com.au,+61 403 770 082,,CloudHaus cafe,lead,NEW,要確認,English,下書き止まり・期日超過
 Stephan,,offset.surryhills@gmail.com,,,OFFSET Matcha & Brew,lead,NEW,取次ぎ,English,⚠️メールの綴りは名刺の手書きのため要確認
 Thomas,Weston,karomicafe@outlook.com,,オーナー,karomi cafe,other,NEW,決裁者,English,🔴ITTEKI MATCHA経由で仕入れ中＝直接の提案をしない。お礼のみ
-Amber,,,0466 436 302,,T TOTALER,salesqualifiedlead,NEW,要確認,English,豪州の茶ブランド。直営ティーショップあり
+Amber,,,+61 466 436 302,,T TOTALER,salesqualifiedlead,NEW,要確認,English,豪州の茶ブランド。直営ティーショップあり
 Sophie,Nguyen,soph.n2308@gmail.com,+61 469 035 234,,C2 matcha,lead,NEW,要確認,English,14種と約束しない。FA 5SKUのキュレーションで返す
