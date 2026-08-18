@@ -66,14 +66,14 @@
 | ✅Naau Cafe | MEL | Insta DM | FA001・FA002・FA003・FA004 | 4 | オーナー火・水在店 |
 | ✅Miyama (Melb Central) | MEL | E-mail | FA001・FA002・FA003・FA004 | 4 | 店長Kei・社内MTGで提案予定 |
 | ✅Hikari Café | MEL | ― | FA001・FA002・FA003・FA004 | 4 | ⭐Derekが東京の展示会に来訪済 |
-| ✅Regulars | MEL | ― | FA001・FA002・FA003・FA004 | 4 | 公開メールなし |
-| ✅Sneaker Laundry | MEL | ― | FA003×2・FA004×2・FA005・AFc | 6 | FA001-002は渡していない |
-| ✅MINIYAMA | MEL | ― | FA001・FA002・FA003×2・FA004×2・FA005×2 | 8 | 8/14にFA003-005追加 |
+| ✅Regulars | MEL | E-mail | FA001・FA002・FA003・FA004 | 4 | 公開メールなし |
+| ✅Sneaker Laundry | MEL | ― | FA003×2・FA004×2・FA005・AFc | 6 | FA001-002は渡していない／🆕**FA2.5を検討中** |
+| ✅MINIYAMA | MEL | E-mail | FA001・FA002・FA003×2・FA004×2・FA005×2 | 8 | 8/14にFA003-005追加 |
 | ✅Groove | MEL | WhatsAppグループ | FA001・FA002・FA003・FA004・FA005 | 5 | ✅受注（10kgトライアル） |
-| ✅Midori pop-up | MEL | ― | FA001・FA002・FA003・FA004・FA005 | 5 | Matthew用にJoanna&Ritaが預かり |
-| ✅Tea Drop | MEL | ― | FA005×2・AFb・Cf・Dg・AFc・AEf・FA001・FA002・FA003・FA004・AEg・Ij | 13 | 7/29 South Melb店／8/10 本社Mevan／8/11 ほうじ茶 |
-| ✅Clement / St Ali | MEL | ― | FA001・FA002・FA003・FA004・FA005・AFc・Cf | 7 | 8/4にCf追加 |
-| ✅Hello Matcha | MEL | ― | Cf・AEf・FA005 | 3 | ★S級・年20t／🇺🇸US側で扱う |
+| ✅Midori pop-up | MEL | 電話（架電営業） | FA001・FA002・FA003・FA004・FA005 | 5 | Matthew用にJoanna&Ritaが預かり |
+| ✅Tea Drop | MEL | E-mail | FA005×2・AFb・Cf・Dg・AFc・AEf・FA001・FA002・FA003・FA004・AEg・Ij | 13 | 7/29 South Melb店／8/10 本社Mevan／8/11 ほうじ茶 |
+| ✅Clement / St Ali | MEL | E-mail | FA001・FA002・FA003・FA004・FA005・AFc・Cf | 7 | 8/4にCf追加 |
+| ✅Hello Matcha | MEL | WhatsApp | Cf・AEf・FA005 | 3 | ★S級・年20t／🇺🇸US側で扱う |
 | ✅MEET FOREST | MEL | メール | FA003・FA005 | 2 | halal-friendly／🔴**未連絡** |
 | ✅Itteki Matcha | MEL | ― | FA001・FA002・FA004・FA005×2 | 5 | ⭐✅受注（FA005 100kg） |
 | ✅KUMO | MEL | Insta DM | FA001・FA002・FA003・FA004・FA005 | 5 | 8/3 FA001-002／8/9 FA003-005 |
@@ -96,8 +96,8 @@
 | ✅ISHHO cafe | SYD | ― | FA001・FA002・FA003 | 3 | ドリンク$14＋席料$10・おくみどり表記 |
 | ✅JIBBI COFFEE ROASTERS | SYD | ― | FA002・AEa・De・Dg・AFb・AFa | 6 | 🆕新規。⚠️De/Dgの内訳は要確認 |
 | ✅Zen Wonders | 郵送 | ― | FA001・FA002・FA003・FA004・FA005・AFb・Cf・Dg・AFc・AEf | 10 | ❌失注（競合リスク）・8/3追送 |
-| ✅Elle Collective (Perth) | 郵送 | 電話 0437 900 130 | FA002・FA003・FA004 | 3 | FA004発注予定・PayPal回答待ち |
-| ✅Jaya Rajan | 郵送 | 電話 +61 409 213 706 | FA001・FA002・FA003 | 3 | 検査ラボ・1ヶ月超ノーレス |
+| ✅Elle Collective (Perth) | 郵送 | 電話 0437 900 130 | FA002・FA003・FA004 | 3 | 🆕⭐**FA004受注**（2026-08-18確定）・⚠️PayPal回答待ち |
+| ✅Jaya Rajan | 郵送 | WhatsApp／電話 +61 409 213 706 | FA001・FA002・FA003 | 3 | 検査ラボ・1ヶ月超ノーレス |
 | ✅Deiji Matcha | 郵送 | Insta DM | FA001・FA002・FA003・FA004・AFb | 5 | 🆕❌**失注**（2026-08-18確定） |
 | ✅Matcha Society | 郵送 | E-mail | FA001・FA002・FA003・FA005 | 4 | 反応待ち |
 | ✅Calder / Cosecha | 郵送 | ― | FA001・FA002・FA004・FA005・AFb・Cf・Dg×2・AFc・AEf・AFa・AEa | 12 | ⭐✅受注（FA005）・8/3＋8/15追送 |
