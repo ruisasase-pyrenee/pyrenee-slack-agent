@@ -99,8 +99,8 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 | **FA002** | **0** 🔴🔴 | | **AFb** | **9** |
 | FA003 | 2 🔴 | | AEa | 5 |
 | FA004 | 2 🔴 | | **Ii** | **10** ⭐ |
-| FA005 | 7 | | De | 4 |
-| AEg | 6 | | Dg | 4 |
+| FA005 | 7 | | De | 3 |
+| AEg | 6 | | Dg | 5 |
 | Ij | 3 | | Cf | 5 |
 | | | | **AFc** | **−1** ⚠️ |
 | | | | **AEf** | **0** 🔴 |
@@ -111,8 +111,8 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
 - 🔴🔴**FA002 ＝ 0本**。US遠征の芯が「FA002を対面で重点的に捌く」なのに**現地で配れる弾がゼロ**。長野代表が姉宅（US）へ事前発送した分の到着確認が最優先
 - 🔴**補充が必要＝FA002（0）／FA001（1）／FA003（2）／FA004（2）／AFc（−1）／AEf（0）**＝**FAシリーズが5種とも実質ゼロ**
 - ⚠️**AFc が −1**：到着5個に対し配布6件（Sneaker Laundry／Tea Drop／Clement・St Ali／Zen Wonders／Calder／TAKEZO）。1件は別SKUだった可能性
-- ⭐**まだ余裕＝Ii 10（一度も配っていない・$50.0／A$71.40）／AFb 9／AFa 6／AEg 6／Cf 5／AEa 5**。⚠️AEaは10月末に在庫消滅の可能性・Deは残4で在庫本体200kgのみ＝配布先を選ぶ
-- **8/16-18の追加配布**＝The Tea Centre（8/17・AFa/AFb/De/Dg・⭐WhatsApp交換）／Mado Matcha（8/16・De/AFb/AEa/AFa/Dg）／🆕**JIBBI COFFEE ROASTERS**（FA002/AEa/Dg×2/AFb/AFa）／🆕**TOMOYA君**（FA001/FA004/FA005・メルボルンのカフェ勤務の知人・⚠️店名未記録）
+- ⭐**まだ余裕＝Ii 10（一度も配っていない・$50.0／A$71.40）／AFb 9／AFa 6／AEg 6／Cf 5／AEa 5**。⚠️AEaは10月末に在庫消滅の可能性・Deは残3で在庫本体200kgのみ＝配布先を厳選する
+- **8/16-18の追加配布**＝The Tea Centre（8/17・AFa/AFb/De/Dg・⭐WhatsApp交換）／Mado Matcha（8/16・De/AFb/AEa/AFa/Dg）／🆕**JIBBI COFFEE ROASTERS**（シドニー・FA002/AEa/De/Dg/AFb/AFa）／🆕**TOMOYA君**（FA001/FA004/FA005・メルボルンのカフェ勤務の知人・⚠️店名未記録）
 - ⚠️**以後は「渡した先＋SKU」を都度記録すること**（逆算だけだと必ずズレる）
 
 ### 発送済みサンプルの追跡（返信待ち）

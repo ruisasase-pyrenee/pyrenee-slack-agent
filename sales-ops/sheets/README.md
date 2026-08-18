@@ -17,6 +17,12 @@
 | `FirstAgri_Cf_Premium_Kagoshima.pdf` | Cf 商品資料 | 汎用 | |
 | `FirstAgri_ALg_Wazuka_Organic.pdf` | ALg（有機・京都/和束） | Hello Matcha 等の有機宇治ライン向け | |
 
+## 社内資料
+
+| ファイル | 内容 |
+|---|---|
+| `FirstAgri_AU_Handover_2026-08.pdf` | **豪州出張ハンドオーバー**（A4 36ページ・65社/95名を人単位で棚卸し）。🔴**社内限定・対外配布不可**（顧客名・担当者名・価格・粗利を含む）。ソース＝`../豪州出張ハンドオーバー.md` |
+
 ## 請求書
 
 | ファイル | 内容 |
@@ -38,12 +44,18 @@ python3 render_hj.py        # hojicha_src.html → FirstAgri_Hojicha_Organic_202
 
 # サンプルラインナップ
 python3 render_sl.py        # samplelist.html → FirstAgri_Sample_Lineup_2026-08.pdf
+
+# 豪州出張ハンドオーバー（Markdown → A4複数ページPDF）
+python3 render_handover.py  # ../豪州出張ハンドオーバー.md → FirstAgri_AU_Handover_2026-08.pdf
 ```
+
+`render_handover.py` は Markdown をそのままA4の冊子体にする。表紙・フッターのページ番号・表のヘッダー行の繰り返しまで入っているので、**内容を直すときは .md 側だけ編集して再レンダリングする**。
 
 Playwright + Chromium（`/opt/pw-browsers/chromium`）でA4 1枚に自動フィットさせている。価格を直すときは HTML 側の該当セルを編集してから再レンダリングする。
 
 ## ⚠️ 注意
 
+- 🔴**`FirstAgri_Sample_Lineup_2026-08.pdf` は 2026-08-15 の値下げ前の価格**（AFb $300／AEa $102／Cf $58.90／AEg $77.10＝MM個別価格）。**顧客に渡すなら `FirstAgri_Samples_OnHand_2026-08.pdf` の方を使うこと**
 - **AUD換算は 1 USD = 1.428 で全シート統一**。⚠️過去に 1.451 で作った版があり、混在すると同一SKUで2つの金額が出るので、必ず既存シートに合わせる
 - **価格の一次ソースは `../supplier-master-2026-08.md`**。Matcha Mate個別シートの数字（標準の0.857倍）を転記しないこと
 - `Ij` はグレード・焙煎・品種が **TBC**。鈴木専務（かねはち茶園）への照会待ち
