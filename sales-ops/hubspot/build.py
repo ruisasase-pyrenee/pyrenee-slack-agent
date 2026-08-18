@@ -132,6 +132,7 @@ P = [
 ("Levae","Ziaei","","要確認","info@levalicious.com.au","+61 403 471 443","Levalicious","lead","NEW","English","下書き止まり・期日超過"),
 ("Po Wei","Su","","要確認","chisame7@gmail.com","+61 422 461 933","YOWHIRL","lead","NEW","English","下書き止まり・期日超過"),
 ("Vinca","Chainiago","","要確認","vincachainiago1@yahoo.com.au","+61 403 770 082","CloudHaus cafe","lead","NEW","English","下書き止まり・期日超過"),
+("Stephan","","","取次ぎ","offset.surryhills@gmail.com","","OFFSET Matcha & Brew","lead","NEW","English","⚠️メールの綴りは名刺の手書きのため要確認"),
 ("Thomas","Weston","オーナー","決裁者","karomicafe@outlook.com","","karomi cafe","other","NEW","English","🔴ITTEKI MATCHA経由で仕入れ中＝直接の提案をしない。お礼のみ"),
 ("Amber","","","要確認","","0466 436 302","T TOTALER","salesqualifiedlead","NEW","English","豪州の茶ブランド。直営ティーショップあり"),
 ("Sophie","Nguyen","","要確認","soph.n2308@gmail.com","+61 469 035 234","C2 matcha","lead","NEW","English","14種と約束しない。FA 5SKUのキュレーションで返す"),
