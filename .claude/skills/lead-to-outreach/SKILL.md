@@ -34,4 +34,6 @@ A lead notification pasted by Rui, usually containing: company name, contact nam
 - If email is more appropriate (e.g. Rui asks for a formal quote follow-up instead of a chat message), offer to also create a Gmail draft via the Gmail MCP tool (`create_draft`) — but only do this if asked, since it writes to a real mailbox.
 - If the lead's volume/grade doesn't clearly map to a rule in `fa-catalog.json`, say so explicitly rather than guessing silently — ask Rui or flag it as a note in the tracker row.
 - Do not invent prices, stock numbers, or company facts not present in `fa-catalog.json`.
-- Flag (but don't silently resolve) the known AUD-vs-USD pricing inconsistency in the catalog if a lead asks for a firm price.
+- 🔴 **`sales-ops/supplier-master-2026-08.md` is the price/stock source of truth.** `fa-catalog.json` is a secondary file reconciled against it on 2026-08-18. If you are about to put a number in front of a customer, check it against the supplier master first — and check stock allocation before any volume commitment.
+- Currency: **USD is the base. AUD = USD × 1.428, JPY = USD × 150.** (The old AUD-vs-USD inconsistency in the catalog was resolved on 2026-08-18 — do not re-flag it.)
+- ⚠️ **Never quote from `sales-ops/quote-matcha-mate-2026-07-01.md`** — those are Matcha Mate's individual prices at 0.857× standard.

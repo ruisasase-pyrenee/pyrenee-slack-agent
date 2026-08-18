@@ -16,7 +16,9 @@
 - `sales-ops/master-price-sheet-2026-06-08.md` — **公式Sample Order Sheet(2026-06-08)全SKUの価格表**（EXW/USD/JPY・在庫・認証・産地/品種。AEe/FA2.5/THE LAST MATCHA/AL系含む最新。※ほうじ茶AEg=$77.1・AEh=$51.4はシート外＝`quote-matcha-mate-2026-07-01.md`参照）
 - `sales-ops/quote-matcha-mate-2026-07-01.md` — Matcha Mate向けサンプル発送シート（ほうじ茶AEg $77.1/AEh $51.4/AFc $61.7・AEa $87.4の個別価格。⚠️他顧客に流用時は割引前か要確認）
 - `sales-ops/full-catalog-2026-06.json` — **弊社全38SKUの完全プライスリスト**（USD/JPY/AUD・在庫・認証・豪州手持ちサンプル）※AFc=ほうじ茶(京都10t)・AFb=$300/2000kgが最新
-- `sales-ops/fa-catalog.json` — FAシリーズ+有機ラインのSKUデータとSKU選定ルール
+- `sales-ops/README.md` — 🗂️**sales-ops の索引**（どこに何があるか・情報の優先順位・更新ルール）。迷ったらまずここ
+- `sales-ops/豪州出張ハンドオーバー.md` — **豪州出張の全65社・95名を人単位で棚卸し**（決裁権・連絡先・状況・次の一手・記録の穴）。PDF＝`sheets/FirstAgri_AU_Handover_2026-08.pdf`🔴社内限定
+- `sales-ops/fa-catalog.json` — FAシリーズ+有機ラインのSKUデータとSKU選定ルール（✅2026-08-18 に仕入マスターと突き合わせ済み）
 - `sales-ops/finance-master-2026.md` — 価格マスター・ロット原価・過去受注実績・5ヶ年計画の索引
 - `sales-ops/zaimu-2026-fulltext.txt` — 財務管理PDF全文（grepで検索）
 - `sales-ops/sheets/FirstAgri_FA25_2026-08.pdf` — **FA2.5 単品シート（1ページ）**。⚠️**価格未確定のまま作成**＝US遠征設定値 ¥25,000／$166.7／**A$238.05** で記載。仕入マスターは⚠️未定（¥24,000〜26,000）→**社内確定後に渡す**
@@ -30,7 +32,7 @@
 USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7｜FA005 $100
 ### 製法（対外説明で使う・⚠️2026-08-11 Rui確認で訂正）
 **石臼挽き＝FA001・FA002 のみ。FA003・FA004・FA005 は石臼ではない。**
-⚠️`sales-ops/fa-catalog.json` は FA003 を "Stone-ground, two-step firing" と記載しているが**「Stone-ground」は誤り**（二段火入れ＝深蒸し＋浅火入れのブレンド部分は有効）。カタログの process 欄をそのまま客に出さないこと。
+✅**2026-08-18 に `fa-catalog.json` の process 欄を修正済み**（FA003＝"Two-step firing"）。⚠️同時に FA001 $366.7／FA002 $300.0 という**値上げ前の価格**が残っていたのも是正（正＝$333.3／$266.7）。
 - FA001＝石臼挽き／やぶきた＋さやまかおり
 - FA002＝石臼挽き・微粉砕／やぶきた＋おくみどり／ミルク特化・水溶性5/5
 - FA003＝二段火入れ（深蒸し＋浅火入れをブレンド）／おくみどり＋やぶきた
