@@ -133,6 +133,7 @@ P = [
 ("Po Wei","Su","","要確認","chisame7@gmail.com","+61 422 461 933","YOWHIRL","lead","NEW","English","下書き止まり・期日超過"),
 ("Vinca","Chainiago","","要確認","vincachainiago1@yahoo.com.au","+61 403 770 082","CloudHaus cafe","lead","NEW","English","下書き止まり・期日超過"),
 ("Stephan","","","取次ぎ","offset.surryhills@gmail.com","","OFFSET Matcha & Brew","lead","NEW","English","⚠️メールの綴りは名刺の手書きのため要確認"),
+("Lucie","","","要確認","","+61 401 765 311","The Tea Centre Pty Ltd","salesqualifiedlead","IN_PROGRESS","English","8/17にWhatsApp交換。1993年創業・東海岸10店舗の卸。本社倉庫はブリスベン"),
 ("Thomas","Weston","オーナー","決裁者","karomicafe@outlook.com","","karomi cafe","other","NEW","English","🔴ITTEKI MATCHA経由で仕入れ中＝直接の提案をしない。お礼のみ"),
 ("Amber","","","要確認","","+61 466 436 302","T TOTALER","salesqualifiedlead","NEW","English","豪州の茶ブランド。直営ティーショップあり"),
 ("Sophie","Nguyen","","要確認","soph.n2308@gmail.com","+61 469 035 234","C2 matcha","lead","NEW","English","14種と約束しない。FA 5SKUのキュレーションで返す"),
