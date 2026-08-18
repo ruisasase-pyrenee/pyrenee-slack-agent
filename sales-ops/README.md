@@ -1,11 +1,90 @@
-# sales-ops
+# sales-ops — ファイル索引
 
-Working files for First Agri matcha B2B lead handling (Rui, Global Sales Manager).
+First Agri（一番農業株式会社）の営業オペレーション用データ。**どこに何があるか、どれが正か**をここで引く。
+運用ルール本体は リポジトリ直下の `CLAUDE.md`。
 
-- `fa-catalog.json` — structured FA Series SKU data (price, origin, grade, best-for, SKU selection rules). Source of truth for outreach drafts.
-- `lead-tracker.csv` — one row per inbound lead: contact info, volume, SKU recommendation, outreach status, 3-day follow-up due date.
-- `follow-up-checklist.md` — the 3-day-rule checklist and phone follow-up call script.
-- `outreach-templates.md` — WhatsApp (short) and email (long) message templates, plus SKU one-liners.
-- `business-improvement-report.md` — the 2026-07-02 business-process review (bottlenecks, automation backlog, what was built).
+---
 
-See `.claude/skills/lead-to-outreach/SKILL.md` for the skill that turns a pasted lead notification into a draft + tracker row automatically.
+## 🔴 情報の優先順位（食い違ったら上が勝つ）
+
+1. **`supplier-master-2026-08.md`** — 価格・在庫・産地・認証の**一次ソース**（2026-08-15 の価格改定を反映）
+2. **`CLAUDE.md`** — 案件の状況・商談の決定事項・営業ルール
+3. **`sample-ledger-2026-08.md`** — 手持ちサンプルの残数（SKU行を正とする）
+4. その他（下の「⚠️二次資料」）
+
+⚠️ **原則すべての最新情報は HubSpot に載る。顧客に渡す価格は HubSpot からインポートしたものが最も正確。**
+本リポジトリは参照用として更新している。
+
+---
+
+## 価格・商品データ
+
+| ファイル | 内容 | 位置づけ |
+|---|---|---|
+| **`supplier-master-2026-08.md`** | 全仕入先×全SKU。仕入原価・標準販売価格(USD/JPY)・在庫・産地・有機・認証・在庫優先度 | 🔴**一次ソース** |
+| `fa-catalog.json` | FAシリーズ＋有機ラインのSKUデータと **SKU選定ルール**（`lead-to-outreach` スキルが読む） | ⚠️二次資料（2026-08-18 に一次ソースと突き合わせ済み） |
+| `full-catalog-2026-06.json` | 全38SKUのスナップショット（USD/JPY/AUD・在庫・認証・豪州手持ちサンプル） | ⚠️二次資料（2026-06時点＋8/15改定を反映） |
+| `master-price-sheet-2026-06-08.md` | 公式 Sample Order Sheet の全SKU価格表 | ⚠️**2026-06-08 のスナップショット**。品種・産地・認証の参照用に留める |
+| `quote-matcha-mate-2026-07-01.md` | Matcha Mate 向け個別シート | 🔴**標準の0.857倍（14.3%オフ）。他顧客に転記しない** |
+
+**通貨の基準**：USD が基準。**AUD = USD × 1.428**（全社統一）。JPY = USD × 150（社内換算）。
+
+---
+
+## 案件・リード管理
+
+| ファイル | 内容 |
+|---|---|
+| **`豪州出張ハンドオーバー.md`** | 2026-07/08 豪州出張の**全65社・95名を人単位で棚卸し**。決裁権・連絡先・状況・次の一手・記録の穴・期日超過まで。PDF版＝`sheets/FirstAgri_AU_Handover_2026-08.pdf` |
+| `sample-ledger-2026-08.md` | 豪州サンプルの到着・配布・残数（配布47先の全件表つき） |
+| `lead-tracker.csv` | インバウンドリード1件1行。連絡先・数量・SKU提案・アウトリーチ状況・3日フォロー期日 |
+| `follow-up-checklist.md` | 3日ルールのチェックリストと電話フォローのスクリプト |
+| `outreach-templates.md` | WhatsApp（短）・メール（長）のテンプレートとSKUワンライナー |
+| `us-target-list-2026.csv` | US新規開拓リスト。PriceRange／Quantity の変数モデルをカラム化 |
+| `us-plan-2026-08-18_09-23.md` | US遠征（37日・6区間）の日次営業計画 |
+
+---
+
+## ブランド・財務
+
+| ファイル | 内容 |
+|---|---|
+| `brand-the-last-matcha.md` | THE LAST MATCHA のブランドストーリー（短縮版／長尺版）＋英語デッキの内容＋⚠️事実確認が要る点 |
+| `finance-master-2026.md` | 価格マスター・ロット原価・過去受注実績・5ヶ年計画の索引 |
+| `zaimu-2026-fulltext.txt` | 財務管理PDFの全文（grepで検索する） |
+| `business-improvement-report.md` | 2026-07-02 の業務プロセス review |
+
+---
+
+## 顧客提出用PDF・生成スクリプト
+
+**`sheets/`** — 対外的にそのまま出せる資料と、その生成用HTML/スクリプト。詳細は `sheets/README.md`。
+
+- `_SUPERSEDED_` で始まるファイルは**古い版**。顧客に渡さないこと
+- 価格やレートが変わったら `render_*.py` で作り直す
+- 🔴 `FirstAgri_AU_Handover_2026-08.pdf` は**社内限定・対外配布不可**
+
+---
+
+## プロンプト
+
+**`prompts/`** — 繰り返し使う指示文。
+
+| ファイル | 用途 |
+|---|---|
+| `trip-wrapup-by-person.md` | 出張の全接触先を「人」単位で棚卸しし、引き継げる形にする |
+
+---
+
+## 自動化
+
+`.claude/skills/lead-to-outreach/SKILL.md` — 貼り付けたリード通知を SKU提案＋WhatsApp文案＋トラッカー行に変換するスキル。
+
+---
+
+## ⚠️ 更新するときのルール
+
+1. **価格を直したら `supplier-master-2026-08.md` を先に直す。**二次資料はその後で合わせる
+2. **サンプルを渡したら「渡した先＋SKU」を都度 `sample-ledger-2026-08.md` に書く。**逆算だけだと必ずズレる
+3. **✅確定と⚠️推定をラベルで分ける。**受注前の案件を受注として書かない
+4. **顧客に渡したPDFは、相手と日付を `CLAUDE.md` に記録する**

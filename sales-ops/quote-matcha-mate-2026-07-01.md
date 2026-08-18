@@ -1,5 +1,11 @@
 # サンプル発送シート — Matcha Mate（2026-07-01）
 
+> 🔴 **Matcha Mate 専用の個別価格シートです。掲載価格は標準価格の 0.857倍（14.3%オフ）。**
+> **他の顧客にこの数字を転記しないこと**（＝14%の値引きを無自覚に配ることになる）。
+> 標準価格は `supplier-master-2026-08.md`：AEg $90.0／AEh $60.0／AFc $72.0／AEa $90.0。
+> ※ Ij $55.60・Ii $50.0 は MM 由来ではなく標準価格なのでそのまま出してよい。
+
+
 出典: First Agri Inc.「Matcha & Hojicha — Sample Dispatch Sheet (FY2025)」PDF。Prepared for **Matcha Mate** / Date 01 Jul 2026 / Quantity **2 bags each** / Incoterms **EXW** / 価格=**EXW USD per kg**。
 ⚠️ **このシートはMatcha Mate向けの個別提示**の可能性大（AEa=$87.4 はマスター$102より約14%安い＝パートナー割引の疑い）。O3等 他顧客にそのまま流用しない。
 

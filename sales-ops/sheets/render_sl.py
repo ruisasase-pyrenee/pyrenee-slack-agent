@@ -11,7 +11,7 @@ async def main():
         b = await p.chromium.launch(executable_path="/opt/pw-browsers/chromium")
         pg = await b.new_page()
         await pg.emulate_media(color_scheme="light", media="screen")
-        html = (SCR/"samplelist.html").read_text()
+        html = (SCR/"_SUPERSEDED_samplelist.html").read_text()
         s = 1.0
         for _ in range(6):
             await pg.set_viewport_size({"width": round(A4W/s), "height": round(A4H/s)})
@@ -20,7 +20,7 @@ async def main():
             h = await pg.evaluate("document.querySelector('.sheet').getBoundingClientRect().height")
             if h <= (A4H/s) - 4: break
             s = max(.4, round((A4H/h)*.99, 3))
-        await pg.pdf(path=str(SCR/"FirstAgri_Sample_Lineup_2026-08.pdf"), format="A4",
+        await pg.pdf(path=str(SCR/"_SUPERSEDED_FirstAgri_Sample_Lineup_2026-08.pdf"), format="A4",
                      print_background=True, scale=s, margin={"top":"0","bottom":"0","left":"0","right":"0"})
         await pg.screenshot(path=str(SCR/"sl_pv.png"), full_page=True)
         print("scale", s, "h", round(h))

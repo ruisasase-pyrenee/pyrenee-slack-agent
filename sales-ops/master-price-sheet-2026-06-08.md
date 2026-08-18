@@ -1,5 +1,10 @@
 # マスタープライスリスト（Sample Order Sheet 2026-06-08・全SKU）
 
+> 🔴 **これは 2026-06-08 時点のスナップショットです。2026-08-15 の価格改定を反映していません。**
+> **AEa $102→$90／Cf $58.9→$50／AFb $300→$266.7／Df・Ik・ALe・ALf は販売中止。**
+> 顧客に出す価格は必ず `supplier-master-2026-08.md` から引くこと。本ファイルは品種・産地・認証の参照用。
+
+
 出典: First Agri 公式「Sample Order Sheet 20260608 Matcha / MatchaAll」PDF（Rui提供・2026-08-03取込）。
 共通条件: Incoterms=**EXW** ／ 支払=**100%前金** ／ 通貨=**USD / JPY** ／ 支払方法=銀行送金 ／ OEM=可 ／ サンプル=原則Available。
 会社: B1F, Zaza City Hamamatsu Central Bldg, 100-1 Kajimachi, Chuo-ku, Hamamatsu ／ +81-80-3694-2131 ／ corporate@first-agri.jp
