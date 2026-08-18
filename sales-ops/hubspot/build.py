@@ -25,7 +25,7 @@ C = [
 ("Morning Made","Auckland","New Zealand","lead","",0,"―","LinkedIn","NZ企業。店頭$59/60g＝A$983/kg。未接触。有機は宇治ではなく鹿児島を当てる"),
 ("Hello Matcha","Sydney NSW","Australia","salesqualifiedlead","",0,"Cf,AEf,FA005","WhatsApp","farm-direct宇治輸入卸・豪州1000+カフェ・年20t。US側で扱う（2026-08-18 Rui指示）"),
 ("Issho Cafe","Haymarket NSW","Australia","salesqualifiedlead","",0,"FA001,FA002,FA003","―","ドリンク$14＋席料$10。メニューに品種名おくみどり。16品全部抹茶。駅隣接"),
-("The Tea Centre","Piccadilly NSW","Australia","salesqualifiedlead","",0,"FA003,FA004,FA005,AFa,AFb,De,Dg","WhatsApp","Est.1993の老舗卸。缶小売からの逆算でプライスレンジ ¥22,600-42,000/kg"),
+("The Tea Centre Pty Ltd","Brisbane QLD","Australia","salesqualifiedlead","",0,"FA003,FA004,FA005,AFa,AFb,De,Dg","WhatsApp","1993年創業・豪州東海岸10店舗＋オンライン。本社倉庫はブリスベン（訪問したPiccadillyはシドニーの1店舗）。缶小売逆算でプライスレンジ¥22,600-42,000/kg。⚠️未検証: Director=Simon Roy／年商約$6.2M"),
 ("BALIBOLA","Melbourne","Australia","salesqualifiedlead","",0,"FA001-FA004,Cf,AEf","個人WhatsApp","1日約200杯。自社ブランド缶RTDあり。カリナリーグレードを探し中"),
 ("Tori's","Melbourne","Australia","salesqualifiedlead","",0,"FA001-FA005","E-mail","5店舗グループ（Tori'sx2/Humble Rays/Suga Rays/Midday）。ほうじ茶缶あり。AEgは未配布"),
 ("Matcha Haus Okaeri","Melbourne","Australia","salesqualifiedlead","",0,"FA001-FA005","E-mail","RMIT Building 14内。1日約100食＝月9-15kg級。デザート業態＝Cfが本命"),
