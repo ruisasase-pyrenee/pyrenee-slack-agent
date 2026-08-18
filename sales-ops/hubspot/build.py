@@ -112,7 +112,7 @@ P = [
 ("Takafumi","Kumayama","","要確認","takahumik@hotmail.com","+61 421 366 817","Matcha Haus Okaeri","salesqualifiedlead","NEW","Japanese","熊山貴文。⚠️本人には未面会。オーナー名も未確認"),
 ("Eddy","","オーナー","決裁者","","","Kona Matcha","lead","NEW","Japanese","日本人。未連絡。⚠️競合でもある"),
 ("Meta","","スタッフ","取次ぎ","","","Kona Matcha","lead","NEW","English","Eddyへ取次ぎ"),
-("SHY","","オーナー","決裁者","","","OSOI","salesqualifiedlead","IN_PROGRESS","English","ご夫婦で創業。旦那さまは弁護士＝条件は細かく詰められる前提"),
+("SHY","","オーナー","決裁者","","+61 422 685 099","OSOI","salesqualifiedlead","IN_PROGRESS","English","ご夫婦で創業。旦那さまは弁護士＝条件は細かく詰められる前提"),
 ("Sharo","","オーナー","決裁者","","+61 424 134 887","ICE KO-II","salesqualifiedlead","IN_PROGRESS","","⚠️英字綴りは要確認（しゃろーさん）"),
 ("Ken","","","取次ぎ","","","Little Rogue","salesqualifiedlead","IN_PROGRESS","English","⚠️Matcha MateのKenとは別人"),
 ("Derek","Yang","Business Development Co-founder","決裁者","derek@hikarilife.com.au","+61 431 483 067","Hikari Cafe","salesqualifiedlead","IN_PROGRESS","English","6月の東京・輸出EXPOで弊社ブースに来訪済＝既接点あり"),
