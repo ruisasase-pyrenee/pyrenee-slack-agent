@@ -21,6 +21,7 @@
 
 | ファイル | 内容 |
 |---|---|
+| `FirstAgri_AU_Handover_ByCompany_2026-08.pdf` | **豪州出張ハンドオーバー 会社別**（A4 30ページ・67社）。**会社名／担当者／オーナー／連絡先4種（WhatsApp・E-mail・Instagram・その他）** を先頭に置いた形式。ソース＝`../豪州出張ハンドオーバー_会社別.md`（生成＝`../build/handover_v2.py`） |
 | `FirstAgri_AU_Handover_2026-08.pdf` | **豪州出張ハンドオーバー**（A4 36ページ・65社/95名を人単位で棚卸し）。🔴**社内限定・対外配布不可**（顧客名・担当者名・価格・粗利を含む）。ソース＝`../豪州出張ハンドオーバー.md` |
 
 ## 請求書
@@ -46,7 +47,11 @@ python3 render_hj.py        # hojicha_src.html → FirstAgri_Hojicha_Organic_202
 python3 render_sl.py        # samplelist.html → FirstAgri_Sample_Lineup_2026-08.pdf
 
 # 豪州出張ハンドオーバー（Markdown → A4複数ページPDF）
-python3 render_handover.py  # ../豪州出張ハンドオーバー.md → FirstAgri_AU_Handover_2026-08.pdf
+python3 render_handover.py     # ../豪州出張ハンドオーバー.md → FirstAgri_AU_Handover_2026-08.pdf
+
+# 豪州出張ハンドオーバー 会社別（★最新の形式）
+python3 ../build/handover_v2.py   # → ../豪州出張ハンドオーバー_会社別.md
+python3 render_handover_bc.py     # → FirstAgri_AU_Handover_ByCompany_2026-08.pdf
 ```
 
 `render_handover.py` は Markdown をそのままA4の冊子体にする。表紙・フッターのページ番号・表のヘッダー行の繰り返しまで入っているので、**内容を直すときは .md 側だけ編集して再レンダリングする**。
