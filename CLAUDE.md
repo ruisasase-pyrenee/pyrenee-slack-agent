@@ -135,7 +135,7 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
     - **NA[先方ボール]**: **8/14までに社長(オーナーEugene)へ稟議→決裁**
     - ⚠️Gemini雑音（無視）: mascara/Peter/temple/cookies/Twitter/Wifi/UK/Italian 等は本商談と無関係
 - **Stephen（Steve Fambo）→ Sydneyカフェ**（商談・Rui＋長野／2026-07-23）: **FA003 100kg発注目前**（初回100kg・20-30kgスタートも可／将来600kg確保オプション）。¥22,500/kg（＋送料$20/kg）＝約¥225万。1kgサンプルが"メロン/ハニーデュー"profileで高評価・現行サプライヤーの品質ばらつきに不満。**PO方式（長期縛りなし）・100%前金で挽き前（大口500kgは40%デポジット）・LT3-4週・9月第1週納品目標**。カフェ側ブランド名"Kaori"。梱包=10kg袋標準（1kg袋は+¥600/袋）・窒素充填なし・ヒートシール・輸入者情報は先方提供。品質＝挽く直前まで冷蔵保管→受注後ミル
-- **Itteki Matcha**（＝**itteki 一滴 Matcha + Cafe**・itteki.com.au・IG @itteki_matcha_coffee_melbourne／11 Daly St South Yarra ＋ Shop 9 FreshWater Place Southbank ほか計3店舗。オーナー＝**元・豪州無印良品(MUJI)の社長**・日本＋Dubai背景＝小売のプロ。Ruiも静岡出身＝地の利/競合インテリ）→ **2回目商談（Rui＋Rinsho・2026-07-28）**でディール骨格ほぼ確定。
+- **Itteki Matcha**（＝**itteki 一滴 Matcha + Cafe**・itteki.com.au・IG @itteki_matcha_coffee_melbourne／11 Daly St South Yarra ＋ Shop 9 FreshWater Place Southbank ほか計3店舗。オーナー＝**Umesh さん**（✅2026-08-19判明・⚠️姓未記録／⚠️日本人かどうかは未確認）＝**元・豪州無印良品(MUJI)の社長**・日本＋Dubai背景＝小売のプロ。Ruiも静岡出身＝地の利/競合インテリ）→ **2回目商談（Rui＋Rinsho・2026-07-28）**でディール骨格ほぼ確定。
   - **✅決定: FA005大口価格＝AUD 131/kg（¥15,000）で確定**（先方希望A$138より$7下＝より良い条件）
   - **FA004はドロップ（Ruiの判断「004はいらない」）**。※7/27時点はFA005+FA004各100kgの初回200kg構成→**7/28でFA005年間＋FA001追加に組み替え**（議事録の残論点欄に"04価格交渉"が残るがGemini古い記載・取り下げ方針）
   - **FA005＝年間3.2t（ランプ型）**: 最初1-2ヶ月100kg／3ヶ月目から300kg＝計3.2t。**初回オーダー8/14・以後毎月**。9月から増量、最初の100kgは補填分。⚠️※別メモ「9/1に100kg・10/1に300kg必要」とNAの「1-2ヶ月100kg」に食い違い→どの月で300kgに上げるか要確定

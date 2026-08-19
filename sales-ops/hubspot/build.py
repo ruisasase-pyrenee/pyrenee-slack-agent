@@ -3,7 +3,7 @@ OUT = pathlib.Path(__file__).resolve().parent
 
 # company, city, country, lifecycle, dealstage(空=案件なし), amount(JPY), samples, channel, note
 C = [
-("Itteki Matcha","Melbourne","Australia","customer","closedwon",1500000,"FA001,FA002,FA004,FA005x2","―","3店舗→10店舗計画。オーナーは元・豪州MUJI社長。銀行がメイン投資家でQC厳格。月合計228-241kg"),
+("Itteki Matcha","Melbourne","Australia","customer","closedwon",1500000,"FA001,FA002,FA004,FA005x2","―","オーナー=Umeshさん（元・豪州MUJI社長）。3店舗→10店舗計画。銀行がメイン投資家でQC厳格。月合計228-241kg"),
 ("Cosecha","Gold Coast","Australia","customer","closedwon",30160000,"FA001,FA002,FA004,FA005,AFb,Cf,Dgx2,AFc,AEf,AFa,AEa","郵送","✅FA005 200kg×5週間ごと＝年2,080kg（2026-08-19確定）。¥14,500なら年¥30,160,000／定価¥15,000なら¥31,200,000。🔴FA005の引当が危険（Itteki3.2t＋Dens1.5t＋本件2.08t＝6.78t、Rockysは別）。¥14,500は下限割れで社内未承認"),
 ("Groove","Melbourne","Australia","customer","closedwon",0,"FA001-FA005","WhatsAppグループ","抹茶100g/日。10日以上のリードタイム不可"),
 ("Elle Collective","Claremont WA","Australia","customer","closedwon",625000,"FA002,FA003,FA004","電話","✅FA004 25kg受注（2026-08-19・¥625,000）。30g缶・80g缶の見積もり依頼あり（社内ボール=関谷くん）。追加25kgで計50kg・¥1,250,000。⚠️PayPal回答待ち。⚠️FA004はMOQ100kg引上げ方向で25kgは大きく下回る＝例外可否を要確認"),
@@ -72,6 +72,7 @@ C = [
 ]
 # 氏名, 姓, 役職, 決裁権, email, phone, 会社, lifecycle, leadstatus, 言語, note
 P = [
+("Umesh","","オーナー","決裁者","","","Itteki Matcha","customer","OPEN_DEAL","","✅2026-08-19判明（⚠️姓未記録）。元・豪州MUJI社長。⚠️日本人かどうか未確認＝英語が無難。請求書・契約書は先方の会計士/弁護士宛（アドレス未記録）"),
 ("Calder","Dryden","","決裁者","","","Cosecha","customer","OPEN_DEAL","English","メール・電話とも未記録。送付先住所のみ判明"),
 ("Sunny","","オーナー","決裁者","","","Groove","customer","OPEN_DEAL","English","WhatsAppグループ作成済（番号未記録）。パートナーと共同決裁"),
 ("Ellie","Dunne","","決裁者","","+61 437 900 130","Elle Collective","customer","OPEN_DEAL","English","FA004受注。PayPal決済希望"),
