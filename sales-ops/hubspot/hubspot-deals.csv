@@ -1,6 +1,6 @@
 ﻿Deal name,Deal stage,Amount,Currency,Associated company,FA_確度メモ
 Itteki Matcha — 豪州2026,closedwon,1500000,JPY,Itteki Matcha,3店舗→10店舗計画。オーナーは元・豪州MUJI社長。銀行がメイン投資家でQC厳格。月合計228-241kg
-Cosecha — 豪州2026,closedwon,,JPY,Cosecha,"月70-80kg＋コロンビア月200kg構想＝年3.4t級。¥14,500/kgの逆提案（社内未承認）"
+Cosecha — 豪州2026,closedwon,30160000,JPY,Cosecha,"✅FA005 200kg×5週間ごと＝年2,080kg（2026-08-19確定）。¥14,500なら年¥30,160,000／定価¥15,000なら¥31,200,000。🔴FA005の引当が危険（Itteki3.2t＋Dens1.5t＋本件2.08t＝6.78t、Rockysは別）。¥14,500は下限割れで社内未承認"
 Groove — 豪州2026,closedwon,,JPY,Groove,抹茶100g/日。10日以上のリードタイム不可
 Elle Collective — 豪州2026,closedwon,,JPY,Elle Collective,FA004受注。数量・時期は未確定。PayPal決済希望でファイナンス回答待ち
 T2 Tea — 豪州2026,contractsent,39000000,JPY,T2 Tea,FA002 1008kg/年・$260。契約書CFOレビュー中。B Corp＝完全トレーサビリティ必須。本社アポなし訪問禁止
@@ -9,11 +9,12 @@ JSY TEA — 豪州2026,closedwon,6750000,JPY,JSY TEA,"✅FA003 300kg受注（202
 Matcha Mami — 豪州2026,qualifiedtobuy,57600000,JPY,Matcha Mami,月50kg→新2店舗で月120-150kg。JPY建て5年契約の意向で一致。現行AUD173/kg。9月来日で茶園訪問
 Matcha Mate — 豪州2026,qualifiedtobuy,,JPY,Matcha Mate,既存顧客・Bb月100kg。協業の方向性のみ合意。数量・条件は未確定。US冷蔵庫アライアンスの相手
 O3 — 豪州2026,qualifiedtobuy,,JPY,O3,FA003=ceremonial/AEa=culinary/AEh=hojicha に決定。80kg/3ヶ月。予算 landed A$180(reg)/A$200-230(prem)
-Kaori (Stephen) — 豪州2026,contractsent,2250000,JPY,Kaori (Stephen),FA003 100kg・9月第1週納品目標。PO方式・100%前金。⚠️OFFSET Matcha & Brew と同一先/同一人物の可能性を要確認
+Kaori (Stephen) — 豪州2026,contractsent,2250000,JPY,Kaori (Stephen),FA003 100kg・9月第1週納品目標。PO方式・100%前金。🔴担当=Stephen(Steve Fambo)=Purematchaの窓口。Purematchaの60kg受注と同一案件かを要統合（二重計上の危険）
 Chatime Australia — 豪州2026,appointmentscheduled,,JPY,Chatime Australia,豪州170店超・年5t。2027年1月に再協議で合意。AUD120/kg FOB上限。即コンタクトしない
 Matcha Maiden — 豪州2026,qualifiedtobuy,,JPY,Matcha Maiden,年4-6t。カスタムブレンド協業で合意。現行≈$60USD/kg。MOQ200kg/月。面談窓は木曜12-14時
 Tea Drop — 豪州2026,presentationscheduled,,JPY,Tea Drop,卸専門・創業22年。現行サプライヤーと15年。AFc（在庫10000kg）が本命
 Midori Matcha — 豪州2026,qualifiedtobuy,,JPY,Midori Matcha,"月60kg・¥14,000-19,000/kg。八女を2年継続。少し安ければ移行意向。FA005が価格帯に合致"
+Purematcha — 豪州2026,closedwon,1350000,JPY,Purematcha,"✅60kg受注（2026-08-19・⚠️SKUと単価は未記録／FA003なら¥1,350,000の試算）。担当=Stephen(Steve Fambo)。豪州最大級の抹茶卸・既に顧客。🔴Kaori名義の100kg案件と同一かを要統合"
 Deiji Matcha — 豪州2026,closedlost,,JPY,Deiji Matcha,❌失注（2026-08-18）。月5-20kg・30g缶リテール希望だった新興先
 Hareruya — 豪州2026,closedlost,,JPY,Hareruya,❌失注。1日300-500杯。メールにて返信あり＝明確な辞退
 Zen Wonders — 豪州2026,closedlost,,JPY,Zen Wonders,"❌失注（競合リスク）。単価上限¥20,000。サンプル10本投下"
