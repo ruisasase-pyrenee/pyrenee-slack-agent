@@ -195,16 +195,16 @@ USD換算（¥150/$）: FA001 $333.3｜FA002 $266.7｜FA003 $150｜FA004 $166.7�
     - ⭐**1日約100杯/食（8/10訪問で判明）**＝デザートは1食3-5g使用のため月**9-15kg級**＝MOQ20kgが2ヶ月弱で回る規模
     - ⚠️**8/10訪問時に熊山さんご本人には会えていない**（対応者の名前は未記録）。連絡先は名刺/施設情報から。**オーナー名も未確認**→次回ヒアリング
     - **サンプル＝FA001-005**。NA[Rui]＝熊山さんへ初回メール（送付済み想定）→味の感想＋現行仕入価格＋月間使用量をヒアリング
-  - **Kona Matcha（★2026-08-10 訪問／South Yarra店＝Malcolm Corner, 23 Malcolm St）**: **オーナー＝Eddy（Eddie）さん＝⭐日本人（8/10判明）→日本語直撃ルート**／**対応＝Metaさん（スタッフ・マネージャーではないが取次ぎ可）**。IG @matcha.kona ／店舗IG @k5.kona ／matchakona.com
+  - **Kona Matcha（★2026-08-10 訪問／🔴**訪問したのは RMIT 大学内の店舗**・✅2026-08-19訂正。South Yarra店＝Malcolm Corner, 23 Malcolm St は別店舗）**: **オーナー＝Eddy（Eddie）さん**（⚠️**2026-08-19訂正：日本人ではない**。旧記載「日本人＝日本語直撃ルート」は誤り）／**対応＝Metaさん（スタッフ・マネージャーではないが取次ぎ可）**。IG @matcha.kona ／店舗IG @k5.kona ／matchakona.com
     - **サンプル＝FA001-005 をMetaさんへ**（＋ブローシャー）。Rui はマンゴー抹茶ラテを注文して試飲。⚠️規模（杯数/月kg）は未ヒアリング
     - 伝えた芯＝**中間業者を排除して農家から直接仕入れ、本物の品質を見せる**（＝卸をやっているKonaに対する上流提案の布石）
     - 伝えた内容＝宇治(京都)＋鹿児島から調達・5種のライン・創業1年/20名のスタートアップ・HP案内。連絡先（WhatsApp・メール・日本の電話番号）を提供
     - ⚠️**競合でもある**＝matchakona.com は「Melbourne based best quality matcha for cafe and home」を掲げる**豪州の抹茶サプライヤー**（premium ceremonial/ceremonial/culinaryを卸売）。→Hello Matcha/Purematchaと同型＝**卸の大口候補**だが、⚠️**現行の仕入元を先に確認**（既に日本の産地と直取引なら頭越しリスク）
-    - **NA[Rui]＝Eddyさんへメール＋WhatsApp（⭐日本語で）**／[Meta]＝サンプルとブローシャーをEddyへ渡す・自身も試飲
+    - **NA[Rui]＝Eddyさんへメール＋WhatsApp（⚠️英語で。日本人ではない）**／[Meta]＝サンプルとブローシャーをEddyへ渡す・自身も試飲
     - ⚠️Gemini誤変換「Maler, South Sierra」＝**Malcolm St, South Yarra**
   - **Tori's（CBD路地裏＋Exhibition St の2店舗）**: **オーナー＝Nahm**／**担当＝Chyanne（Channe）・こうきさん**／**hello@toris.com.au**／⭐**8/10は閉店間際に訪問・抹茶ラテを試飲（高評価）**。⭐**缶リテールを展開しており、ほうじ茶の缶まである**＝ほうじ茶の実需が確定している数少ない先。**サンプルはFA001-005の5本のみ**（✅2026-08-18訂正：AEgは渡していない＝ほうじ茶を送る口実がまだ残っている）（⚠️Broadsheet記事は「オーナー＝Tinee Su」と記載＝共同経営者か記事が古いか。Rui直接確認のNahmを正とする）。2022開業。**抹茶バスクチーズケーキ・抹茶マドレーヌが看板**。「日本から輸入し**受注ごとに撹拌**して鮮度保持」と明記＝うちの"受注後に挽く"と同じ思想で刺さる。Exhibition St店はceremonial matchaも提供。→**製菓＝Cf($58.9)本命**（⚠️サンプル残3本）
   - **Astrid**: ❌**失注・低優先**。月1-2kgでMOQ20kgに合わず。**サンプル渡さず**（＝正しい判断・在庫温存）
-- **【2026-08-11 フォロー送信】9件すべてに文案作成済み（送信はRui）**: Tea Drop(Mevan・メール／Gmail下書き作成済)／Tori's(Nahm・メール)／Matcha Haus Okaeri(熊山・メール日本語)／MEET FOREST(メール)／Kona Matcha(Eddy・⭐日本語)／OSOI(SHY・WhatsApp)／ICE KO-II(WhatsApp)／Little Rogue(Ken・IG DM)／KUMO(Gracia・IG DM＝⚠️既に1度DM済みで返信なし→オーナー在店日を聞く1問に絞った)
+- **【2026-08-11 フォロー送信】9件すべてに文案作成済み（送信はRui）**: Tea Drop(Mevan・メール／Gmail下書き作成済)／Tori's(Nahm・メール)／Matcha Haus Okaeri(熊山・メール日本語)／MEET FOREST(メール)／Kona Matcha(Eddy・⚠️英語)／OSOI(SHY・WhatsApp)／ICE KO-II(WhatsApp)／Little Rogue(Ken・IG DM)／KUMO(Gracia・IG DM＝⚠️既に1度DM済みで返信なし→オーナー在店日を聞く1問に絞った)
 - ⚠️**サンプル残（2026-08-11 Rui確認込み・計約102個）**: **FA001=2／FA002=2**／FA003=6／FA004=6／FA005=6／**AEg≈6／Ij=4**（-3の内訳＝Tori's・Tea Drop・OSOI）／AFa=10／AFb≈7／AEa=8／Il=10／De=7／Dg=7／**Cf=2**／**AFc=0**（計約83個）。🔴**FA001・FA002・FA003・FA004・FA005・Cf・AFc の補充手配が必要**（FAシリーズは5種とも一桁）（特にCfは4件に「製菓グレードを持っていく」と書いた直後に残1本）
 - ⚠️**8/10時点の配布でFAシリーズが加速消化**: FA005は直近7店（ICE KO-II/KUMO/Tea Drop/OSOI/Matcha Haus/Kona/Tori's）に配布済。**FA005＝残僅少・FA004＝残1.5t再現困難・FA003＝今季契約でほぼ満杯**。⚠️**同時に複数店から引き合いが来ると供給できない**＝反応が来たらSKUを最優先で確認し、受け皿(AEa $90/Dg $120有機/Cf $50)へ誘導する
 - **ICE KO-II 冰錦鯉（Elizabeth St・Flinders Street駅隣／+61 424 134 887）**: **オーナー＝しゃろーさん（英字綴りは⚠️"Shallow"か要確認）**。訪問＝8/9（土）・**サンプルは従業員の方に手渡し**。**サンプル＝FA001-005 の5本を手渡し**。アジア系デザート店＝**ジェラート・ビンス(かき氷)・мочи/大福・ミルクシェイク**。⚠️**抹茶を4段階の濃さで出し分けている**（"Double Rich Matcha"等）＝**1SKUではなく複数グレードが必要な店＝うちのライン全体が刺さる稀な相手**。**ほうじ茶**もメニューにあり（他に烏龍・タイティー）。→デザート用途は1食あたりの抹茶使用量がラテより多く、**カリナリー主力Cf($58.9)が本命**＋最上位グレードで"Double Rich"枠を取る2SKU構成が現実解。⚠️Cfはサンプル残3本。**学びの3件目＝ジェラート/アイス系はほうじ茶・玄米茶パウダー需要とセット**（T2・ハレルヤに続く）
