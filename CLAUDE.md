@@ -16,7 +16,7 @@
 - `sales-ops/master-price-sheet-2026-06-08.md` — **公式Sample Order Sheet(2026-06-08)全SKUの価格表**（EXW/USD/JPY・在庫・認証・産地/品種。AEe/FA2.5/THE LAST MATCHA/AL系含む最新。※ほうじ茶AEg=$77.1・AEh=$51.4はシート外＝`quote-matcha-mate-2026-07-01.md`参照）
 - `sales-ops/quote-matcha-mate-2026-07-01.md` — Matcha Mate向けサンプル発送シート（ほうじ茶AEg $77.1/AEh $51.4/AFc $61.7・AEa $87.4の個別価格。⚠️他顧客に流用時は割引前か要確認）
 - `sales-ops/full-catalog-2026-06.json` — **弊社全38SKUの完全プライスリスト**（USD/JPY/AUD・在庫・認証・豪州手持ちサンプル）※AFc=ほうじ茶(京都10t)・AFb=$300/2000kgが最新
-- `sales-ops/minutes/2026-08-30_Cosecha.md` — **Cosecha 商談議事録**（800kg×4回・味の要件・支払い交渉の経緯）
+- `sales-ops/minutes/2026-08-14_Cosecha.md` — **Cosecha 商談議事録**（✅日付は2026-08-14／出席＝Calder・長野信吾・Rui。800kg×4回・味の要件・支払い交渉の経緯。⚠️支払いスケジュールとデポジット額は未確定のまま）
 - `sales-ops/minutes/2026-08-01_Itteki.md` — **Itteki 3回目 商談議事録**（FA005 100kgトライアル確定・年間3.2tは⚠️未確定／🔴価格基準が3つ並んでいる／⚠️自動議事録の主語逆転と有機認証の言い間違い疑いを列挙）
 - `sales-ops/README.md` — 🗂️**sales-ops の索引**（どこに何があるか・情報の優先順位・更新ルール）。迷ったらまずここ
 - `sales-ops/豪州出張ハンドオーバー.md` — **豪州出張の全65社・95名を人単位で棚卸し**（決裁権・連絡先・状況・次の一手・記録の穴）。PDF＝`sheets/FirstAgri_AU_Handover_2026-08.pdf`🔴社内限定
