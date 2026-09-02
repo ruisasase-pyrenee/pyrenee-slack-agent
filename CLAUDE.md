@@ -17,6 +17,7 @@
 - `sales-ops/quote-matcha-mate-2026-07-01.md` — Matcha Mate向けサンプル発送シート（ほうじ茶AEg $77.1/AEh $51.4/AFc $61.7・AEa $87.4の個別価格。⚠️他顧客に流用時は割引前か要確認）
 - `sales-ops/full-catalog-2026-06.json` — **弊社全38SKUの完全プライスリスト**（USD/JPY/AUD・在庫・認証・豪州手持ちサンプル）※AFc=ほうじ茶(京都10t)・AFb=$300/2000kgが最新
 - `sales-ops/minutes/2026-08-30_Cosecha.md` — **Cosecha 商談議事録**（800kg×4回・味の要件・支払い交渉の経緯）
+- `sales-ops/minutes/2026-08-01_Itteki.md` — **Itteki 3回目 商談議事録**（FA005 100kgトライアル確定・年間3.2tは⚠️未確定／🔴価格基準が3つ並んでいる／⚠️自動議事録の主語逆転と有機認証の言い間違い疑いを列挙）
 - `sales-ops/README.md` — 🗂️**sales-ops の索引**（どこに何があるか・情報の優先順位・更新ルール）。迷ったらまずここ
 - `sales-ops/豪州出張ハンドオーバー.md` — **豪州出張の全65社・95名を人単位で棚卸し**（決裁権・連絡先・状況・次の一手・記録の穴）。PDF＝`sheets/FirstAgri_AU_Handover_2026-08.pdf`🔴社内限定
 - `sales-ops/fa-catalog.json` — FAシリーズ+有機ラインのSKUデータとSKU選定ルール（✅2026-08-18 に仕入マスターと突き合わせ済み）
