@@ -1,0 +1,215 @@
+{
+  "_source": "FIRST AGRI INC. 2026 Buyer Pitch (FA Series), PDF uploaded 2026-07-02",
+  "_note_currency": "✅解決済み（2026-08-18）：USD が基準。AUD = USD × 1.428 で全社統一。旧版は AUD を 1.451 で計算し、さらに FA001/FA002 に値上げ前の価格が入っていた。",
+  "moq_per_sku_kg": 20,
+  "skus": [
+    {
+      "sku": "FA001",
+      "origin": "Uji, Kyoto",
+      "cultivar": "Proprietary Uji blend (yabukita, sayamakaori)",
+      "harvest": "1st flush, 100% ichibancha",
+      "grade": "Ceremonial",
+      "process": "Stone-ground",
+      "price_table_aud_per_kg": 475.95,
+      "price_detail_usd_per_kg": 333.3,
+      "stock_kg": 5000,
+      "best_for": [
+        "Usucha",
+        "Koicha",
+        "Latte",
+        "Food"
+      ],
+      "positioning": "Flagship. Top sensory scores (umami, sweetness, aroma, water solubility). Use when the buyer explicitly wants top-tier ceremonial quality and price is secondary.",
+      "price_jpy_per_kg": 49995
+    },
+    {
+      "sku": "FA002",
+      "origin": "Uji, Kyoto",
+      "cultivar": "Proprietary Uji blend (yabukita, okumidori)",
+      "harvest": "1st flush, 100% ichibancha",
+      "grade": "Ceremonial",
+      "process": "Stone-ground, fine-milled",
+      "price_table_aud_per_kg": 380.85,
+      "price_detail_usd_per_kg": 266.7,
+      "stock_kg": 5000,
+      "best_for": [
+        "Latte",
+        "Usucha"
+      ],
+      "positioning": "Engineered specifically for milk-based drinks (matcha latte). Water solubility 5/5. Use when the lead's stated use case is a latte menu.",
+      "price_jpy_per_kg": 40005
+    },
+    {
+      "sku": "FA003",
+      "origin": "Uji, Kyoto",
+      "cultivar": "Proprietary Uji blend (okumidori, yabukita)",
+      "harvest": "1st flush, 100% ichibancha",
+      "grade": "Ceremonial",
+      "process": "Two-step firing (deep-steamed + light-fired blend)",
+      "price_table_aud_per_kg": 214.2,
+      "price_detail_usd_per_kg": 150.0,
+      "stock_kg": 5000,
+      "best_for": [
+        "Everyday latte"
+      ],
+      "positioning": "Cost-optimized while still 100% Uji ichibancha ceremonial grade. DEFAULT RECOMMENDATION when the lead explicitly asks for both premium/Kyoto quality AND wholesale price competitiveness.",
+      "price_jpy_per_kg": 22500,
+      "_process_correction": "⚠️2026-08-11 Rui確認：FA003 は石臼挽きではない。旧版の 'Stone-ground, two-step firing' は誤り。石臼挽きは FA001・FA002 のみ。"
+    },
+    {
+      "sku": "FA004",
+      "origin": "Kagoshima",
+      "cultivar": "Kagoshima blend (yabukita, okumidori, asanoka, saemidori)",
+      "harvest": "1st flush, 100% ichibancha",
+      "grade": "Ceremonial",
+      "process": "Fine-milled",
+      "price_table_aud_per_kg": 238.05,
+      "price_detail_usd_per_kg": 166.7,
+      "stock_kg": 5000,
+      "best_for": [
+        "Everyday latte"
+      ],
+      "positioning": "Best price-to-flavor benchmark; nutty/milky profile. Use for volume-focused buyers who are open to non-Kyoto origin, or for multi-origin trial sample sets.",
+      "price_jpy_per_kg": 25005
+    },
+    {
+      "sku": "FA005",
+      "origin": "Kagoshima",
+      "cultivar": "Saemidori (single cultivar)",
+      "harvest": "1st flush",
+      "grade": "Ceremonial",
+      "process": "Fine-milled",
+      "price_table_aud_per_kg": 142.8,
+      "price_detail_usd_per_kg": 100.0,
+      "stock_kg": 5000,
+      "best_for": [
+        "Latte",
+        "RTD"
+      ],
+      "positioning": "Lowest cost, vivid color at volume. Use for large-volume / cost-sensitive buyers, RTD beverage, ice cream, or bakery use cases.",
+      "price_jpy_per_kg": 15000
+    }
+  ],
+  "internal_sample_codes": {
+    "_source": "supplier-master-2026-08.md（2026-08-15 価格改定反映）",
+    "_note": "Organic-certified Kagoshima line, separate from the FA buyer-pitch series. All items: Organic cert + Certificate of Origin, Healthcare Certificate, COA, FDA. Terms: EXW, 100% down payment, USD/JPY bank transfer.",
+    "items": [
+      {
+        "code": "De",
+        "product": "Matcha",
+        "origin": "Kagoshima",
+        "grade": "Ceremonial",
+        "cultivar": "yabukita",
+        "harvest": "1st flush",
+        "price_aud_per_kg": 342.72,
+        "price_jpy_per_kg": 36000,
+        "stock_kg": 200,
+        "price_usd_per_kg": 240.0,
+        "_note": "⚠️在庫本体200kgのみ。小ロット専用・大口には出せない"
+      },
+      {
+        "code": "Df",
+        "product": "Matcha",
+        "origin": "Kagoshima",
+        "grade": "Ceremonial",
+        "cultivar": "saemidori",
+        "harvest": "1st flush",
+        "price_aud_per_kg": null,
+        "price_jpy_per_kg": null,
+        "stock_kg": 0,
+        "_status": "❌販売中止（2026-08-15・仕入値が¥37,000→¥48,000に急騰）"
+      },
+      {
+        "code": "Dg",
+        "product": "Matcha",
+        "origin": "Kagoshima",
+        "grade": "Premium",
+        "cultivar": "saemidori + yabukita blend",
+        "harvest": "2nd flush",
+        "price_aud_per_kg": 171.36,
+        "price_jpy_per_kg": 18000,
+        "stock_kg": 4500,
+        "price_usd_per_kg": 120.0,
+        "_note": "在庫が厚い＝量販・有機ラインの主力"
+      },
+      {
+        "code": "AEc",
+        "product": "Matcha",
+        "origin": "Kagoshima",
+        "grade": "Ceremonial",
+        "cultivar": "Blend",
+        "harvest": "1st flush",
+        "price_aud_per_kg": 90.39,
+        "price_jpy_per_kg": 9500,
+        "stock_kg": 2500,
+        "price_usd_per_kg": 63.3,
+        "_note": "有機・ラテグレード。コスト重視のカリナリー枠"
+      },
+      {
+        "code": "AFb",
+        "product": "Matcha",
+        "origin": "Kagoshima",
+        "grade": "Ceremonial",
+        "cultivar": "Blend",
+        "harvest": "1st flush",
+        "price_aud_per_kg": 380.85,
+        "price_jpy_per_kg": 40000,
+        "stock_kg": 2000,
+        "price_usd_per_kg": 266.7,
+        "_note": "🔻2026-08-15 値下げ（$300→$266.7）。FA002の有機版という建て付け"
+      }
+    ],
+    "volume_supply_note": "Only Dg (4500kg) and AEc (2000kg) have stock depth for chain-scale supply; Df (600kg) and AFb (450kg) are premium/limited-tier only."
+  },
+  "company_facts": {
+    "partner_farms": "80+",
+    "export_destinations": "30+",
+    "sku_count": 5,
+    "differentiators": [
+      "Farm-direct sourcing, no middlemen/rebranding",
+      "Every SKU US FDA pesticide/contaminant tested",
+      "Flexible MOQ from 20kg per SKU, no minimum-container commitment"
+    ],
+    "sample_request": {
+      "email": "corporate@first-agri.jp",
+      "web": "first-agri.jp",
+      "turnaround": "curated sample box + cupping notes + quote sheet within 2 business days"
+    }
+  },
+  "sku_selection_rules": [
+    {
+      "if": "lead wants Kyoto/Uji ceremonial AND emphasizes wholesale price competitiveness",
+      "recommend_primary": "FA003",
+      "recommend_secondary": "FA002 if latte menu is mentioned"
+    },
+    {
+      "if": "lead's use case is explicitly a matcha latte menu",
+      "recommend_primary": "FA002",
+      "recommend_secondary": "FA003 for a cheaper everyday-latte tier"
+    },
+    {
+      "if": "lead wants top-tier flagship / quality-first, price secondary, small-mid volume",
+      "recommend_primary": "FA001",
+      "recommend_secondary": "FA002"
+    },
+    {
+      "if": "lead wants to trial multiple origins / grades",
+      "recommend_primary": "sample set spanning Uji (FA001 or FA003) + Kagoshima (FA004 or FA005)",
+      "recommend_secondary": null
+    },
+    {
+      "if": "lead is large volume and cost-sensitive, or RTD/bakery/ice-cream use case",
+      "recommend_primary": "Cf ($50.0) / AEc ($63.3, organic) / Dg ($120.0, organic)",
+      "recommend_secondary": "FA003 if they insist on Uji",
+      "_why_changed": "⚠️2026-08-18 是正：旧ルールは FA005/FA004 を推していたが、FA005 は残僅少、FA004 は残1.5t・再現困難でMOQ100kg引上げ方向。大口の受け皿にできない。"
+    },
+    {
+      "if": "⚠️ALWAYS — 数量コミットの前に",
+      "recommend_primary": "supplier-master-2026-08.md で在庫引当を照合する",
+      "recommend_secondary": null,
+      "_why": "ダブルブッキングは炎上＝インセンティブ全消滅条項に直結"
+    }
+  ],
+  "_authority": "⚠️このファイルは二次資料。価格・在庫の一次ソースは supplier-master-2026-08.md（2026-08-15 価格改定を反映）。食い違ったら必ず supplier-master を正とする。",
+  "_last_reconciled": "2026-08-18（supplier-master-2026-08.md と全SKU突き合わせ）"
+}
