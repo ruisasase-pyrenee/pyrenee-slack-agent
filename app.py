@@ -1,8 +1,13 @@
 import os
 import re
+from pathlib import Path
+
+from dotenv import load_dotenv
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 import anthropic
+
+load_dotenv()
 
 # Initialize Slack app
 app = App(token=os.environ["SLACK_BOT_TOKEN"])
@@ -13,38 +18,47 @@ claude = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 # Store conversation history per user (in-memory, resets on restart)
 conversation_history: dict[str, list] = {}
 
+KNOWLEDGE_PATH = Path(__file__).parent / "knowledge" / "pyrenee.md"
+PYRENEE_KNOWLEDGE = KNOWLEDGE_PATH.read_text(encoding="utf-8") if KNOWLEDGE_PATH.exists() else ""
+
 SYSTEM_PROMPT = """あなたはRuiの専属ビジネス壁打ち相手です。スタートアップ、事業戦略、マーケティング、意思決定など、ビジネス全般の相談に乗ります。
+Ruiは株式会社Pyrenee（Pyrenee Inc.）のUS Evangelistとして、アメリカ事業の立ち上げと投資家集めを担っています。
 まず結論・答えをズバッと言い、その後に理由を簡潔に添えます。
 共感より「前に進む思考」を優先し、甘い言葉より鋭い本音を言います。
 必要なら反論や別視点を積極的に提示します。
-相手が話しかけた言語（日本語・英語）で返します。"""
+相手が話しかけた言語（日本語・英語）で返します。
+
+Pyreneeについての質問には、下の社内ナレッジに基づいて答えます。ナレッジにないことは推測で断定せず、「ナレッジにない」と明言します。"""
+
+if PYRENEE_KNOWLEDGE:
+    SYSTEM_PROMPT += f"\n\n<pyrenee_knowledge>\n{PYRENEE_KNOWLEDGE}\n</pyrenee_knowledge>"
 
 
 def get_claude_response(user_id: str, user_message: str) -> str:
-        """Get a response from Claude, maintaining conversation history."""
-        if user_id not in conversation_history:
-                    conversation_history[user_id] = []
+    """Get a response from Claude, maintaining conversation history."""
+    if user_id not in conversation_history:
+        conversation_history[user_id] = []
 
-        conversation_history[user_id].append({
-            "role": "user",
-            "content": user_message
-        })
+    conversation_history[user_id].append({
+        "role": "user",
+        "content": user_message
+    })
 
     # Keep last 20 messages to avoid token limits
-        messages = conversation_history[user_id][-20:]
+    messages = conversation_history[user_id][-20:]
 
     response = claude.messages.create(
-                model="claude-opus-4-5",
-                max_tokens=2048,
-                system=SYSTEM_PROMPT,
-                messages=messages
+        model="claude-opus-4-5",
+        max_tokens=2048,
+        system=SYSTEM_PROMPT,
+        messages=messages
     )
 
     assistant_message = response.content[0].text
 
     conversation_history[user_id].append({
-                "role": "assistant",
-                "content": assistant_message
+        "role": "assistant",
+        "content": assistant_message
     })
 
     return assistant_message
@@ -52,14 +66,14 @@ def get_claude_response(user_id: str, user_message: str) -> str:
 
 @app.event("app_mention")
 def handle_mention(event, say):
-        """Handle @mentions in channels."""
-        user_id = event["user"]
-        # Remove the bot mention from the text
-        text = re.sub(r"<@[A-Z0-9]+>", "", event["text"]).strip()
+    """Handle @mentions in channels."""
+    user_id = event["user"]
+    # Remove the bot mention from the text
+    text = re.sub(r"<@[A-Z0-9]+>", "", event["text"]).strip()
 
     if not text:
-                say("How can I help you?")
-                return
+        say("How can I help you?")
+        return
 
     response = get_claude_response(user_id, text)
     say(response)
@@ -67,23 +81,23 @@ def handle_mention(event, say):
 
 @app.event("message")
 def handle_dm(event, say):
-        """Handle direct messages."""
-        # Only respond to DMs (channel_type == "im"), not channel messages
-        if event.get("channel_type") != "im":
-                    return
-                if event.get("subtype") is not None:
-                            return # Ignore bot messages and other subtypes
+    """Handle direct messages."""
+    # Only respond to DMs (channel_type == "im"), not channel messages
+    if event.get("channel_type") != "im":
+        return
+    if event.get("subtype") is not None:
+        return  # Ignore bot messages and other subtypes
 
     user_id = event["user"]
     text = event.get("text", "").strip()
 
     if not text:
-                return
+        return
 
     response = get_claude_response(user_id, text)
     say(response)
 
 
 if __name__ == "__main__":
-        handler = SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"])
+    handler = SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"])
     handler.start()
