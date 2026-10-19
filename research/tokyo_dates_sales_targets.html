@@ -1,0 +1,374 @@
+<title>東京デーツ営業先リスト</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one reading column; a short answer up top, then visit routes as the main body, forms and holds after */
+:root {
+  --bg: #f6f5f2;
+  --surface: #ffffff;
+  --ink: #23201c;
+  --muted: #6c655d;
+  --line: #e2ddd5;
+  --date: #6e3b1e;        /* date-skin brown: the accent */
+  --palm: #2f6b4f;        /* palm frond green: direct visit */
+  --sky: #2f5b8a;         /* web form */
+  --amber: #9a6a12;       /* wholesale hub */
+  --hold: #8a8379;        /* on hold */
+  --tint-palm: #e6f0ea;
+  --tint-sky: #e5edf6;
+  --tint-amber: #f5ecd9;
+  --tint-hold: #ece9e4;
+  --tint-date: #f2e7df;
+  --f-display: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --f-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #171513; --surface: #201d1a; --ink: #ece7e1; --muted: #a59d93; --line: #35302b;
+    --date: #d79a74; --palm: #7cc4a0; --sky: #8db6e3; --amber: #e0b765; --hold: #a59d93;
+    --tint-palm: #1d2e25; --tint-sky: #1c2633; --tint-amber: #2f2716; --tint-hold: #2a2724; --tint-date: #2e221b;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #171513; --surface: #201d1a; --ink: #ece7e1; --muted: #a59d93; --line: #35302b;
+  --date: #d79a74; --palm: #7cc4a0; --sky: #8db6e3; --amber: #e0b765; --hold: #a59d93;
+  --tint-palm: #1d2e25; --tint-sky: #1c2633; --tint-amber: #2f2716; --tint-hold: #2a2724; --tint-date: #2e221b;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.7; }
+.wrap { max-width: 960px; margin-inline: auto; padding-block: 40px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 48px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+h1 { font-family: var(--f-display); font-weight: 600; font-size: clamp(1.75rem, 4vw, 2.4rem); line-height: 1.3; letter-spacing: .02em; }
+h2 { font-size: 1.25rem; font-weight: 700; }
+h3 { font-size: 1.05rem; font-weight: 700; }
+p { margin: 0; }
+.lead { color: var(--muted); max-width: 62ch; }
+.head { display: grid; gap: 12px; }
+.meta { font-size: .8rem; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: .75rem; font-weight: 500; letter-spacing: .03em; padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
+.chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.c-visit { color: var(--palm); background: var(--tint-palm); }
+.c-form { color: var(--sky); background: var(--tint-sky); }
+.c-hub { color: var(--amber); background: var(--tint-amber); }
+.c-hold { color: var(--hold); background: var(--tint-hold); }
+.c-show { color: var(--date); background: var(--tint-date); }
+section { display: grid; gap: 16px; min-width: 0; }
+.sec-head { display: grid; gap: 6px; }
+.sec-head p { color: var(--muted); font-size: .9rem; max-width: 64ch; }
+
+.answer { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 24px; display: grid; gap: 16px; }
+.answer .verdict { font-family: var(--f-display); font-size: 1.3rem; color: var(--date); line-height: 1.5; }
+.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px; }
+.split > div { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.split ul { margin: 0; padding-left: 1.1em; font-size: .9rem; }
+.split li + li { margin-top: 4px; }
+
+.routes { display: grid; gap: 20px; }
+.route { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.route-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.route-top p { color: var(--muted); font-size: .85rem; }
+.stops { list-style: none; margin: 0; padding: 0; }
+.stop { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); gap: 4px 12px; padding: 14px 20px; }
+.stop + .stop { border-top: 1px dashed var(--line); }
+.stop-n { font-family: var(--f-mono); font-size: .8rem; color: var(--muted); padding-top: 2px; font-variant-numeric: tabular-nums; }
+.stop-body { display: grid; gap: 4px; min-width: 0; }
+.stop-name { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-weight: 700; }
+.stop-addr { font-size: .85rem; color: var(--muted); }
+.stop-note { font-size: .85rem; }
+.tel { font-family: var(--f-mono); font-size: .85rem; user-select: all; }
+.tag-dates { font-size: .72rem; font-weight: 500; color: var(--date); border: 1px solid var(--date); border-radius: 4px; padding: 0 6px; }
+
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+table { width: 100%; border-collapse: collapse; font-size: .85rem; min-width: 720px; }
+th { text-align: left; font-weight: 500; color: var(--muted); font-size: .75rem; letter-spacing: .04em; padding: 10px 14px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+td.name { font-weight: 700; white-space: nowrap; }
+td a, .stop a { color: var(--sky); text-underline-offset: 2px; word-break: break-all; }
+td.pri { font-family: var(--f-mono); color: var(--date); font-weight: 400; white-space: nowrap; }
+
+.check { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px; }
+.check > div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; display: grid; gap: 8px; align-content: start; }
+.check ul { margin: 0; padding-left: 1.1em; font-size: .88rem; }
+.check li + li { margin-top: 4px; }
+.foot { font-size: .8rem; color: var(--muted); max-width: 70ch; }
+a:focus-visible { outline: 2px solid var(--date); outline-offset: 2px; border-radius: 2px; }
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <h1>東京デーツ営業先リスト</h1>
+    <p class="lead">ドバイ産デーツの都内販路を、動き方ごとに並べ直しました。独立系の店は訪問ルート順、チェーンは提出順です。</p>
+    <div class="legend" aria-label="アプローチの種類">
+      <span class="chip c-visit">直接訪問</span>
+      <span class="chip c-form">Webフォーム・メール</span>
+      <span class="chip c-hub">卸（アポを取って訪問）</span>
+      <span class="chip c-show">展示会・商談会</span>
+      <span class="chip c-hold">保留</span>
+    </div>
+    <p class="meta">2026年10月19日時点。住所・電話は出典で確認できたものだけを載せています。訪問の前に営業しているか確認してください。</p>
+  </header>
+
+  <section id="direct" aria-labelledby="direct-h">
+    <h2 id="direct-h">直接営業はあり？</h2>
+    <div class="answer">
+      <p class="verdict">独立系のハラール・エスニック店には、直接訪問が一番早いです。チェーンへの飛び込みは効きません。</p>
+      <div class="split">
+        <div>
+          <h3>独立系の店：訪問する</h3>
+          <ul>
+            <li>店主がその場で仕入れを決めることが多く、試食とサンプルがそのまま商談になります。</li>
+            <li>新大久保・御徒町・西葛西は店が徒歩圏に固まっていて、半日で5〜8店まわれます。</li>
+            <li>初回は1〜2ケースの少量取引を提案し、ラマダン前の再注文につなげます。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>チェーン：本部窓口に出す</h3>
+          <ul>
+            <li>仕入れは本部の一括決定なので、店舗に行っても担当者に届きません。</li>
+            <li>成城石井・カルディ・PPIHはフォームやシートの手順が決まっています。まず書類で出します。</li>
+            <li>バイヤーと直接会うなら、展示会（例年2〜3月のスーパーマーケット・トレードショー、FOODEX JAPAN）が近道です。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="routes" aria-labelledby="routes-h">
+    <div class="sec-head">
+      <h2 id="routes-h">直接訪問ルート</h2>
+      <p>同じ日にまわれる店をまとめています。番号は歩く順番の目安です。<span class="tag-dates">デーツ取扱あり</span>は、デーツを売っていることを出典で確認できた店です。</p>
+    </div>
+    <div class="routes">
+
+      <article class="route" id="route-okubo">
+        <div class="route-top">
+          <h3>新大久保・大久保（イスラム横丁）</h3>
+          <p>JR新大久保駅から徒歩1〜3分。半日</p>
+        </div>
+        <ol class="stops">
+          <li class="stop"><span class="stop-n">1</span><div class="stop-body">
+            <div class="stop-name">ローズファミリーストア <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">新宿区百人町2-10-8 2F</div>
+            <div class="stop-note">ミャンマー系・南アジア系の客が中心。電話は不明</div>
+          </div></li>
+          <li class="stop"><span class="stop-n">2</span><div class="stop-body">
+            <div class="stop-name">バラヒ・フーズ・アンド・スパイスセンター <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">新宿区百人町2-10-9 1F（横丁の入口近く）</div>
+            <div class="stop-note">ネパール系・インド系。品揃えが多く人気の店。電話は不明</div>
+          </div></li>
+          <li class="stop"><span class="stop-n">3</span><div class="stop-body">
+            <div class="stop-name">グリーン・ナスコ <span class="chip c-visit">直接訪問</span><span class="chip c-hub">グループで卸も</span></div>
+            <div class="stop-addr">新宿区百人町2-9-3（火災後に移転。場所は要確認）</div>
+            <div class="stop-note">隣のナスコ・フードコートと同じ経営。飲食店向けの量もまとめて相談できる可能性あり。電話は不明</div>
+          </div></li>
+          <li class="stop"><span class="stop-n">4</span><div class="stop-body">
+            <div class="stop-name">ザ・ジャンナット・ハラル・フード <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">新宿区百人町2-9-15（別資料では2-9-1）</div>
+            <div class="stop-note">ミャンマー系・南アジア系。電話は不明</div>
+          </div></li>
+          <li class="stop"><span class="stop-n">5</span><div class="stop-body">
+            <div class="stop-name">シンジュク・ハラル・フード <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">新宿区百人町2-9-2（出典は1件のみ）</div>
+            <div class="stop-note">全国配送のECもあり、店頭とネットの両方で売れる。<a href="https://shinjukuhalalfood.com/">shinjukuhalalfood.com</a></div>
+          </div></li>
+          <li class="stop"><span class="stop-n">6</span><div class="stop-body">
+            <div class="stop-name">ソルティ・ハラル・カージャ <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">新大久保駅から徒歩約3分（番地は不明）</div>
+            <div class="stop-note">イートイン併設。電話は不明</div>
+          </div></li>
+          <li class="stop"><span class="stop-n">7</span><div class="stop-body">
+            <div class="stop-name">SARSINA HALAL FOODS <span class="chip c-visit">直接訪問</span><span class="tag-dates">デーツ取扱あり</span></div>
+            <div class="stop-addr">新宿区百人町2-1-50（大久保駅寄り）</div>
+            <div class="stop-note">saidshopのUAE産デーツを扱う店として載っています。今の仕入れ値と回転を聞ける、最初の比較相手です。電話は不明</div>
+          </div></li>
+        </ol>
+      </article>
+
+      <article class="route" id="route-ueno">
+        <div class="route-top">
+          <h3>御徒町・上野・蔵前・小伝馬町</h3>
+          <p>都営浅草線・日比谷線でつながる東側。1日</p>
+        </div>
+        <ol class="stops">
+          <li class="stop"><span class="stop-n">1</span><div class="stop-body">
+            <div class="stop-name">Eusa Halal Mart <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">台東区上野5-10-11 1F（JR御徒町駅南口 徒歩1分。AS-SALAAMモスクの前）</div>
+            <div class="stop-note">オーナーはバングラデシュ出身。多国籍の品揃え。電話は不明</div>
+          </div></li>
+          <li class="stop"><span class="stop-n">2</span><div class="stop-body">
+            <div class="stop-name">野澤屋 <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">台東区上野4-7-8 アメ横センタービルB1F</div>
+            <div class="stop-note">スパイス・ハーブ・ハラール肉が中心。電話は不明</div>
+          </div></li>
+          <li class="stop"><span class="stop-n">3</span><div class="stop-body">
+            <div class="stop-name">小島屋 <span class="chip c-visit">直接訪問</span><span class="chip c-hub">卸も</span><span class="tag-dates">デーツ取扱あり</span></div>
+            <div class="stop-addr">上野・アメ横（番地は<a href="https://www.kojima-ya.com/">公式サイト</a>で確認）</div>
+            <div class="stop-note">ナッツ・ドライフルーツ専門の卸問屋で、ホテルやバーにも卸しています。デーツは米国・イスラエル・イラン産の4種類。UAE産はなく、品種を増やす提案ができます</div>
+          </div></li>
+          <li class="stop"><span class="stop-n">4</span><div class="stop-body">
+            <div class="stop-name">アンビカショップ 蔵前 <span class="chip c-hub">卸（アポを取って訪問）</span></div>
+            <div class="stop-addr">台東区蔵前3-19-2 アンビカハウス（蔵前駅 徒歩5分）</div>
+            <div class="stop-note">インド食材の輸入・卸・小売。取引先は累計4,000社超。店頭で買い物して様子を見たあと、卸担当とのアポを取ります。<span class="tel">03-6908-8077</span>（蔵前店）</div>
+          </div></li>
+          <li class="stop"><span class="stop-n">5</span><div class="stop-body">
+            <div class="stop-name">ダルヴィッシュショップ <span class="chip c-visit">直接訪問</span><span class="tag-dates">デーツ取扱あり</span></div>
+            <div class="stop-addr">中央区日本橋小伝馬町18-4 上野ビル1F（小伝馬町駅 徒歩3分）</div>
+            <div class="stop-note">イラン食材の専門店。イラン産デーツが安く、価格で比べられやすい相手です。月曜は休みとの情報あり。<span class="tel">03-6661-9848</span></div>
+          </div></li>
+        </ol>
+      </article>
+
+      <article class="route" id="route-otsuka">
+        <div class="route-top">
+          <h3>大塚・池袋</h3>
+          <p>JR大塚駅から池袋へ。半日</p>
+        </div>
+        <ol class="stops">
+          <li class="stop"><span class="stop-n">1</span><div class="stop-body">
+            <div class="stop-name">ラフマニア・ハラルフードショップ <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">豊島区南大塚3-40-8（別資料では3-47-3）。マスジド大塚のすぐ近く</div>
+            <div class="stop-note">モスクの利用者が主な客。金曜の礼拝の前後は混むので避けます。電話は不明</div>
+          </div></li>
+          <li class="stop"><span class="stop-n">2</span><div class="stop-body">
+            <div class="stop-name">SPICE OF BENGAL <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">豊島区南大塚2-14-6（新大塚駅）</div>
+            <div class="stop-note">バングラデシュ系。電話は不明</div>
+          </div></li>
+          <li class="stop"><span class="stop-n">3</span><div class="stop-body">
+            <div class="stop-name">Al-Flah Supermarket <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">豊島区池袋2-41-2 大野屋ビル4F（池袋駅北口・西口側）</div>
+            <div class="stop-note">食材のほか日用品も扱う。電話は不明</div>
+          </div></li>
+          <li class="stop"><span class="stop-n">4</span><div class="stop-body">
+            <div class="stop-name">サンシャイン ハラル マート <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">豊島区東池袋1-13-12 共同ビル2〜3F（池袋駅東口）</div>
+            <div class="stop-note">パキスタン・インド系のスパイスが中心。<span class="tel">03-5952-1313</span></div>
+          </div></li>
+        </ol>
+      </article>
+
+      <article class="route" id="route-kasai">
+        <div class="route-top">
+          <h3>西葛西（リトル・インディア）</h3>
+          <p>東京メトロ東西線 西葛西駅の周辺。半日</p>
+        </div>
+        <ol class="stops">
+          <li class="stop"><span class="stop-n">1</span><div class="stop-body">
+            <div class="stop-name">デシマート <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">江戸川区西葛西3-13-5 らーめるコーポ1F</div>
+            <div class="stop-note">インド系・ネパール系。電話は不明</div>
+          </div></li>
+          <li class="stop"><span class="stop-n">2</span><div class="stop-body">
+            <div class="stop-name">WATAN INDIA HALAL FOOD <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">江戸川区西葛西5-10-13 栄華ビル</div>
+            <div class="stop-note">ハラールの表示がある店。<span class="tel">03-5667-7866</span></div>
+          </div></li>
+          <li class="stop"><span class="stop-n">3</span><div class="stop-body">
+            <div class="stop-name">SWAGAT INDIAN BAZAAR <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">江戸川区西葛西5-12-2</div>
+            <div class="stop-note">価格の安さで人気の店。<span class="tel">03-3680-9490</span></div>
+          </div></li>
+          <li class="stop"><span class="stop-n">4</span><div class="stop-body">
+            <div class="stop-name">TMVS FOODS <span class="chip c-visit">直接訪問</span></div>
+            <div class="stop-addr">江戸川区西葛西5-8-5（小島町2丁目団地1F）</div>
+            <div class="stop-note">南インド系。<span class="tel">03-6808-6011</span></div>
+          </div></li>
+        </ol>
+      </article>
+
+      <article class="route" id="route-camii">
+        <div class="route-top">
+          <h3>代々木上原（単独訪問）</h3>
+          <p>小田急線・千代田線 代々木上原駅 徒歩約5分</p>
+        </div>
+        <ol class="stops">
+          <li class="stop"><span class="stop-n">1</span><div class="stop-body">
+            <div class="stop-name">東京ジャーミイ ハラールマーケット <span class="chip c-visit">直接訪問（事前に電話）</span><span class="tag-dates">デーツ取扱あり</span></div>
+            <div class="stop-addr">渋谷区大山町1-19（東京ジャーミイ・トルコ文化センター1F）</div>
+            <div class="stop-note">都内でデーツの品揃えが最も多い店で、サウジ系のアジワ・スッカリ・サガイを扱っています。UAE産のカラースやファルドで品揃えの空きを埋める提案が刺さります。礼拝の時間は15分ほど閉まるので、電話で担当者と時間を決めてから行きます。<span class="tel">03-5790-0760</span></div>
+          </div></li>
+        </ol>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="chains" aria-labelledby="chains-h">
+    <div class="sec-head">
+      <h2 id="chains-h">チェーン本部（書類を提出）</h2>
+      <p>上から順に出すのがおすすめです。どれも、書類を出したあと先方から連絡が来るのを待つ形です。</p>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>順</th><th>企業</th><th>出し方</th><th>窓口</th><th>今の棚と切り口</th></tr></thead>
+        <tbody>
+          <tr><td class="pri">1</td><td class="name">成城石井</td><td><span class="chip c-form">シートをメール</span></td><td>商談申込シート（Excel）を <span class="tel">shohin-group@seijoishii.co.jp</span> へ。審査は約1週間。<a href="https://www.seijoishii.co.jp/about/schedule.html">手順のページ</a></td><td>サウジ産250g 754円を直輸入。UAE産のプレミアムで差をつける</td></tr>
+          <tr><td class="pri">2</td><td class="name">カルディ</td><td><span class="chip c-form">Webフォーム</span></td><td>法人のお問い合わせ →「新規お取引・新商品のご提案」。<a href="https://www.kaldi.co.jp/faq/business.html">フォーム</a></td><td>PBの130gが378円。PBのOEMか、ギフト向けの小袋を提案</td></tr>
+          <tr><td class="pri">3</td><td class="name">ドン・キホーテ（PPIH）</td><td><span class="chip c-form">Webフォーム</span></td><td>「新規お取り引き」。関心がある場合だけ10日以内に返信が来る。<a href="https://ppih.co.jp/contact/partner8/">フォーム</a></td><td>デーツの取扱いは確認できず。新しいカテゴリとしての提案になる</td></tr>
+          <tr><td class="pri">4</td><td class="name">富澤商店</td><td><span class="chip c-form">Webフォーム</span></td><td>お問い合わせ（卸業務の区分）。<a href="https://tomiz.com/contact">フォーム</a>・<span class="tel">0570-001919</span></td><td>製菓用が中心（チュニジア・イスラエル・イラン産）。UAE産のペースト・ダイスで入る</td></tr>
+          <tr><td class="pri">5</td><td class="name">業務スーパー（神戸物産）</td><td><span class="chip c-form">メールフォーム</span></td><td>お取引の問い合わせ。<a href="https://www.kobebussan.co.jp/mail.php">フォーム</a>・代表 <span class="tel">079-457-5001</span></td><td>サウジ産500gで低価格。量と価格を求められる前提で臨む</td></tr>
+          <tr><td class="pri">6</td><td class="name">コストコ</td><td><span class="chip c-form">Webフォーム</span><span class="chip c-show">サプライヤーデー</span></td><td>「新規お取引のご提案」。<a href="https://customerservice.costco.co.jp/s/contactsupport/ask-transaction">フォーム</a></td><td>米国産マジョール907g。大量に出せる体制ができてから</td></tr>
+          <tr><td class="pri">7</td><td class="name">北野エース</td><td><span class="chip c-show">商談会</span></td><td>東京本部の代表 <span class="tel">03-5639-1448</span> で担当部署を確認</td><td>デーツの取扱いは確認できず。自治体や展示会の商談会を使う</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="hold" aria-labelledby="hold-h">
+    <div class="sec-head">
+      <h2 id="hold-h">保留</h2>
+      <p>今は動かず、状況が変わったら再検討します。</p>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>先</th><th>状態</th><th>理由</th></tr></thead>
+        <tbody>
+          <tr><td class="name">ジュピター</td><td><span class="chip c-hold">保留</span></td><td>2026年1月に民事再生を申請し、47店舗が新会社に引き継がれて再建中。仕入れ方針が固まってから<a href="https://www.jupiter-coffee.com/contact.html">問い合わせページ</a>から出す</td></tr>
+          <tr><td class="name">ロヂャース（浅草）</td><td><span class="chip c-hold">保留</span></td><td>ハラール売場はあるが、取引の窓口が分からない</td></tr>
+          <tr><td class="name">saidshop</td><td><span class="chip c-hub">卸・競合</span></td><td>UAE産をすでに輸入している（大久保の店は閉店）。競合だが、提携先の候補にもなる</td></tr>
+          <tr><td class="name">無印良品・紀ノ国屋</td><td><span class="chip c-hold">保留</span></td><td>今のデーツの取扱いも、取引の窓口も分からない</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="checklist" aria-labelledby="check-h">
+    <div class="sec-head">
+      <h2 id="check-h">訪問の前にそろえるもの</h2>
+    </div>
+    <div class="check">
+      <div>
+        <h3>持ち物</h3>
+        <ul>
+          <li>試食用の開封品と、渡す用の未開封サンプル</li>
+          <li>卸価格表（1ケース／5kg／10kg）と最小ロット</li>
+          <li>ハラール証明書、原産地証明書のコピー</li>
+          <li>日本語・英語の1枚もの（品種・産地・賞味期限）</li>
+        </ul>
+      </div>
+      <div>
+        <h3>タイミング</h3>
+        <ul>
+          <li>金曜の昼（集団礼拝）と開店直後は避け、平日の午後に行く</li>
+          <li>2027年のラマダン（2月上旬に始まる見込み）に向けて、12〜1月に店へ入れる</li>
+          <li>初回は少量で置いてもらい、ラマダン前に追加注文をもらう</li>
+        </ul>
+      </div>
+      <div>
+        <h3>表示と取引条件</h3>
+        <ul>
+          <li>日本語の食品表示（名称・原産国・輸入者・賞味期限・保存方法など）を商品に貼っておく</li>
+          <li>支払い条件（現金・振込・月末締め）を先に決めておく</li>
+          <li>店ごとの売価を聞き取り、価格表を見直す</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <p class="foot">出典URLと確度は、リポジトリの research/tokyo_dates_buyer_list.md にまとめています。電話番号とメールアドレスは、出典で確認できたものだけを載せています。</p>
+</div>
