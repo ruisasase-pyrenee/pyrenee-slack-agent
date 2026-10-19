@@ -1,0 +1,6 @@
+year,tonnes,usd_thousand,is_lower_bound,source
+2019,1298.7,3382.5,0,UN Comtrade via WITS
+2020,2014.9,6653.0,0,UN Comtrade via WITS
+2022,2304.3,7331.2,0,UN Comtrade via WITS
+2023,2346.6,6077.6,0,UN Comtrade via WITS (Japan imports by partner)
+2024,2800,,1,pdxtrading.jp デーツ統計情報（「2,800トン超」・金額は未取得）
