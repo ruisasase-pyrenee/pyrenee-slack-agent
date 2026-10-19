@@ -33,7 +33,7 @@
 
 | # | 店舗名 | 住所・最寄駅 | 業態 | 想定客層の国籍（推定） | デーツ取扱の有無と産地 | 仕入ルート | 連絡先 | 出典URL | 確度 |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | 東京ジャーミイ ハラールマーケット | 渋谷区大山町1-19（東京ジャーミイ・トルコ文化センター1F）／代々木上原駅 徒歩約5分 | 小売（EC併設） | トルコ、中東、インドネシア、マレーシア、日本人 | **有**：アジワ 400g、スッカリ・ルタブ 500g、サガイ（いずれもサウジ系品種）。価格帯は500円台〜4,500円程度（JHBA） | 不明（トルコをはじめ多国からの仕入れ） | 03-5790-0760 | https://halalmarket.tokyocamii.org/ ／ https://halalmarket.tokyocamii.org/products/ajwa-dates-400g ／ https://halalmarket.tokyocamii.org/products/sukari-rutab-dates-500g ／ https://jhba.jp/new/1544/ ／ https://www.kateigaho.com/article/detail/153470 | 高 |
+| 1 | 東京ジャーミイ ハラールマーケット | 渋谷区大山町1-19（東京ジャーミイ・トルコ文化センター1F）／代々木上原駅 徒歩約5分 | 小売（EC併設） | トルコ、中東、インドネシア、マレーシア、日本人 | **有**：アジワ 400g、スッカリ・ルタブ 500g、サガイ（サウジ系品種）に加え、**UAE産 Date Crown（カラース 500g・ファルド）**。価格帯は500円台〜4,500円程度（JHBA） | 不明（トルコをはじめ多国からの仕入れ） | 03-5790-0760 | https://halalmarket.tokyocamii.org/ ／ https://halalmarket.tokyocamii.org/products/ajwa-dates-400g ／ https://halalmarket.tokyocamii.org/products/sukari-rutab-dates-500g ／ https://jhba.jp/new/1544/ ／ https://www.kateigaho.com/article/detail/153470 | 高 |
 | 2 | バラヒ・フーズ・アンド・スパイスセンター | 新宿区百人町2-10-9 1F／新大久保駅 | 小売 | ネパール、インド | 不明 | 不明 | 不明 | https://travel.spot-app.jp/shinokubo_isuramuyokocho_suzukisarasa/ ／ https://search-ethnic.com/ethnicwalk/islam-yokocho/ | 中 |
 | 3 | ザ・ジャンナット・ハラル・フード | 新宿区百人町2-9-15（別資料では2-9-1）／新大久保駅 徒歩約2分 | 小売 | ミャンマー（ロヒンギャ等）、南アジア | 不明 | 不明 | 不明 | https://burmese.tokyo/myanmar-groceryshops/jannathalalfood/ ／ https://around-india.com/shop-greennasco-tokyo/ | 中 |
 | 4 | グリーン・ナスコ（ナスコ・フードコートと同じグループ） | 新宿区百人町2-9-3（火災後に移転。要確認）／新大久保駅 | 小売（グループで飲食も運営） | インド、パキスタン、バングラデシュ | 不明 | 不明 | 不明 | https://around-india.com/shop-greennasco-tokyo/ ／ https://travel.spot-app.jp/shinokubo_isuramuyokocho_suzukisarasa/ | 中 |
@@ -70,6 +70,6 @@
 3. 入口は、手続きが明確な**成城石井（商談申込シート）→ カルディ（法人フォーム）→ PPIH（新規お取り引きフォーム）**の順を推奨します。コストコは907g級の量目と大きな物量が前提なので、2段目に回します。
 
 **レイヤー2（独立系ハラール店）**
-1. デーツの品揃えでは、東京ジャーミイがサウジ系（アジワ・スッカリ・サガイ）で先行しています。一方、UAE産の都内の拠点だったサイードショップ大久保店は閉店しており、**UAE産を扱う店舗の空き**があります。
+1. 東京ジャーミイはサウジ系に加えて**UAE産のDate Crown（カラース・ファルド）をすでに扱っています**。UAE産で空きを突くのではなく、別ブランド・別品種（マジュールなど）・別の荷姿（ギフト箱・1kg）で棚を増やしてもらう提案にします。UAE産を扱う競合はUSOUQ（Date Crown総代理店）とsaidshopです。
 2. 西葛西・新大久保・大塚の南アジア系の店は、価格を重視する傾向があります。**2027年のラマダン（2月上旬開始見込み）**に向けて、1kg・5kgのバルク品やイフタール用の箱を、年内に店頭へ届けることが勝負になります。
 3. 店に1軒ずつ営業するのは効率が悪いため、**アンビカ（卸の取引先4,000社以上）・ナスコのグループ・saidshop（UAE産の既存取扱）**を卸のハブとして先に押さえ、複数店にまとめて届ける形を推奨します。

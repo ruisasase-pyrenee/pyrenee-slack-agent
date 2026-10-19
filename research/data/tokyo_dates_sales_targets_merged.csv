@@ -1,0 +1,51 @@
+﻿priority,segment,area,name,address,phone,dates_on_shelf,approach,source_url,confidence,next_action
+A,チェーン本部,—,成城石井,神奈川県横浜市西区みなとみらい（本社）,045-329-2300,有：サウジ産ナキール250g 754円（直輸入）,Webフォーム（商談申込シートをshohin-group@seijoishii.co.jpへ）,https://www.seijoishii.co.jp/about/schedule.html,高,商談申込シートを作って提出
+A,チェーン本部,—,カルディコーヒーファーム（キャメル珈琲）,世田谷区代田2-31-8,,有：PB 130g 378円／オマーン産／チュニジア産有機,Webフォーム（法人のお問い合わせ）,https://www.kaldi.co.jp/faq/business.html,高,法人フォームから新商品を提案
+A,チェーン本部,—,ドン・キホーテ（PPIH）,東京都目黒区（PPIH本社・要確認）,,不明,Webフォーム（新規お取り引き）,https://ppih.co.jp/contact/partner8/,中,フォームを送って10日待つ
+A,卸ハブ,蔵前,アンビカコーポレーション（アンビカショップ蔵前）,台東区蔵前3-19-2 アンビカハウス,03-6908-8077,不明,卸（アポを取って訪問）,https://www.infbs.net/corp/ambika_corp,高,卸担当とのアポを取る
+A,卸・輸入（提携候補）,—,ILODOLY（合同会社）,板橋区,,有：サウジ産オーガニック（OEM・5kgバルク対応）,問い合わせ,https://www.ilodoly.com/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%E3%83%87%E3%83%BC%E3%83%84,中,OEM・バルクの体制を聞く。競合でもある
+A,卸・輸入（提携候補）,—,株式会社二宮（ハラール食材専門卸）,不明,,不明（約800品目のハラール食品）,問い合わせ,https://ispfoods.jp/halalninomiya/,中,取扱品にデーツを入れてもらえるか打診
+A,卸・輸入（提携候補）,—,HALAL ICHIBA（ハラール認証食品のBtoB EC）,不明,,不明,出品の問い合わせ,https://halalichiba.com/,中,飲食店・小売向けに出品できるか確認
+A,独立系,上野・御徒町,小島屋,上野・アメ横（番地は公式サイトで確認）,,有：米国・イスラエル・イラン産の4種,直接訪問（卸も）,https://www.kojima-ya.com/c/all/dried-fruit/b021,高,UAE産を品種追加として提案
+A,独立系,上野・御徒町,Eusa Halal Mart,台東区上野5-10-11 1F,,不明,直接訪問,https://www.halalfoodinjapan.com/post/55,中,訪問してデーツ棚を確認
+A,独立系,代々木上原,東京ジャーミイ ハラールマーケット,渋谷区大山町1-19,03-5790-0760,有：サウジ系（アジワ・スッカリ・サガイ）＋UAE産 Date Crown（カラース500g・ファルド）,直接訪問（事前に電話）,https://halalmarket.tokyocamii.org/products/date-crown-khalas-500g-デーツハラス,高,UAE産の仕入れ値・回転を聞き、別ブランドで並べられるか提案
+A,独立系,十条・東十条,アザーン ハラルフード,北区東十条4-3-7,,不明,直接訪問,https://search-ethnic.com/ethnicwalk/little-dhaka/,中,都内最大のバングラデシュ人街。訪問して棚を確認
+A,独立系,十条・東十条,ソナリハラルフード＆カフェ,北区東十条4-2-3,,不明,直接訪問,https://search-ethnic.com/ethnicwalk/little-dhaka/,中,訪問して棚を確認
+A,独立系,十条・東十条,サクラ ハラル フード,北区東十条4-6-1 小林ビル1F,,不明,直接訪問,https://tabelog.com/tokyo/A1323/A132304/13171752/dtlrvwlst/B60147766/,中,訪問して棚を確認
+A,独立系,十条・東十条,マジャマダー ハラール フード,北区上十条2-24-8,,不明,直接訪問,https://tabelog.com/en/tokyo/A1323/A132304/13226031/,中,訪問して棚を確認
+A,独立系,大塚,ラフマニア・ハラルフードショップ,豊島区南大塚3-40-8（別資料3-47-3）,,不明,直接訪問,https://halalgourmet.jp/ja/pray/343868,中,金曜昼を避けて訪問
+A,独立系,小伝馬町,ダルヴィッシュショップ,中央区日本橋小伝馬町18-4 上野ビル1F,03-6661-9848,有：イラン産,直接訪問,https://www.mapion.co.jp/phonebook/M02002/13102/21331608228/,中,価格比較の基準として仕入れ値を聞く
+A,独立系,新大久保,SARSINA HALAL FOODS,新宿区百人町2-1-50,,有：saidshopのUAE産を扱う店として掲載,直接訪問,http://halal-food.jp/user_data/dealer,中,今の仕入れ値と回転を聞く
+A,独立系,新大久保,シンジュク・ハラル・フード,新宿区百人町2-9-2,,有：Ace Sabaah カラース 1kg（EC）,直接訪問,https://shinjukuhalalfood.com/product-category/nuts-dry-fruits/dates/,中,EC出品も含めて提案
+B,チェーン本部,—,富澤商店,町田市小山ヶ丘3-22-9,0570-001919,有：チュニジア・イスラエル・イラン産（製菓用）,Webフォーム（卸業務）,https://tomiz.com/contact,高,製菓向けのペースト・ダイスで提案
+B,チェーン本部,—,業務スーパー（神戸物産）,兵庫県加古川市加古川町平野125-1,079-457-5001,有：サウジ産500g（ドバイのブランド Kowry）,メールフォーム,https://www.kobebussan.co.jp/mail.php,高,価格表を用意してから問い合わせ
+B,チェーン本部,—,コストコ,千葉県木更津市（商品購買部）,,有：米国産マジョール907g,Webフォーム／サプライヤーデー,https://customerservice.costco.co.jp/s/contactsupport/ask-transaction,中,大量に出せる体制ができてから
+B,卸・輸入（提携候補）,相模原（都外）,株式会社スパイスハウス,神奈川県相模原市,,不明,問い合わせ,https://www.spice-house.com/en,低,ハラール食品の卸として打診
+B,卸・輸入（競合）,—,USOUQ（UAE産 Date Crownの日本総代理店）,不明,,有：UAE産 Date Crown,—,https://vegewel.com/ja/style/usouq,中,UAE産の直接の競合。価格と販路を調べる
+B,卸・輸入（競合）,—,saidshop（Said Shop）,福岡（大久保店は閉店）,,有：UAE産・イラン産,提携の打診,https://halal-food.jp/products/list?category_id=29,中,競合だが、都内の取扱店網を共有できるか打診
+B,卸・輸入（競合）,—,Date with Dates,不明,,有：サウジ産,—,https://terjumedia.com/,低,価格帯を調べる
+B,独立系,上野・御徒町,野澤屋,台東区上野4-7-8 アメ横センタービルB1F,,不明,直接訪問,https://omatomesan.com/ueno-halal/,中,訪問してデーツ棚を確認
+B,独立系,十条・東十条,マーハラルレストラン（食材販売あり）,北区十条仲原1-24-10,,不明,直接訪問,https://retty.me/area/PRE13/ARE24/SUB2404/100001539899/,低,食材を今も売っているか確認
+B,独立系,大塚,SPICE OF BENGAL,豊島区南大塚2-14-6,,不明,直接訪問,https://ikebukuro-times.com/archives/spice-of-bengal.html,中,訪問してデーツ棚を確認
+B,独立系,新大久保,ローズファミリーストア 新大久保店,新宿区百人町2-10-8 2F,,不明,直接訪問,https://burmese.tokyo/myanmar-groceryshops/rosefamilystore-shinookubo/,中,訪問してデーツ棚を確認
+B,独立系,新大久保,バラヒ・フーズ・アンド・スパイスセンター,新宿区百人町2-10-9 1F,,不明,直接訪問,https://travel.spot-app.jp/shinokubo_isuramuyokocho_suzukisarasa/,中,訪問してデーツ棚を確認
+B,独立系,新大久保,グリーン・ナスコ,新宿区百人町2-9-3（移転・要確認）,,不明,直接訪問（グループで卸も）,https://around-india.com/shop-greennasco-tokyo/,中,移転先を確認してから訪問
+B,独立系,新大久保,ザ・ジャンナット・ハラル・フード,新宿区百人町2-9-15（別資料2-9-1）,,不明,直接訪問,https://burmese.tokyo/myanmar-groceryshops/jannathalalfood/,中,訪問してデーツ棚を確認
+B,独立系,新大久保,ソルティ・ハラル・カージャ,新大久保駅 徒歩約3分（番地不明）,,不明,直接訪問,https://search-ethnic.com/ethnicwalk/islam-yokocho/,低,Googleマップで場所を確認
+B,独立系,新小岩,バングラ ハラル フード,葛飾区新小岩1-50-8,,不明,直接訪問,https://tabelog.com/tokyo/A1312/A131204/13221639/dtlmap/,中,訪問して棚を確認
+B,独立系,池袋,Al-Flah Supermarket,豊島区池袋2-41-2 大野屋ビル4F,,不明,直接訪問,https://tabelog.com/en/tokyo/A1305/A130501/13200629/,中,訪問してデーツ棚を確認
+B,独立系,池袋,サンシャイン ハラル マート,豊島区東池袋1-13-12 共同ビル2〜3F,03-5952-1313,不明,直接訪問,https://pathee.com/spots/223408,中,訪問してデーツ棚を確認
+B,独立系,西葛西,WATAN INDIA HALAL FOOD,江戸川区西葛西5-10-13 栄華ビル,03-5667-7866,不明,直接訪問,https://unico-shumitan.com/foods/imported-foods/nishikasai-india/,中,訪問してデーツ棚を確認
+B,独立系,西葛西,SWAGAT INDIAN BAZAAR,江戸川区西葛西5-12-2,03-3680-9490,不明,直接訪問,https://runrunlife.me/spices-nishikasai-swagatindianbazaar/,中,訪問してデーツ棚を確認
+B,独立系,西葛西,TMVS FOODS,江戸川区西葛西5-8-5,03-6808-6011,不明,直接訪問,https://nishi-kasai.com/7955/,中,訪問してデーツ棚を確認
+B,独立系,西葛西,デシマート,江戸川区西葛西3-13-5 らーめるコーポ1F,,不明,直接訪問,https://nishi-kasai.com/17722/,中,訪問してデーツ棚を確認
+B,独立系,高田馬場,ローズファミリーストア 高田馬場店,新宿区高田馬場3-2-13 2F,,不明,直接訪問,https://myanmars.jp/injapan/852,低,営業しているか確認
+C,チェーン本部,—,北野エース（エース）,江東区富岡2-1-9 HF門前仲町ビルディング,03-5639-1448,不明,代表電話／商談会,https://www.ace-group.co.jp/about-us/profile.html,中,代表電話で担当部署を確認
+C,チェーン本部,—,ジュピター（Jupiter株式会社）,中央区日本橋本町3-6-9,,不明,Webフォーム（再建中のため保留）,https://www.jupiter-coffee.com/contact.html,中,仕入れ方針が固まるまで保留
+C,チェーン本部,—,ロヂャース（北辰商事）,台東区浅草1-22-9（浅草店）,,不明（ハラール売場あり）,不明,https://fooddiversity.today/article_137319.html,低,取引窓口を調べる
+C,卸・輸入（競合）,—,ペルシャ貿易有限会社,不明,,有：イラン産（カートン販売）,—,https://www.persia-trd.co.jp/html/products/list.php?category_id=8,中,価格の基準として把握
+C,卸・輸入（競合）,—,スペンタス株式会社,不明,,有：イラン産・濃縮果汁,—,https://www.spentasinc.com/company/,中,加工用の価格の基準として把握
+C,卸・輸入（競合）,杉並,DatesMalak,杉並区（番地不明）,,有：直輸入,—,http://www.datesmalak.com/,低,扱う産地を調べる
+C,独立系,上野・御徒町,SPICY FOOD NETWORK,台東区台東4-8-1,,不明,直接訪問,https://omatomesan.com/ueno-halal/,低,営業しているか確認
+C,独立系,十条・東十条,エベレストストア,十条演芸場通り沿い（番地不明）,,不明,直接訪問,https://search-ethnic.com/ethnicwalk/little-dhaka/,低,ネパール系。場所を確認
+C,独立系,高田馬場,MOTHER HOUSE（ミャンマー雑貨・食材）,新宿区高田馬場2-19-7 タックイレブン910,,不明,直接訪問,https://www.mother-house.tokyo/shop_jp/,低,ミャンマー系。ムスリム客は少なめと推定
