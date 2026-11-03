@@ -18,13 +18,15 @@
     "notify_channel": null
   },
   "holdings": [
-    {"ticker": "AAPL", "quantity": 2,  "avg_price": 302.84,  "bought_at": "2026-08-08", "note": "スクショで新規確認"},
-    {"ticker": "SPCX", "quantity": 3,  "avg_price": 135.00, "bought_at": "2026-07-17", "note": "lot2 - 8/6ロックアップ解除通過済み"},
-    {"ticker": "TSLA", "quantity": 2,  "avg_price": 383.265, "bought_at": "2026-07-17"},
-    {"ticker": "TSM",  "quantity": 1,  "avg_price": 391.94,  "bought_at": "2026-07-17"},
-    {"ticker": "UBER", "quantity": 5,  "avg_price": 73.62,   "bought_at": "2026-07-17"}
+    {"ticker": "AAPL", "quantity": 2, "avg_price": 302.84,  "bought_at": "2026-08-08"},
+    {"ticker": "GOOG", "quantity": 5, "avg_price": 281.05,  "bought_at": "2026-11-03", "note": "11/3スクショで新規確認"},
+    {"ticker": "INTC", "quantity": 1, "avg_price": 65.19,   "bought_at": "2026-11-03", "note": "11/3スクショで新規確認"},
+    {"ticker": "SPCX", "quantity": 3, "avg_price": 135.00,  "bought_at": "2026-07-17", "note": "lot2"},
+    {"ticker": "SPCX", "quantity": 3, "avg_price": 136.67,  "bought_at": "2026-11-03", "note": "lot3 - 11/3スクショで新規確認"},
+    {"ticker": "TSLA", "quantity": 2, "avg_price": 383.265, "bought_at": "2026-07-17"},
+    {"ticker": "TSM",  "quantity": 1, "avg_price": 391.94,  "bought_at": "2026-07-17"},
+    {"ticker": "UBER", "quantity": 5, "avg_price": 73.62,   "bought_at": "2026-07-17"},
+    {"ticker": "VOO",  "quantity": 2, "avg_price": 695.77,  "bought_at": "2026-11-03", "note": "11/3スクショで新規確認"}
   ],
-  "pending_orders": [
-    {"ticker": "SPCX", "action": "BUY", "quantity": 15, "limit_price": 115.00, "good_til": "2026-08-12", "note": "約定すればSPCX比率58%超。10%上限ルールに抵触するため約定前に再検討推奨"}
-  ]
+  "pending_orders": []
 }
