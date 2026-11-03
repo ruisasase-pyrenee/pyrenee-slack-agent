@@ -4,7 +4,8 @@
   "paper_start_date": "2026-07-17",
   "live_enabled_after_weeks": 2,
   "order_cap_usd": null,
-  "max_position_pct": 0.10,
+  "max_position_pct": 0.20,
+  "_max_position_pct_note": "2026-11-03に0.10から変更。ポートフォリオ$6k規模では1銘柄$400超の株を買うと必ず10%に当たり、ルールが数学的に機能していなかったため",
   "stop_loss_pct": 0.08,
   "auto_trade": {
     "enabled": false,
